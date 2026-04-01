@@ -43,10 +43,6 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: var(--font-family);
       color: var(--color-text);
@@ -230,17 +226,6 @@
     /* ==============================
        FADE-IN ANIMATION
        ============================== */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(24px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .fade-in {
       opacity: 0;
       transform: translateY(24px);
@@ -761,13 +746,6 @@
     }
 
     /* ==============================
-       MISC UTILITIES
-       ============================== */
-    .text-center { text-align: center; }
-    .mt-4 { margin-top: 16px; }
-    .mt-8 { margin-top: 32px; }
-
-    /* ==============================
        TASK 6 — HOW IT WORKS
        ============================== */
     .methode-section {
@@ -1194,13 +1172,13 @@
           <ul class="nav">
             <li><a href="#offre">Offre</a></li>
             <li><a href="#methode">Méthode</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#cta">Contact</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </nav>
 
         <div class="header-cta">
-          <a href="#offre" class="btn btn-primary btn-lg">Demander un audit</a>
+          <a href="#cta" class="btn btn-primary btn-lg">Demander un audit</a>
         </div>
       </div>
     </div>
@@ -1394,7 +1372,7 @@
         </p>
 
         <div class="hero-ctas fade-in" style="transition-delay: 0.3s">
-          <a href="#offre" class="btn btn-primary btn-lg">Demander mon audit export</a>
+          <a href="#cta" class="btn btn-primary btn-lg">Demander mon audit export</a>
           <a href="#offre" class="btn btn-secondary btn-lg">Découvrir l'offre</a>
         </div>
 
@@ -1461,8 +1439,7 @@
             Avant de prospecter, avant d'investir, avant de recruter — comprenez vraiment votre potentiel export. Notre audit analyse votre produit, votre marché cible, vos concurrents et vos capacités opérationnelles pour définir une stratégie sur mesure.
           </p>
           <div class="pillar-price">À partir de 990 € HT</div>
-          <br/>
-          <a href="#" class="pillar-link">Demander mon audit &#x2192;</a>
+          <a href="#cta" class="pillar-link">Demander mon audit &#x2192;</a>
         </div>
         <div class="pillar-visual">
           <div class="visual-placeholder">
@@ -1600,7 +1577,7 @@
         </div>
 
         <div class="why-cta-group">
-          <a href="#offre" class="btn btn-primary btn-lg">Demander mon audit export</a>
+          <a href="#cta" class="btn btn-primary btn-lg">Demander mon audit export</a>
           <span class="why-note">Sans engagement · Premier échange gratuit</span>
         </div>
 
@@ -1707,61 +1684,61 @@
       <div class="faq-list fade-in">
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" id="faq-q1" aria-expanded="false">
             <span class="faq-question-text">Combien coûte un audit export ?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" aria-labelledby="faq-q1">
             <div class="faq-answer-inner">L'audit export est proposé entre 990 € et 2 990 € HT selon la complexité de votre projet et le nombre de marchés à analyser. C'est un investissement qui pose les bases de toute votre stratégie export.</div>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" id="faq-q2" aria-expanded="false">
             <span class="faq-question-text">Quelle est la durée d'engagement ?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" aria-labelledby="faq-q2">
             <div class="faq-answer-inner">Les abonnements mensuels ont un engagement minimum de 6 mois. Ce délai est nécessaire pour obtenir des résultats mesurables à l'international. L'audit, lui, est un service ponctuel sans engagement de suite.</div>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" id="faq-q3" aria-expanded="false">
             <span class="faq-question-text">En quoi ExportPilot est différent d'un cabinet de conseil ?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" aria-labelledby="faq-q3">
             <div class="faq-answer-inner">Nous sommes un « passeur », pas un cabinet traditionnel. Notre approche est 100% digitalisée, transparente sur les ratios de conversion, et orientée terrain. Pas de rapports PowerPoint interminables — des actions concrètes et des résultats mesurables.</div>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" id="faq-q4" aria-expanded="false">
             <span class="faq-question-text">Quels marchés couvrez-vous ?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" aria-labelledby="faq-q4">
             <div class="faq-answer-inner">Notre expertise couvre l'Afrique, le Maghreb, le Moyen-Orient et l'Europe de l'Est. Nous sommes également ouverts à d'autres zones géographiques selon votre projet et nos partenaires locaux.</div>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" id="faq-q5" aria-expanded="false">
             <span class="faq-question-text">Je n'ai jamais exporté, c'est pour moi ?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" aria-labelledby="faq-q5">
             <div class="faq-answer-inner">Absolument. L'audit export est justement conçu pour évaluer votre potentiel et structurer votre première démarche. Beaucoup de nos clients en sont à leur premier projet export.</div>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" id="faq-q6" aria-expanded="false">
             <span class="faq-question-text">Que comprend l'abonnement mensuel ?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" aria-labelledby="faq-q6">
             <div class="faq-answer-inner">Selon la formule choisie (Starter, Business ou Expert), l'abonnement inclut : sourcing de prospects, campagnes de prospection digitale, suivi des leads, reporting mensuel, et un accès à notre dashboard client. Les missions terrain sont vendues séparément.</div>
           </div>
         </div>
@@ -1803,8 +1780,8 @@
           <ul>
             <li><a href="#offre">Offre</a></li>
             <li><a href="#methode">Méthode</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#cta">Contact</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
 
