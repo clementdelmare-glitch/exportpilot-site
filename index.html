@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ExportPilot combine expertise terrain, data et digital pour ouvrir vos marchés à l'international. Audit export, abonnements et missions terrain pour PME françaises." />
+  <meta name="robots" content="index, follow" />
+  <title>ExportPilot — L'ultime outil pour votre développement export</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==============================
+       DESIGN SYSTEM — CSS CUSTOM PROPERTIES
+       ============================== */
+    :root {
+      --color-primary: #3B82F6;
+      --color-primary-dark: #1E40AF;
+      --color-primary-light: #DBEAFE;
+      --color-primary-lighter: #EFF6FF;
+      --color-text: #111827;
+      --color-text-secondary: #6B7280;
+      --color-bg: #FFFFFF;
+      --color-bg-alt: #F8FAFC;
+      --color-border: #E5E7EB;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 48px;
+      --radius-full: 999px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-card-hover: 0 4px 12px rgba(0,0,0,0.12);
+      --max-width: 1140px;
+      --font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ==============================
+       RESET
+       ============================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img, svg {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ==============================
+       CONTAINER
+       ============================== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==============================
+       TYPOGRAPHY
+       ============================== */
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      color: var(--color-text);
+    }
+
+    h3 {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--color-text);
+    }
+
+    p {
+      color: var(--color-text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ==============================
+       BUTTONS
+       ============================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-family);
+      font-size: 0.925rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-lg {
+      padding: 16px 32px;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-primary-lighter);
+      transform: translateY(-1px);
+    }
+
+    /* ==============================
+       PILL / BADGE
+       ============================== */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+    }
+
+    .badge-popular {
+      background-color: var(--color-primary);
+      color: #fff;
+    }
+
+    /* ==============================
+       SECTIONS
+       ============================== */
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-rounded {
+      border-radius: var(--radius-lg);
+      margin: 0 16px;
+      padding: 80px 64px;
+    }
+
+    @media (max-width: 768px) {
+      .section-rounded {
+        margin: 0 8px;
+        padding: 60px 24px;
+      }
+      .section {
+        padding: 64px 0;
+      }
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+      color: var(--color-text);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    /* ==============================
+       FADE-IN ANIMATION
+       ============================== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==============================
+       PULSE ANIMATION (Hero map)
+       ============================== */
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.4); }
+    }
+
+    /* ==============================
+       TASK 1 — HEADER
+       ============================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      border-bottom-color: var(--color-border);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--color-primary);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--color-primary);
+    }
+
+    .header-cta {
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-cta .btn-lg {
+        padding: 12px 18px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* ==============================
+       TASK 2 — HERO SECTION
+       ============================== */
+    .hero {
+      position: relative;
+      padding: 160px 0 96px;
+      background: linear-gradient(180deg, var(--color-primary-lighter) 0%, var(--color-bg) 100%);
+      overflow: hidden;
+    }
+
+    .hero-map {
+      position: absolute;
+      inset: 0;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .hero-pill {
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      margin-bottom: 24px;
+    }
+
+    .hero h1 .accent {
+      color: var(--color-primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+      max-width: 640px;
+      margin-bottom: 40px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .hero-social-proof {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-social-proof .proof-text {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+    }
+
+    .hero-flags {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 1.35rem;
+    }
+
+    /* ==============================
+       TASK 3 — STATS BANNER
+       ============================== */
+    .stats-banner {
+      padding: 56px 0;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .stats-grid {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .stat-item {
+      flex: 1;
+      max-width: 320px;
+      text-align: center;
+      padding: 0 40px;
+      position: relative;
+    }
+
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 10%;
+      height: 80%;
+      width: 1px;
+      background-color: var(--color-border);
+    }
+
+    .stat-number {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      line-height: 1.4;
+      max-width: 180px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .stats-grid {
+        flex-direction: column;
+        gap: 32px;
+      }
+      .stat-item:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    /* ==============================
+       TASK 4 — OFFRE SECTION
+       ============================== */
+    .offre-section {
+      padding: 96px 0;
+    }
+
+    .offre-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .offre-header .section-title {
+      max-width: 640px;
+      margin: 0 auto 16px;
+    }
+
+    .pillar {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      margin-bottom: 96px;
+    }
+
+    .pillar:last-child {
+      margin-bottom: 0;
+    }
+
+    .pillar:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .pillar-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .pillar-visual {
+      flex: 0 0 440px;
+      min-width: 0;
+    }
+
+    .pillar-badge {
+      margin-bottom: 16px;
+    }
+
+    .pillar-content h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .pillar-content p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .pillar-price {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      background-color: var(--color-primary-lighter);
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 24px;
+    }
+
+    .pillar-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      transition: gap 0.2s ease;
+    }
+
+    .pillar-link:hover {
+      gap: 10px;
+    }
+
+    /* Visual placeholder */
+    .visual-placeholder {
+      background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary-lighter) 100%);
+      border-radius: var(--radius-md);
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--color-border);
+    }
+
+    .visual-placeholder .visual-icon {
+      font-size: 3.5rem;
+    }
+
+    .visual-placeholder .visual-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      opacity: 0.8;
+    }
+
+    /* Mini pricing cards */
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 20px 0 28px;
+    }
+
+    .pricing-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 16px 12px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .pricing-card:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .pricing-card.popular {
+      border-color: var(--color-primary);
+      border-width: 2px;
+    }
+
+    .pricing-card-badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .pricing-card-name {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      margin-top: 4px;
+    }
+
+    .pricing-card-price {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--color-text);
+      line-height: 1;
+    }
+
+    .pricing-card-unit {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      margin-top: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .pillar {
+        flex-direction: column !important;
+        gap: 40px;
+      }
+      .pillar-visual {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .pricing-cards {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+
+    /* ==============================
+       TASK 5 — WHY EXPORTPILOT SECTION
+       ============================== */
+    .why-section {
+      padding: 32px 0 64px;
+    }
+
+    .why-inner {
+      background-color: var(--color-bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 80px 64px;
+      text-align: center;
+    }
+
+    .why-inner .section-title {
+      max-width: 680px;
+      margin: 0 auto 16px;
+    }
+
+    .why-inner .section-subtitle {
+      margin: 0 auto 56px;
+      text-align: center;
+    }
+
+    .why-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .why-card {
+      background-color: var(--color-bg);
+      border-radius: var(--radius-md);
+      padding: 32px 24px;
+      text-align: left;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--color-border);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .why-card:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-3px);
+    }
+
+    .why-card-icon {
+      font-size: 2.25rem;
+      margin-bottom: 16px;
+    }
+
+    .why-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--color-text);
+    }
+
+    .why-card p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--color-text-secondary);
+    }
+
+    .why-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .why-note {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+
+    @media (max-width: 860px) {
+      .why-cards {
+        grid-template-columns: 1fr;
+      }
+      .why-inner {
+        padding: 60px 24px;
+      }
+    }
+
+    /* ==============================
+       FOOTER (minimal)
+       ============================== */
+    .footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* ==============================
+       MISC UTILITIES
+       ============================== */
+    .text-center { text-align: center; }
+    .mt-4 { margin-top: 16px; }
+    .mt-8 { margin-top: 32px; }
+
+    /* ==============================
+       TASK 6 — HOW IT WORKS
+       ============================== */
+    .methode-section {
+      padding: 96px 0;
+      background-color: var(--color-bg);
+    }
+
+    .methode-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+
+    .methode-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .steps-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+    }
+
+    .step-item {
+      flex: 1;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    /* Horizontal connector line between steps */
+    .step-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 32px; /* vertically centered with the 64px circle */
+      left: calc(50% + 32px);
+      right: calc(-50% + 32px);
+      height: 2px;
+      background-color: var(--color-primary-light);
+      z-index: 0;
+    }
+
+    .step-number {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+    }
+
+    .step-item h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+
+    .step-item p {
+      font-size: 0.925rem;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+    }
+
+    @media (max-width: 768px) {
+      .steps-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+      }
+      .step-item:not(:last-child)::after {
+        display: none;
+      }
+      .step-item {
+        max-width: 100%;
+      }
+    }
+
+    /* ==============================
+       TASK 7 — TESTIMONIALS
+       ============================== */
+    .temoignages-section {
+      padding: 32px 0 64px;
+    }
+
+    .temoignages-inner {
+      background-color: var(--color-bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 80px 64px;
+      text-align: center;
+    }
+
+    .temoignages-inner .section-title {
+      max-width: 680px;
+      margin: 0 auto 16px;
+    }
+
+    .temoignages-inner .section-subtitle {
+      margin: 0 auto 56px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      text-align: left;
+    }
+
+    .testimonial-card {
+      background-color: var(--color-bg);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--color-border);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-3px);
+    }
+
+    .testimonial-quote {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+      font-style: italic;
+      flex: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .avatar-blue   { background-color: #3B82F6; }
+    .avatar-indigo { background-color: #6366F1; }
+    .avatar-teal   { background-color: #0D9488; }
+
+    .testimonial-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .testimonial-role {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .temoignages-inner {
+        padding: 60px 24px;
+      }
+    }
+
+    /* ==============================
+       TASK 8 — FAQ ACCORDION
+       ============================== */
+    .faq-section {
+      padding: 96px 0;
+      background-color: var(--color-bg);
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .faq-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px 0;
+      cursor: pointer;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: var(--font-family);
+    }
+
+    .faq-question-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.4;
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, background-color 0.2s ease;
+    }
+
+    .faq-item.is-open .faq-icon {
+      transform: rotate(45deg);
+      background-color: var(--color-primary);
+      color: #fff;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-answer-inner {
+      padding: 0 0 24px;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+    }
+
+    /* ==============================
+       TASK 9 — FINAL CTA
+       ============================== */
+    .cta-section {
+      padding: 32px 0 64px;
+    }
+
+    .cta-inner {
+      background: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-primary-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 96px 64px;
+      text-align: center;
+    }
+
+    .cta-inner .section-title {
+      max-width: 680px;
+      margin: 0 auto 16px;
+    }
+
+    .cta-inner .section-subtitle {
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .cta-mention {
+      margin-top: 20px;
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .cta-inner {
+        padding: 60px 24px;
+      }
+    }
+
+    /* ==============================
+       TASK 9 — FOOTER (full)
+       ============================== */
+    .footer-main {
+      background-color: #111827;
+      padding: 72px 0 0;
+      color: #9CA3AF;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid #1F2937;
+    }
+
+    .footer-brand .footer-logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #F9FAFB;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand .footer-logo span {
+      color: var(--color-primary);
+    }
+
+    .footer-brand .footer-tagline {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: #6B7280;
+      max-width: 240px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #F9FAFB;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 0.875rem;
+      color: #9CA3AF;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: #F9FAFB;
+    }
+
+    .footer-contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: #9CA3AF;
+      transition: color 0.2s ease;
+      margin-bottom: 10px;
+    }
+
+    .footer-contact-link:hover {
+      color: #F9FAFB;
+    }
+
+    .footer-bottom {
+      padding: 24px 0;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: #4B5563;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ==============================
+       TASK 1 — HEADER
+       ============================== -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#" class="logo">Export<span>Pilot</span></a>
+
+        <nav>
+          <ul class="nav">
+            <li><a href="#offre">Offre</a></li>
+            <li><a href="#methode">Méthode</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-cta">
+          <a href="#offre" class="btn btn-primary btn-lg">Demander un audit</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==============================
+       TASK 2 — HERO SECTION
+       ============================== -->
+  <section class="hero">
+    <!-- SVG World Map Background -->
+    <svg class="hero-map" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Dashed connection lines -->
+      <g stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="6 4" fill="none" opacity="0.6">
+        <!-- France → Maroc -->
+        <line x1="490" y1="195" x2="470" y2="255"/>
+        <!-- France → Sénégal -->
+        <line x1="490" y1="195" x2="430" y2="310"/>
+        <!-- France → Côte d'Ivoire -->
+        <line x1="490" y1="195" x2="445" y2="330"/>
+        <!-- France → Allemagne -->
+        <line x1="490" y1="195" x2="530" y2="175"/>
+        <!-- France → UAE -->
+        <line x1="490" y1="195" x2="680" y2="255"/>
+        <!-- France → USA -->
+        <line x1="490" y1="195" x2="250" y2="200"/>
+        <!-- France → Japon -->
+        <line x1="490" y1="195" x2="940" y2="215"/>
+      </g>
+
+      <!-- Europe dots -->
+      <g fill="#3B82F6" opacity="0.7">
+        <!-- France -->
+        <circle cx="490" cy="195" r="5"/>
+        <!-- Allemagne -->
+        <circle cx="530" cy="175" r="3.5"/>
+        <!-- UK -->
+        <circle cx="472" cy="168" r="3"/>
+        <!-- Espagne -->
+        <circle cx="468" cy="215" r="3"/>
+        <!-- Italie -->
+        <circle cx="532" cy="210" r="3"/>
+        <!-- Pays-Bas -->
+        <circle cx="510" cy="162" r="2.5"/>
+        <!-- Belgique -->
+        <circle cx="505" cy="170" r="2.5"/>
+        <!-- Suisse -->
+        <circle cx="520" cy="195" r="2.5"/>
+        <!-- Pologne -->
+        <circle cx="562" cy="168" r="2.5"/>
+        <!-- Portugal -->
+        <circle cx="452" cy="218" r="2.5"/>
+      </g>
+
+      <!-- Africa dots -->
+      <g fill="#3B82F6" opacity="0.7">
+        <!-- Maroc -->
+        <circle cx="470" cy="255" r="4"/>
+        <!-- Algérie -->
+        <circle cx="505" cy="258" r="3"/>
+        <!-- Tunisie -->
+        <circle cx="525" cy="248" r="3"/>
+        <!-- Sénégal -->
+        <circle cx="430" cy="310" r="3.5"/>
+        <!-- Côte d'Ivoire -->
+        <circle cx="445" cy="330" r="3.5"/>
+        <!-- Ghana -->
+        <circle cx="460" cy="332" r="3"/>
+        <!-- Nigeria -->
+        <circle cx="495" cy="325" r="3"/>
+        <!-- Cameroun -->
+        <circle cx="510" cy="330" r="2.5"/>
+        <!-- Kenya -->
+        <circle cx="570" cy="340" r="3"/>
+        <!-- Afrique du Sud -->
+        <circle cx="540" cy="410" r="3"/>
+        <!-- Éthiopie -->
+        <circle cx="570" cy="315" r="2.5"/>
+        <!-- Tanzania -->
+        <circle cx="560" cy="355" r="2.5"/>
+      </g>
+
+      <!-- Middle East dots -->
+      <g fill="#3B82F6" opacity="0.7">
+        <!-- UAE -->
+        <circle cx="680" cy="255" r="4"/>
+        <!-- Arabie Saoudite -->
+        <circle cx="650" cy="265" r="3.5"/>
+        <!-- Qatar -->
+        <circle cx="668" cy="263" r="2.5"/>
+        <!-- Turquie -->
+        <circle cx="598" cy="218" r="3"/>
+        <!-- Israël -->
+        <circle cx="602" cy="248" r="2.5"/>
+        <!-- Égypte -->
+        <circle cx="582" cy="258" r="3"/>
+        <!-- Liban -->
+        <circle cx="606" cy="240" r="2"/>
+        <!-- Jordanie -->
+        <circle cx="612" cy="250" r="2"/>
+        <!-- Oman -->
+        <circle cx="688" cy="270" r="2.5"/>
+        <!-- Koweit -->
+        <circle cx="658" cy="252" r="2"/>
+      </g>
+
+      <!-- Americas dots -->
+      <g fill="#3B82F6" opacity="0.7">
+        <!-- USA East -->
+        <circle cx="250" cy="200" r="4"/>
+        <!-- USA West -->
+        <circle cx="180" cy="205" r="3"/>
+        <!-- Canada -->
+        <circle cx="230" cy="168" r="3"/>
+        <!-- Mexique -->
+        <circle cx="215" cy="255" r="3"/>
+        <!-- Brésil -->
+        <circle cx="290" cy="345" r="3.5"/>
+        <!-- Colombie -->
+        <circle cx="255" cy="305" r="2.5"/>
+        <!-- Argentine -->
+        <circle cx="280" cy="400" r="2.5"/>
+        <!-- Chili -->
+        <circle cx="265" cy="390" r="2.5"/>
+        <!-- Pérou -->
+        <circle cx="248" cy="340" r="2.5"/>
+        <!-- Venezuela -->
+        <circle cx="270" cy="295" r="2"/>
+      </g>
+
+      <!-- Asia dots -->
+      <g fill="#3B82F6" opacity="0.7">
+        <!-- Inde -->
+        <circle cx="748" cy="268" r="4"/>
+        <!-- Chine -->
+        <circle cx="858" cy="218" r="4"/>
+        <!-- Japon -->
+        <circle cx="940" cy="215" r="4"/>
+        <!-- Singapour -->
+        <circle cx="865" cy="318" r="3"/>
+        <!-- Vietnam -->
+        <circle cx="858" cy="295" r="2.5"/>
+        <!-- Thaïlande -->
+        <circle cx="845" cy="285" r="2.5"/>
+        <!-- Indonésie -->
+        <circle cx="878" cy="340" r="3"/>
+        <!-- Bangladesh -->
+        <circle cx="778" cy="268" r="2"/>
+        <!-- Pakistan -->
+        <circle cx="720" cy="248" r="2.5"/>
+        <!-- Sri Lanka -->
+        <circle cx="758" cy="295" r="2"/>
+        <!-- Malaisie -->
+        <circle cx="860" cy="315" r="2.5"/>
+        <!-- Philippines -->
+        <circle cx="902" cy="288" r="2.5"/>
+        <!-- Corée du Sud -->
+        <circle cx="920" cy="210" r="2.5"/>
+        <!-- Taiwan -->
+        <circle cx="908" cy="240" r="2"/>
+        <!-- Hong Kong -->
+        <circle cx="890" cy="250" r="2"/>
+      </g>
+
+      <!-- Animated pulse circles on key hubs -->
+      <g fill="#3B82F6">
+        <!-- France pulse -->
+        <circle cx="490" cy="195" r="12" opacity="0" style="animation: pulse 2.4s ease-in-out infinite;"/>
+        <!-- UAE pulse -->
+        <circle cx="680" cy="255" r="10" opacity="0" style="animation: pulse 2.4s ease-in-out 0.8s infinite;"/>
+        <!-- Maroc pulse -->
+        <circle cx="470" cy="255" r="10" opacity="0" style="animation: pulse 2.4s ease-in-out 1.6s infinite;"/>
+        <!-- USA pulse -->
+        <circle cx="250" cy="200" r="10" opacity="0" style="animation: pulse 2.4s ease-in-out 0.4s infinite;"/>
+        <!-- Chine pulse -->
+        <circle cx="858" cy="218" r="10" opacity="0" style="animation: pulse 2.4s ease-in-out 1.2s infinite;"/>
+      </g>
+    </svg>
+
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-pill fade-in">
+          <span class="pill">&#x1F30D; La plateforme export digitalisée</span>
+        </div>
+
+        <h1 class="fade-in" style="transition-delay: 0.1s">
+          L'ultime outil pour votre développement&nbsp;<span class="accent">EXPORT</span>
+        </h1>
+
+        <p class="hero-subtitle fade-in" style="transition-delay: 0.2s">
+          ExportPilot combine expertise terrain, data et digital pour ouvrir vos marchés à l'international. Vous restez l'acteur commercial, nous ouvrons les portes.
+        </p>
+
+        <div class="hero-ctas fade-in" style="transition-delay: 0.3s">
+          <a href="#offre" class="btn btn-primary btn-lg">Demander mon audit export</a>
+          <a href="#offre" class="btn btn-secondary btn-lg">Découvrir l'offre</a>
+        </div>
+
+        <div class="hero-social-proof fade-in" style="transition-delay: 0.4s">
+          <span class="proof-text">Accompagnement de PME françaises vers 15+ pays</span>
+          <div class="hero-flags">
+            <span title="France">🇫🇷</span>
+            <span title="Maroc">🇲🇦</span>
+            <span title="Sénégal">🇸🇳</span>
+            <span title="Côte d'Ivoire">🇨🇮</span>
+            <span title="Allemagne">🇩🇪</span>
+            <span title="Émirats Arabes Unis">🇦🇪</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       TASK 3 — STATS BANNER
+       ============================== -->
+  <section class="stats-banner">
+    <div class="container">
+      <div class="stats-grid fade-in">
+
+        <div class="stat-item">
+          <div class="stat-number">44&thinsp;500</div>
+          <div class="stat-label">nouvelles entreprises exportatrices chaque année en France</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number">26%</div>
+          <div class="stat-label">abandonnent l'export après la première année</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number">8+</div>
+          <div class="stat-label">ans d'expertise terrain sur les marchés internationaux</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       TASK 4 — OFFRE SECTION
+       ============================== -->
+  <section class="offre-section" id="offre">
+    <div class="container">
+
+      <div class="offre-header fade-in">
+        <h2 class="section-title">Une offre complète pour chaque étape de votre export</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">De l'audit initial à l'accompagnement continu, ExportPilot structure votre développement à l'international.</p>
+      </div>
+
+      <!-- Pillar 1 — Audit Export -->
+      <div class="pillar fade-in">
+        <div class="pillar-content">
+          <div class="pillar-badge">
+            <span class="badge">Point d'entrée obligatoire</span>
+          </div>
+          <h3>Le diagnostic qui change tout</h3>
+          <p>
+            Avant de prospecter, avant d'investir, avant de recruter — comprenez vraiment votre potentiel export. Notre audit analyse votre produit, votre marché cible, vos concurrents et vos capacités opérationnelles pour définir une stratégie sur mesure.
+          </p>
+          <div class="pillar-price">À partir de 990 € HT</div>
+          <br/>
+          <a href="#" class="pillar-link">Demander mon audit &#x2192;</a>
+        </div>
+        <div class="pillar-visual">
+          <div class="visual-placeholder">
+            <div class="visual-icon">🔍</div>
+            <div class="visual-label">Audit Export — Diagnostic stratégique</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 2 — Abonnements -->
+      <div class="pillar fade-in">
+        <div class="pillar-content">
+          <div class="pillar-badge">
+            <span class="badge">Accompagnement continu</span>
+          </div>
+          <h3>Un copilote, pas un coup d'éclat</h3>
+          <p>
+            L'export se construit dans la durée. Nos abonnements mensuels (6 mois minimum) vous donnent accès à un expert dédié, des outils digitaux de prospection et un suivi régulier de vos actions terrain. Vous pilotez, nous ouvrons les portes.
+          </p>
+
+          <div class="pricing-cards">
+            <div class="pricing-card">
+              <div class="pricing-card-name">Starter</div>
+              <div class="pricing-card-price">590 €</div>
+              <div class="pricing-card-unit">/mois HT</div>
+            </div>
+            <div class="pricing-card popular">
+              <div class="pricing-card-badge">
+                <span class="badge badge-popular">Populaire</span>
+              </div>
+              <div class="pricing-card-name">Business</div>
+              <div class="pricing-card-price">790 €</div>
+              <div class="pricing-card-unit">/mois HT</div>
+            </div>
+            <div class="pricing-card">
+              <div class="pricing-card-name">Expert</div>
+              <div class="pricing-card-price">2 490 €</div>
+              <div class="pricing-card-unit">/mois HT</div>
+            </div>
+          </div>
+
+          <a href="#" class="pillar-link">Voir les formules en détail &#x2192;</a>
+        </div>
+        <div class="pillar-visual">
+          <div class="visual-placeholder">
+            <div class="visual-icon">📊</div>
+            <div class="visual-label">Dashboard de suivi export</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 3 — Missions terrain -->
+      <div class="pillar fade-in">
+        <div class="pillar-content">
+          <div class="pillar-badge">
+            <span class="badge">Représentation</span>
+          </div>
+          <h3>Votre présence là où ça se joue</h3>
+          <p>
+            Salons internationaux, rencontres acheteurs, visites de partenaires locaux — ExportPilot vous représente sur le terrain quand vous ne pouvez pas y être. Chaque mission fait l'objet d'un brief et d'un rapport détaillé avec les contacts qualifiés identifiés.
+          </p>
+          <a href="#" class="pillar-link">Demander une mission terrain &#x2192;</a>
+        </div>
+        <div class="pillar-visual">
+          <div class="visual-placeholder">
+            <div class="visual-icon">✈️</div>
+            <div class="visual-label">Missions terrain & salons</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 4 — Services one-shot -->
+      <div class="pillar fade-in">
+        <div class="pillar-content">
+          <div class="pillar-badge">
+            <span class="badge">À la carte</span>
+          </div>
+          <h3>Formation, conformité, recrutement agents</h3>
+          <p>
+            Besoin d'une formation export pour vos équipes ? D'un audit de conformité douanière ? Du recrutement d'un agent commercial local ? Nos services one-shot s'adaptent à vos besoins ponctuels sans engagement d'abonnement.
+          </p>
+          <a href="#" class="pillar-link">Explorer les services &#x2192;</a>
+        </div>
+        <div class="pillar-visual">
+          <div class="visual-placeholder">
+            <div class="visual-icon">🛠️</div>
+            <div class="visual-label">Services à la carte</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================
+       TASK 5 — WHY EXPORTPILOT SECTION
+       ============================== -->
+  <section class="why-section" id="pourquoi">
+    <div class="container">
+      <div class="why-inner fade-in">
+
+        <h2 class="section-title">
+          Pas un cabinet de conseil classique.<br/>Votre passeur digital vers l'export.
+        </h2>
+        <p class="section-subtitle">
+          Une approche radicalement différente : transparente sur les chiffres, structurée par la data, ancrée dans la réalité du terrain.
+        </p>
+
+        <div class="why-cards">
+
+          <div class="why-card">
+            <div class="why-card-icon">📈</div>
+            <h3>Transparence</h3>
+            <p>
+              Nous partageons nos ratios de conversion, nos méthodes et nos limites. Vous savez exactement ce que vous achetez, pourquoi, et quels résultats attendre à chaque étape. Pas de promesses floues, pas d'effet tunnel.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-card-icon">💻</div>
+            <h3>Méthodologie digitalisée</h3>
+            <p>
+              Kompass, Apollo, Skylead, Make — des outils de prospection et d'automatisation de pointe pilotés par nos experts. Votre pipeline de prospects qualifiés est alimenté en continu, avec reporting en temps réel sur votre dashboard.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-card-icon">🤝</div>
+            <h3>Passeur terrain</h3>
+            <p>
+              Nous ouvrons les portes, vous faites le commercial. Notre rôle est de qualifier, introduire et préparer vos rendez-vous. Vous gardez la main sur votre relation client et votre image de marque à l'international.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="why-cta-group">
+          <a href="#offre" class="btn btn-primary btn-lg">Démarrer mon audit export</a>
+          <span class="why-note">Sans engagement · Premier échange gratuit</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       TASK 6 — HOW IT WORKS
+       ============================== -->
+  <section class="methode-section" id="methode">
+    <div class="container">
+
+      <div class="methode-header fade-in">
+        <h2 class="section-title">3 étapes pour lancer votre export</h2>
+        <p class="section-subtitle">Un parcours clair, structuré, sans surprise.</p>
+      </div>
+
+      <div class="steps-row fade-in">
+
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <h3>Audit export</h3>
+          <p>On analyse votre potentiel, vos marchés et votre capacité opérationnelle.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <h3>Plan d'action</h3>
+          <p>Vous recevez une feuille de route claire : marchés cibles, stratégie, outils.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <h3>Accompagnement</h3>
+          <p>On vous accompagne avec un abonnement mensuel et des missions terrain ciblées.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       TASK 7 — TESTIMONIALS
+       ============================== -->
+  <section class="temoignages-section" id="temoignages">
+    <div class="container">
+      <div class="temoignages-inner fade-in">
+
+        <h2 class="section-title">Ils ont franchi le pas de l'export</h2>
+        <p class="section-subtitle">Des dirigeants de PME qui ont structuré leur développement international.</p>
+
+        <div class="testimonials-grid">
+
+          <div class="testimonial-card">
+            <p class="testimonial-quote">&#x201C;Grâce à ExportPilot, nous avons identifié 3 marchés prioritaires en Afrique de l'Ouest et signé notre premier contrat en 4 mois.&#x201D;</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar avatar-blue">ML</div>
+              <div>
+                <div class="testimonial-name">Marc L.</div>
+                <div class="testimonial-role">Dirigeant, PME agroalimentaire</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-quote">&#x201C;L'audit export a mis en lumière des opportunités au Maghreb qu'on n'avait pas envisagées. L'accompagnement mensuel nous a donné la structure qui nous manquait.&#x201D;</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar avatar-indigo">SD</div>
+              <div>
+                <div class="testimonial-name">Sophie D.</div>
+                <div class="testimonial-role">DG, industrie mécanique</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-quote">&#x201C;Ce qui change avec ExportPilot, c'est la transparence. On sait exactement où on en est, quels sont les ratios, et ce qui reste à faire.&#x201D;</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar avatar-teal">PB</div>
+              <div>
+                <div class="testimonial-name">Pierre B.</div>
+                <div class="testimonial-role">Fondateur, startup cleantech</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       TASK 8 — FAQ ACCORDION
+       ============================== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+
+      <div class="faq-header fade-in">
+        <h2 class="section-title">Toutes les réponses à vos questions</h2>
+        <p class="section-subtitle">Tout ce que vous devez savoir avant de vous lancer.</p>
+      </div>
+
+      <div class="faq-list fade-in">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Combien coûte un audit export ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">L'audit export est proposé entre 990 € et 2 990 € HT selon la complexité de votre projet et le nombre de marchés à analyser. C'est un investissement qui pose les bases de toute votre stratégie export.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Quelle est la durée d'engagement ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">Les abonnements mensuels ont un engagement minimum de 6 mois. Ce délai est nécessaire pour obtenir des résultats mesurables à l'international. L'audit, lui, est un service ponctuel sans engagement de suite.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">En quoi ExportPilot est différent d'un cabinet de conseil ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">Nous sommes un « passeur », pas un cabinet traditionnel. Notre approche est 100% digitalisée, transparente sur les ratios de conversion, et orientée terrain. Pas de rapports PowerPoint interminables — des actions concrètes et des résultats mesurables.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Quels marchés couvrez-vous ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">Notre expertise couvre l'Afrique, le Maghreb, le Moyen-Orient et l'Europe de l'Est. Nous sommes également ouverts à d'autres zones géographiques selon votre projet et nos partenaires locaux.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Je n'ai jamais exporté, c'est pour moi ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">Absolument. L'audit export est justement conçu pour évaluer votre potentiel et structurer votre première démarche. Beaucoup de nos clients en sont à leur premier projet export.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Que comprend l'abonnement mensuel ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">Selon la formule choisie (Starter, Business ou Expert), l'abonnement inclut : sourcing de prospects, campagnes de prospection digitale, suivi des leads, reporting mensuel, et un accès à notre dashboard client. Les missions terrain sont vendues séparément.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       TASK 9 — FINAL CTA
+       ============================== -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-inner fade-in">
+        <h2 class="section-title">Prêt à ouvrir de nouveaux marchés ?</h2>
+        <p class="section-subtitle">Commencez par un audit export. Sans engagement, sans surprise.</p>
+        <a href="mailto:contact@exportpilot.fr" class="btn btn-primary btn-lg">Demander mon audit export</a>
+        <p class="cta-mention">Premier échange gratuit · Réponse sous 48h</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       TASK 9 — FOOTER (full)
+       ============================== -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">Export<span>Pilot</span></div>
+          <p class="footer-tagline">Votre passeur digital vers l'export. Expertise terrain, data et accompagnement structuré pour PME françaises.</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#offre">Notre offre</a></li>
+            <li><a href="#methode">Méthode</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="footer-col">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+            <li><a href="#">CGV</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@exportpilot.fr" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            contact@exportpilot.fr
+          </a>
+          <a href="https://www.linkedin.com/company/exportpilot" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn ExportPilot
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ExportPilot. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==============================
+       TASK 10 — JS CONSOLIDATED
+       ============================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // ---- Header scroll shadow ----
+      var header = document.getElementById('header');
+
+      function onScroll() {
+        if (window.scrollY > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // ---- IntersectionObserver for .fade-in ----
+      var fadeEls = document.querySelectorAll('.fade-in');
+
+      if ('IntersectionObserver' in window) {
+        var fadeObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                fadeObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        fadeEls.forEach(function (el) { fadeObserver.observe(el); });
+      } else {
+        fadeEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      // ---- FAQ accordion ----
+      var faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(function (item) {
+        var btn = item.querySelector('.faq-question');
+        var answer = item.querySelector('.faq-answer');
+
+        btn.addEventListener('click', function () {
+          var isOpen = item.classList.contains('is-open');
+
+          // Close all
+          faqItems.forEach(function (other) {
+            other.classList.remove('is-open');
+            other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            other.querySelector('.faq-answer').style.maxHeight = null;
+          });
+
+          // Open clicked if it was closed
+          if (!isOpen) {
+            item.classList.add('is-open');
+            btn.setAttribute('aria-expanded', 'true');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+          }
+        });
+      });
+
+      // ---- Smooth scroll for anchor links ----
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            var offset = 80; // header height
+            var top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+
+    });
+  </script>
+
+</body>
+</html>
