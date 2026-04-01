@@ -363,12 +363,13 @@
       color: var(--color-text-secondary);
       line-height: 1.75;
       max-width: 640px;
-      margin-bottom: 40px;
+      margin: 0 auto 40px;
     }
 
     .hero-ctas {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 16px;
       flex-wrap: wrap;
       margin-bottom: 56px;
@@ -1196,6 +1197,155 @@
       }
     }
 
+    /* ========== PRICING ========== */
+    .pricing-section {
+      padding: 100px 0;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius-lg);
+      margin: 40px 16px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 60px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--color-bg);
+    }
+
+    .pricing-card {
+      padding: 40px 32px;
+      border-right: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .pricing-card:last-child {
+      border-right: none;
+    }
+
+    .pricing-card.popular {
+      background: var(--color-primary-lighter);
+    }
+
+    .pricing-card-header {
+      margin-bottom: 24px;
+    }
+
+    .pricing-card-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .pricing-card-name h3 {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .pricing-badge-popular {
+      background: var(--color-primary);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pricing-card-desc {
+      color: var(--color-text-secondary);
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 44px;
+    }
+
+    .pricing-price {
+      margin-bottom: 8px;
+    }
+
+    .pricing-amount {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--color-text);
+      line-height: 1;
+    }
+
+    .pricing-amount .pricing-unit {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+    }
+
+    .pricing-billing {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      margin-bottom: 28px;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    .pricing-features-group {
+      margin-bottom: 20px;
+    }
+
+    .pricing-features-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .pricing-features-list {
+      list-style: none;
+    }
+
+    .pricing-features-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+      font-size: 14px;
+      color: var(--color-text);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .pricing-features-list li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-check {
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 860px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-card {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .pricing-card:last-child {
+        border-bottom: none;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1211,6 +1361,7 @@
         <nav>
           <ul class="nav">
             <li><a href="#offre">Offre</a></li>
+            <li><a href="#pricing">Prix</a></li>
             <li><a href="#methode">Méthode</a></li>
             <li><a href="#temoignages">Témoignages</a></li>
             <li><a href="#faq">FAQ</a></li>
@@ -1577,6 +1728,123 @@
   </section>
 
   <!-- ==============================
+       PRICING SECTION
+       ============================== -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title fade-in">Des formules claires, sans surprise</h2>
+      <p class="section-subtitle fade-in">Engagement 6 mois minimum. Vous gardez le contrôle, on structure votre croissance export.</p>
+
+      <div class="pricing-grid fade-in">
+
+        <!-- Starter -->
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <div class="pricing-card-name">
+              <h3>Starter</h3>
+            </div>
+            <p class="pricing-card-desc">Pour les PME qui démarrent à l'export et veulent structurer leur première démarche.</p>
+          </div>
+          <div class="pricing-price">
+            <div class="pricing-amount">590 € <span class="pricing-unit">/mois</span></div>
+          </div>
+          <div class="pricing-billing">HT · Engagement 6 mois</div>
+          <a href="#cta" class="btn btn-secondary">Choisir Starter</a>
+
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Prospection</div>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> Sourcing de prospects ciblés</li>
+              <li><span class="pricing-check">✓</span> 1 campagne de prospection digitale</li>
+              <li><span class="pricing-check">✓</span> Qualification des leads</li>
+            </ul>
+          </div>
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Suivi</div>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> Reporting mensuel</li>
+              <li><span class="pricing-check">✓</span> 1 point stratégique / mois</li>
+              <li><span class="pricing-check">✓</span> Accès dashboard client</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Business -->
+        <div class="pricing-card popular">
+          <div class="pricing-card-header">
+            <div class="pricing-card-name">
+              <h3>Business</h3>
+              <span class="pricing-badge-popular">Populaire</span>
+            </div>
+            <p class="pricing-card-desc">Pour les PME ambitieuses qui veulent accélérer sur plusieurs marchés en parallèle.</p>
+          </div>
+          <div class="pricing-price">
+            <div class="pricing-amount">790 € <span class="pricing-unit">/mois</span></div>
+          </div>
+          <div class="pricing-billing">HT · Engagement 6 mois</div>
+          <a href="#cta" class="btn btn-primary">Choisir Business</a>
+
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Prospection</div>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> Sourcing de prospects ciblés</li>
+              <li><span class="pricing-check">✓</span> 3 campagnes de prospection digitale</li>
+              <li><span class="pricing-check">✓</span> Qualification des leads</li>
+              <li><span class="pricing-check">✓</span> Veille concurrentielle</li>
+            </ul>
+          </div>
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Suivi</div>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> Reporting bi-mensuel</li>
+              <li><span class="pricing-check">✓</span> 2 points stratégiques / mois</li>
+              <li><span class="pricing-check">✓</span> Accès dashboard client</li>
+              <li><span class="pricing-check">✓</span> Support prioritaire</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Expert -->
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <div class="pricing-card-name">
+              <h3>Expert</h3>
+            </div>
+            <p class="pricing-card-desc">Pour les entreprises qui veulent un accompagnement intensif avec présence terrain dédiée.</p>
+          </div>
+          <div class="pricing-price">
+            <div class="pricing-amount">2 490 € <span class="pricing-unit">/mois</span></div>
+          </div>
+          <div class="pricing-billing">HT · Engagement 6 mois</div>
+          <a href="#cta" class="btn btn-secondary">Choisir Expert</a>
+
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Prospection</div>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> Sourcing illimité de prospects</li>
+              <li><span class="pricing-check">✓</span> Campagnes de prospection illimitées</li>
+              <li><span class="pricing-check">✓</span> Qualification des leads</li>
+              <li><span class="pricing-check">✓</span> Veille concurrentielle approfondie</li>
+              <li><span class="pricing-check">✓</span> Intelligence douanière (Trasic)</li>
+            </ul>
+          </div>
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Suivi</div>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> Reporting hebdomadaire</li>
+              <li><span class="pricing-check">✓</span> Points stratégiques illimités</li>
+              <li><span class="pricing-check">✓</span> Accès dashboard client</li>
+              <li><span class="pricing-check">✓</span> Support prioritaire 24/48h</li>
+              <li><span class="pricing-check">✓</span> Expert dédié</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
        TASK 5 — WHY EXPORTPILOT SECTION
        ============================== -->
   <section class="why-section" id="pourquoi">
@@ -1821,6 +2089,7 @@
           <h4>Navigation</h4>
           <ul>
             <li><a href="#offre">Offre</a></li>
+            <li><a href="#pricing">Prix</a></li>
             <li><a href="#methode">Méthode</a></li>
             <li><a href="#temoignages">Témoignages</a></li>
             <li><a href="#faq">FAQ</a></li>
