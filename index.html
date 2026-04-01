@@ -395,6 +395,46 @@
     }
 
     /* ==============================
+       SECTOR CARDS (Hero)
+       ============================== */
+    .hero-sectors {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .sector-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 7px 13px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      box-shadow: var(--shadow-card);
+      white-space: nowrap;
+    }
+
+    .sector-badge .sector-icon {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero-sectors {
+        gap: 8px;
+      }
+      .sector-badge {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+      }
+    }
+
+    /* ==============================
        TASK 3 — STATS BANNER
        ============================== */
     .stats-banner {
@@ -412,9 +452,9 @@
 
     .stat-item {
       flex: 1;
-      max-width: 320px;
+      max-width: 280px;
       text-align: center;
-      padding: 0 40px;
+      padding: 0 32px;
       position: relative;
     }
 
@@ -1178,7 +1218,7 @@
         </nav>
 
         <div class="header-cta">
-          <a href="#cta" class="btn btn-primary btn-lg">Demander un audit</a>
+          <a href="#cta" class="btn btn-primary btn-lg">Audit gratuit</a>
         </div>
       </div>
     </div>
@@ -1372,20 +1412,17 @@
         </p>
 
         <div class="hero-ctas fade-in" style="transition-delay: 0.3s">
-          <a href="#cta" class="btn btn-primary btn-lg">Demander mon audit export</a>
+          <a href="#cta" class="btn btn-primary btn-lg">Demander mon audit gratuit</a>
           <a href="#offre" class="btn btn-secondary btn-lg">Découvrir l'offre</a>
         </div>
 
-        <div class="hero-social-proof fade-in" style="transition-delay: 0.4s">
-          <span class="proof-text">Accompagnement de PME françaises vers 15+ pays</span>
-          <div class="hero-flags">
-            <span title="France">🇫🇷</span>
-            <span title="Maroc">🇲🇦</span>
-            <span title="Sénégal">🇸🇳</span>
-            <span title="Côte d'Ivoire">🇨🇮</span>
-            <span title="Allemagne">🇩🇪</span>
-            <span title="Émirats Arabes Unis">🇦🇪</span>
-          </div>
+        <div class="hero-sectors fade-in" style="transition-delay: 0.4s">
+          <div class="sector-badge"><span class="sector-icon">⚙️</span> Industries</div>
+          <div class="sector-badge"><span class="sector-icon">🏗️</span> BTP / Construction</div>
+          <div class="sector-badge"><span class="sector-icon">💊</span> Pharmaceutique &amp; Bien-être</div>
+          <div class="sector-badge"><span class="sector-icon">🍷</span> Vin &amp; Spiritueux</div>
+          <div class="sector-badge"><span class="sector-icon">🌾</span> Agroalimentaire</div>
+          <div class="sector-badge"><span class="sector-icon">🚚</span> Transport &amp; Logistique</div>
         </div>
       </div>
     </div>
@@ -1413,6 +1450,11 @@
           <div class="stat-label">ans d'expertise terrain sur les marchés internationaux</div>
         </div>
 
+        <div class="stat-item">
+          <div class="stat-number">N°1</div>
+          <div class="stat-label">cause d'abandon : la difficulté à prospecter</div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1438,8 +1480,8 @@
           <p>
             Avant de prospecter, avant d'investir, avant de recruter — comprenez vraiment votre potentiel export. Notre audit analyse votre produit, votre marché cible, vos concurrents et vos capacités opérationnelles pour définir une stratégie sur mesure.
           </p>
-          <div class="pillar-price">À partir de 990 € HT</div>
-          <a href="#cta" class="pillar-link">Demander mon audit &#x2192;</a>
+          <div class="pillar-price">100% gratuit — sans engagement</div>
+          <a href="#cta" class="pillar-link">Demander mon audit gratuit &#x2192;</a>
         </div>
         <div class="pillar-visual">
           <div class="visual-placeholder">
@@ -1577,8 +1619,8 @@
         </div>
 
         <div class="why-cta-group">
-          <a href="#cta" class="btn btn-primary btn-lg">Demander mon audit export</a>
-          <span class="why-note">Sans engagement · Premier échange gratuit</span>
+          <a href="#cta" class="btn btn-primary btn-lg">Demander mon audit gratuit</a>
+          <span class="why-note">100% gratuit · Sans engagement · Réponse sous 48h</span>
         </div>
 
       </div>
@@ -1685,11 +1727,11 @@
 
         <div class="faq-item">
           <button class="faq-question" id="faq-q1" aria-expanded="false">
-            <span class="faq-question-text">Combien coûte un audit export ?</span>
+            <span class="faq-question-text">L'audit export est-il vraiment gratuit ?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" role="region" aria-labelledby="faq-q1">
-            <div class="faq-answer-inner">L'audit export est proposé entre 990 € et 2 990 € HT selon la complexité de votre projet et le nombre de marchés à analyser. C'est un investissement qui pose les bases de toute votre stratégie export.</div>
+            <div class="faq-answer-inner">L'audit export est entièrement gratuit. Aucun frais, aucun engagement. Nous analysons votre potentiel, vos marchés cibles et votre capacité opérationnelle, puis vous présentons une stratégie sur mesure — sans rien vous facturer. C'est notre façon de démarrer une relation de confiance.</div>
           </div>
         </div>
 
@@ -1754,9 +1796,9 @@
     <div class="container">
       <div class="cta-inner fade-in">
         <h2 class="section-title">Prêt à ouvrir de nouveaux marchés ?</h2>
-        <p class="section-subtitle">Commencez par un audit export. Sans engagement, sans surprise.</p>
-        <a href="mailto:contact@exportpilot.fr" class="btn btn-primary btn-lg">Demander mon audit export</a>
-        <p class="cta-mention">Premier échange gratuit · Réponse sous 48h</p>
+        <p class="section-subtitle">Commencez par un audit export 100% gratuit. Sans engagement, sans surprise.</p>
+        <a href="mailto:contact@exportpilot.fr" class="btn btn-primary btn-lg">Demander mon audit gratuit</a>
+        <p class="cta-mention">Audit gratuit · Sans engagement · Réponse sous 48h</p>
       </div>
     </div>
   </section>
