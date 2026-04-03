@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Qu'est-ce qu'une landing page et quel est son rôle dans la prospection export ? Découvrez comment cet outil digital convertit vos prospects internationaux en leads qualifiés." />
+  <meta name="robots" content="index, follow" />
+  <title>Qu'est-ce qu'une landing page ? Son rôle dans la prospection export | ExportPilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-primary: #3B82F6;
+      --color-primary-dark: #1E40AF;
+      --color-primary-light: #DBEAFE;
+      --color-primary-lighter: #EFF6FF;
+      --color-text: #111827;
+      --color-text-secondary: #6B7280;
+      --color-bg: #FFFFFF;
+      --color-bg-alt: #F8FAFC;
+      --color-border: #E5E7EB;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 48px;
+      --radius-full: 999px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-card-hover: 0 4px 12px rgba(0,0,0,0.12);
+      --max-width: 1140px;
+      --font-family: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==============================
+       HEADER
+       ============================== */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background-color: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      border-bottom-color: var(--color-border);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+    .logo span { color: var(--color-primary); }
+
+    .nav {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    .nav a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover { color: var(--color-text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-family);
+      font-size: 0.925rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-lg { padding: 16px 32px; font-size: 1rem; }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(59,130,246,0.35);
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+    }
+
+    /* ==============================
+       ARTICLE HERO
+       ============================== */
+    .article-hero {
+      padding: 120px 0 48px;
+      background: linear-gradient(180deg, #EFF6FF 0%, rgba(219,234,254,0.2) 40%, #FFFFFF 100%);
+    }
+
+    .article-hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--color-primary);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--color-primary-dark);
+    }
+
+    .breadcrumb .sep {
+      color: var(--color-border);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .article-tag {
+      display: inline-flex;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 600;
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .article-date,
+    .article-reading-time {
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+    }
+
+    .article-reading-time::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: var(--color-border);
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+
+    .article-hero h1 .highlight {
+      color: var(--color-primary);
+    }
+
+    .article-hero-lead {
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ==============================
+       ARTICLE CONTENT
+       ============================== */
+    .article-section {
+      padding: 48px 0 80px;
+    }
+
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+
+    .article-content h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+
+    .article-content p {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: 20px;
+      padding-left: 24px;
+    }
+
+    .article-content li {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    .article-content strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid var(--color-primary);
+      background: var(--color-primary-lighter);
+      padding: 20px 24px;
+      margin: 32px 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .article-content blockquote p {
+      color: var(--color-primary-dark);
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    .article-content a {
+      color: var(--color-primary);
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .article-content a:hover {
+      border-bottom-color: var(--color-primary);
+    }
+
+    /* Info box */
+    .info-box {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin: 32px 0;
+    }
+
+    .info-box h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+
+    .info-box ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .info-box li {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+
+    /* CTA box */
+    .article-cta {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      border-radius: var(--radius-md);
+      padding: 40px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .article-cta h3 {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      margin-top: 0;
+    }
+
+    .article-cta p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-white {
+      background-color: #fff;
+      color: var(--color-primary-dark);
+      border-color: #fff;
+      font-weight: 700;
+    }
+
+    .btn-white:hover {
+      background-color: var(--color-primary-lighter);
+      border-color: var(--color-primary-lighter);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* ==============================
+       FOOTER
+       ============================== */
+    .footer {
+      background: #0F172A;
+      color: #94A3B8;
+      padding: 64px 0 32px;
+      font-size: 0.875rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+
+    .footer-col a {
+      color: #94A3B8;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover { color: #fff; }
+
+    .footer-brand .logo { margin-bottom: 12px; color: #fff; }
+    .footer-brand .logo span { color: var(--color-primary); }
+
+    .footer-tagline {
+      color: #94A3B8;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #94A3B8;
+      margin-bottom: 10px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-link:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      text-align: center;
+      color: #64748B;
+      font-size: 0.8rem;
+    }
+
+    /* Fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../index.html" class="logo">Export<span>Pilot</span></a>
+
+        <nav>
+          <ul class="nav">
+            <li><a href="../index.html#offre">Offre</a></li>
+            <li><a href="../index.html#pricing">Tarifs</a></li>
+            <li><a href="../index.html#methode">Méthode</a></li>
+            <li><a href="../etude-de-cas.html">Étude de cas</a></li>
+            <li><a href="../index.html#faq">FAQ</a></li>
+            <li><a href="../blog.html" style="color: var(--color-primary); font-weight: 600;">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-cta">
+          <a href="../index.html#cta" class="btn btn-primary btn-lg">Audit gratuit</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="container">
+      <div class="article-hero-inner fade-in">
+
+        <div class="breadcrumb">
+          <a href="../index.html">Accueil</a>
+          <span class="sep">/</span>
+          <a href="../blog.html">Blog</a>
+          <span class="sep">/</span>
+          <span>Qu'est-ce qu'une landing page ? Son rôle dans la prospection export</span>
+        </div>
+
+        <div class="article-meta">
+          <span class="article-tag">Prospection digitale</span>
+          <span class="article-date">3 avril 2026</span>
+          <span class="article-reading-time">12 min de lecture</span>
+        </div>
+
+        <h1>Qu'est-ce qu'une <span class="highlight">landing page</span> ? Son rôle dans la prospection export</h1>
+        <p class="article-hero-lead">Un site web ne suffit plus pour convaincre un importateur étranger. Découvrez pourquoi la landing page est devenue l'arme secrète des PME exportatrices qui veulent générer des leads qualifiés à l'international.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE CONTENT -->
+  <section class="article-section">
+    <div class="container">
+      <div class="article-content">
+
+        <!-- SECTION 1 : INTRODUCTION -->
+        <div class="fade-in">
+          <h2>Pourquoi la landing page est un outil incontournable pour l'export</h2>
+
+          <p>Lorsqu'une PME française décide de se lancer à l'export, elle pense naturellement à son site web. Elle le traduit, ajoute quelques drapeaux en haut de page et espère que les prospects étrangers la contacteront. Dans la réalité, cette approche ne fonctionne presque jamais.</p>
+
+          <p>Le problème est simple : un site web d'entreprise est conçu pour présenter l'ensemble de l'activité. Il parle à tout le monde et, par conséquent, ne convainc personne en particulier. Un importateur allemand qui cherche un fournisseur de machines-outils n'a pas le même besoin qu'un distributeur ivoirien qui cherche des produits agroalimentaires. Leur envoyer la même page, c'est comme distribuer le même tract à un salon professionnel et dans une galerie marchande.</p>
+
+          <p>C'est exactement là que la landing page entre en jeu. Page unique, ciblée, conçue pour une seule action : elle constitue le maillon essentiel entre votre campagne de prospection digitale et la prise de contact concrète avec un prospect international.</p>
+        </div>
+
+        <!-- SECTION 2 : DÉFINITION -->
+        <div class="fade-in">
+          <h2>Qu'est-ce qu'une landing page ?</h2>
+
+          <p>Une landing page — ou page d'atterrissage — est une page web autonome, créée spécifiquement pour recevoir le trafic provenant d'une campagne marketing (emailing, publicité LinkedIn, prospection automatisée, campagne Google Ads). Contrairement à une page classique de votre site, elle n'a qu'un seul objectif : convertir le visiteur en lead.</p>
+
+          <h3>La différence avec un site web classique</h3>
+
+          <p>Un site web d'entreprise est un espace d'information général. Il comporte un menu de navigation, plusieurs dizaines de pages, des liens internes, une page "À propos", un catalogue complet. Le visiteur peut s'y promener librement — et c'est justement le problème quand on veut qu'il agisse.</p>
+
+          <p>La landing page, elle, fonctionne sur un principe radicalement différent :</p>
+
+          <ul>
+            <li><strong>Un seul sujet :</strong> un produit, un service, une offre spécifique</li>
+            <li><strong>Aucune distraction :</strong> pas de menu de navigation complet, pas de liens vers d'autres pages</li>
+            <li><strong>Un seul call-to-action :</strong> remplir un formulaire, demander un devis, télécharger un document</li>
+            <li><strong>Un message adapté :</strong> le contenu correspond exactement à ce que le visiteur attendait en cliquant sur le lien qui l'a amené là</li>
+          </ul>
+
+          <blockquote>
+            <p>Pensez à la landing page comme à un entonnoir : tout est conçu pour guider le visiteur vers une seule action, sans détour.</p>
+          </blockquote>
+        </div>
+
+        <!-- SECTION 3 : RÔLE DANS LA PROSPECTION EXPORT -->
+        <div class="fade-in">
+          <h2>Son rôle dans la prospection export</h2>
+
+          <p>Dans une stratégie de prospection digitale à l'international, la landing page occupe une place centrale. Elle est le point de rencontre entre votre campagne outbound (emails de prospection, messages LinkedIn, publicités) et la décision du prospect de vous contacter.</p>
+
+          <h3>Comment elle s'intègre dans le parcours de prospection</h3>
+
+          <p>Voici le schéma typique d'une campagne de prospection export digitale :</p>
+
+          <ol>
+            <li><strong>Identification des cibles :</strong> vous constituez une base de prospects qualifiés dans un pays cible (importateurs, distributeurs, industriels)</li>
+            <li><strong>Campagne d'outreach :</strong> vous envoyez des séquences d'emails personnalisés ou des messages LinkedIn via des outils comme Skylead</li>
+            <li><strong>Redirection vers la landing page :</strong> chaque message contient un lien vers une page dédiée à l'offre présentée</li>
+            <li><strong>Conversion :</strong> le prospect remplit le formulaire, télécharge un document ou demande un rendez-vous</li>
+            <li><strong>Suivi commercial :</strong> vous reprenez la main avec un contact humain, un appel, une proposition</li>
+          </ol>
+
+          <p>Sans landing page, l'étape 3 redirige vers votre site général. Le prospect arrive sur une page d'accueil qui ne correspond pas au message qu'il a reçu, il se perd, et il quitte le site sans agir. Le taux de conversion chute.</p>
+
+          <h3>Pourquoi elle convertit mieux qu'un site classique</h3>
+
+          <p>Les chiffres parlent d'eux-mêmes. Selon les études du secteur, une landing page bien conçue convertit en moyenne entre 5 et 15 % des visiteurs, contre 1 à 3 % pour une page d'accueil classique. La raison est mécanique :</p>
+
+          <ul>
+            <li><strong>Cohérence du message :</strong> le prospect retrouve exactement ce qu'on lui a promis dans l'email ou la publicité</li>
+            <li><strong>Réduction des frictions :</strong> aucun choix complexe à faire, aucune navigation à comprendre</li>
+            <li><strong>Urgence et spécificité :</strong> l'offre est claire, limitée, contextualisée pour son marché</li>
+            <li><strong>Confiance immédiate :</strong> preuves sociales, références, certifications visibles dès les premières secondes</li>
+          </ul>
+
+          <p>Pour une PME qui investit dans une campagne de prospection export — que ce soit 500 ou 5 000 emails envoyés — chaque point de conversion gagné représente des leads supplémentaires, sans budget additionnel.</p>
+        </div>
+
+        <!-- SECTION 4 : COMPOSITION -->
+        <div class="fade-in">
+          <h2>La composition d'une landing page efficace</h2>
+
+          <p>Une landing page performante ne s'improvise pas. Chaque élément est positionné pour guider le regard et la décision du visiteur. Voici les composants essentiels.</p>
+
+          <h3>1. Le titre accrocheur (headline)</h3>
+
+          <p>C'est la première chose que le visiteur lit. Vous avez moins de 3 secondes pour capter son attention. Le titre doit être :</p>
+
+          <ul>
+            <li>Court (10 mots maximum)</li>
+            <li>Centré sur le bénéfice pour le prospect, pas sur votre entreprise</li>
+            <li>Cohérent avec le message de la campagne qui a amené le visiteur</li>
+          </ul>
+
+          <p><strong>Exemple :</strong> plutôt que "Bienvenue chez [votre entreprise]", préférez "Machines industrielles françaises — livraison et SAV en Afrique de l'Ouest".</p>
+
+          <h3>2. La proposition de valeur</h3>
+
+          <p>Juste en dessous du titre, un sous-titre ou un paragraphe court explique ce que vous proposez et pourquoi c'est pertinent pour ce prospect. C'est ici que vous répondez à la question que tout importateur se pose : "Pourquoi cette entreprise plutôt qu'une autre ?"</p>
+
+          <h3>3. Les visuels</h3>
+
+          <p>Une image vaut mille mots, surtout à l'international où la barrière linguistique peut exister. Utilisez :</p>
+
+          <ul>
+            <li>Des photos professionnelles de vos produits ou de vos réalisations</li>
+            <li>Des schémas ou infographies expliquant votre processus</li>
+            <li>Des pictos clairs pour les avantages clés</li>
+          </ul>
+
+          <p>Évitez absolument les banques d'images génériques. Un importateur repère immédiatement une photo de stock et cela dégrade la confiance.</p>
+
+          <h3>4. Les preuves sociales</h3>
+
+          <p>Dans un contexte export, la confiance est le premier obstacle. Un prospect étranger ne vous connaît pas, ne connaît pas votre entreprise, et prend un risque financier et logistique en travaillant avec vous. Les preuves sociales réduisent ce risque perçu :</p>
+
+          <ul>
+            <li><strong>Témoignages clients</strong> avec nom, entreprise, pays</li>
+            <li><strong>Logos de références</strong> connues dans le secteur ou dans la zone géographique cible</li>
+            <li><strong>Chiffres concrets :</strong> "43 pays livrés", "12 ans d'expérience export", "150+ machines installées en Afrique"</li>
+            <li><strong>Certifications :</strong> CE, ISO, normes spécifiques au marché cible</li>
+          </ul>
+
+          <h3>5. Le call-to-action (CTA)</h3>
+
+          <p>Le CTA est le bouton ou le lien qui déclenche l'action souhaitée. Il doit être :</p>
+
+          <ul>
+            <li><strong>Visible :</strong> couleur contrastée, taille généreuse</li>
+            <li><strong>Explicite :</strong> "Demander un devis gratuit", "Télécharger le catalogue", "Planifier un appel"</li>
+            <li><strong>Répété :</strong> présent au moins 2 fois sur la page (après la proposition de valeur et en bas de page)</li>
+          </ul>
+
+          <div class="info-box">
+            <h4>Les 5 piliers d'une landing page export</h4>
+            <ul>
+              <li>Titre accrocheur centré sur le bénéfice client</li>
+              <li>Proposition de valeur claire et différenciante</li>
+              <li>Visuels professionnels et authentiques</li>
+              <li>Preuves sociales adaptées au marché cible</li>
+              <li>CTA visible, explicite et répété</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SECTION 5 : LE FORMULAIRE -->
+        <div class="fade-in">
+          <h2>Le formulaire de contact : le cœur de la conversion</h2>
+
+          <p>Le formulaire est l'élément le plus critique de votre landing page. C'est le moment où le visiteur passe de l'intérêt passif à l'engagement actif. Chaque champ supplémentaire est une friction qui peut le faire abandonner.</p>
+
+          <h3>Combien de champs ?</h3>
+
+          <p>La règle d'or : demandez le minimum nécessaire pour qualifier le lead et initier le contact. Pour une landing page export B2B, voici une structure qui fonctionne :</p>
+
+          <ul>
+            <li><strong>Nom et prénom</strong> (ou nom complet)</li>
+            <li><strong>Email professionnel</strong></li>
+            <li><strong>Entreprise</strong></li>
+            <li><strong>Pays</strong></li>
+            <li><strong>Message ou besoin</strong> (champ libre, optionnel)</li>
+          </ul>
+
+          <p>Cinq champs maximum. Chaque champ supplémentaire réduit le taux de conversion d'environ 10 %. Si vous avez besoin de plus d'informations, vous les obtiendrez lors du premier échange commercial.</p>
+
+          <h3>Où placer le formulaire ?</h3>
+
+          <p>Deux options performantes :</p>
+
+          <ul>
+            <li><strong>Au-dessus de la ligne de flottaison :</strong> visible immédiatement sans scroller, idéal pour les offres simples (téléchargement, demande de catalogue)</li>
+            <li><strong>Après la section de preuves sociales :</strong> pour les offres plus complexes qui nécessitent d'abord de convaincre (demande de devis, prise de rendez-vous)</li>
+          </ul>
+
+          <p>Dans tous les cas, un bouton CTA en haut de page doit scroller automatiquement vers le formulaire pour ne pas perdre le visiteur pressé.</p>
+
+          <h3>Bonnes pratiques pour maximiser les conversions</h3>
+
+          <ul>
+            <li><strong>Intitulé du bouton d'envoi :</strong> évitez "Envoyer" ou "Submit". Préférez "Recevoir mon devis gratuit" ou "Planifier mon appel"</li>
+            <li><strong>Réassurance :</strong> ajoutez une mention sous le formulaire ("Vos données restent confidentielles", "Réponse sous 24h")</li>
+            <li><strong>Pré-remplissage :</strong> si vous envoyez un lien personnalisé, pré-remplissez le pays et le nom de l'entreprise pour réduire les frictions</li>
+            <li><strong>Confirmation :</strong> après envoi, affichez un message de remerciement clair avec les prochaines étapes</li>
+          </ul>
+        </div>
+
+        <!-- SECTION 6 : LA LANGUE LOCALE -->
+        <div class="fade-in">
+          <h2>La visibilité grâce à la langue locale</h2>
+
+          <p>Voici l'erreur la plus fréquente des PME françaises qui se lancent à l'export digital : elles créent une landing page en français — ou au mieux en anglais — et l'envoient à des prospects dans des marchés où la langue de travail est tout autre.</p>
+
+          <h3>Pourquoi traduire dans la langue du marché cible</h3>
+
+          <p>La traduction n'est pas une option, c'est un levier de performance :</p>
+
+          <ul>
+            <li><strong>Crédibilité :</strong> un importateur turc ou brésilien qui reçoit une page dans sa langue perçoit immédiatement que vous avez fait l'effort de vous adapter à son marché. Cela vous distingue de 90 % des concurrents qui envoient un contenu générique en anglais</li>
+            <li><strong>Compréhension :</strong> dans le B2B industriel, les termes techniques doivent être compris sans ambiguïté. Une mauvaise traduction ou un anglais approximatif peut générer de la méfiance</li>
+            <li><strong>Accessibilité :</strong> tous les décideurs B2B ne maîtrisent pas l'anglais, en particulier dans les marchés émergents (Afrique francophone, Amérique latine, Asie du Sud-Est)</li>
+          </ul>
+
+          <h3>L'impact sur le SEO local</h3>
+
+          <p>Au-delà de la prospection directe, une landing page dans la langue locale peut devenir un actif de référencement naturel sur le long terme :</p>
+
+          <ul>
+            <li><strong>Google indexe par langue et par pays :</strong> une page en portugais ciblera naturellement le marché brésilien sur google.com.br</li>
+            <li><strong>Les mots-clés locaux diffèrent :</strong> le terme utilisé pour chercher un fournisseur de machines n'est pas le même en allemand, en espagnol ou en arabe</li>
+            <li><strong>Le trafic organique est gratuit :</strong> une landing page bien référencée dans la langue locale peut générer des leads sans aucun budget publicitaire</li>
+          </ul>
+
+          <blockquote>
+            <p>Une landing page en langue locale n'est pas une dépense de traduction. C'est un investissement qui génère des leads, de la crédibilité et du référencement naturel sur votre marché cible.</p>
+          </blockquote>
+
+          <h3>Comment procéder concrètement</h3>
+
+          <p>Inutile de traduire l'intégralité de votre site. L'approche pragmatique :</p>
+
+          <ol>
+            <li>Identifiez vos 2 ou 3 marchés prioritaires</li>
+            <li>Créez une landing page par marché, dans la langue locale</li>
+            <li>Faites relire par un locuteur natif du pays cible (pas seulement un traducteur)</li>
+            <li>Adaptez les références et preuves sociales au contexte local (normes, clients dans la zone, monnaie)</li>
+            <li>Intégrez la page dans vos campagnes de prospection sur ce marché</li>
+          </ol>
+        </div>
+
+        <!-- SECTION 7 : CONCLUSION ET CTA -->
+        <div class="fade-in">
+          <h2>Conclusion : la landing page, premier pas vers vos clients internationaux</h2>
+
+          <p>La landing page n'est pas un gadget marketing. C'est l'outil qui transforme votre effort de prospection digitale en résultats concrets. Sans elle, vos campagnes d'emails, vos messages LinkedIn et vos publicités en ligne finissent dans le vide. Avec elle, chaque clic devient une opportunité de conversion.</p>
+
+          <p>Pour résumer :</p>
+
+          <ul>
+            <li>Une landing page est une page unique, ciblée, sans distraction, avec un seul objectif</li>
+            <li>Elle convertit 3 à 5 fois mieux qu'un site web classique</li>
+            <li>Elle s'intègre directement dans votre stratégie de prospection export digitale</li>
+            <li>Son formulaire doit être court, rassurant et orienté vers l'action</li>
+            <li>La traduire dans la langue du marché cible multiplie sa crédibilité et son efficacité</li>
+          </ul>
+
+          <p>Chez ExportPilot, la création de landing pages adaptées fait partie intégrante de notre accompagnement. Nous ne nous contentons pas de vous donner des listes de prospects : nous construisons les outils qui convertissent ces prospects en leads qualifiés.</p>
+
+          <div class="article-cta">
+            <h3>Prêt à lancer votre prospection export ?</h3>
+            <p>Demandez votre audit export gratuit. Nous analysons votre marché cible, votre positionnement et vos outils digitaux pour construire une stratégie de prospection qui convertit.</p>
+            <a href="../index.html#cta" class="btn btn-white btn-lg">Demander mon audit gratuit</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div class="logo">Export<span>Pilot</span></div>
+          <p class="footer-tagline">Votre passeur digital vers l'export. Expertise terrain, data et accompagnement structuré pour TPE, PME et ETI françaises.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../index.html#offre">Offre</a></li>
+            <li><a href="../index.html#pricing">Tarifs</a></li>
+            <li><a href="../index.html#methode">Méthode</a></li>
+            <li><a href="../etude-de-cas.html">Étude de cas</a></li>
+            <li><a href="../index.html#faq">FAQ</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="../mentions-legales.html">Mentions légales</a></li>
+            <li><a href="../politique-confidentialite.html">Politique de confidentialité</a></li>
+            <li><a href="../cgv.html">CGV</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@exportpilot.fr" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            contact@exportpilot.fr
+          </a>
+          <a href="https://www.linkedin.com/company/exportpilot" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn ExportPilot
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ExportPilot. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var header = document.getElementById('header');
+      function onScroll() {
+        if (window.scrollY > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var fadeEls = document.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        var fadeObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                fadeObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        fadeEls.forEach(function (el) { fadeObserver.observe(el); });
+      } else {
+        fadeEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+    });
+  </script>
+</body>
+</html>

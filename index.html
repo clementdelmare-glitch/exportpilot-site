@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ExportPilot combine expertise terrain, data et digital pour ouvrir vos marchés à l'international. Audit export, abonnements et missions terrain pour PME françaises." />
+  <meta name="description" content="ExportPilot combine expertise terrain, data et digital pour gravir de nouveaux sommets internationaux. Audit export, abonnements et missions terrain pour TPE, PME et ETI françaises." />
   <meta name="robots" content="index, follow" />
-  <title>ExportPilot — L'ultime outil pour votre développement export</title>
+  <title>ExportPilot — Vous êtes à un clic de booster votre croissance à l'export</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -223,6 +223,28 @@
       max-width: 600px;
     }
 
+    .handwritten-highlight {
+      font-weight: 800;
+      color: var(--color-text);
+      font-style: italic;
+      position: relative;
+      display: inline-block;
+      padding: 0 4px;
+    }
+
+    .handwritten-highlight::after {
+      content: '';
+      position: absolute;
+      left: -2px;
+      right: -2px;
+      bottom: 2px;
+      height: 40%;
+      background: rgba(59, 130, 246, 0.2);
+      border-radius: 2px;
+      z-index: -1;
+      transform: rotate(-1deg);
+    }
+
     /* ==============================
        FADE-IN ANIMATION
        ============================== */
@@ -356,6 +378,65 @@
 
     .hero h1 .accent {
       color: var(--color-primary);
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Bounding box around EXPORT */
+    .accent-box {
+      position: absolute;
+      inset: -6px -10px;
+      border: 2px solid var(--color-primary);
+      border-radius: 4px;
+      pointer-events: none;
+      opacity: 0;
+      animation: boxAppear 0.4s ease 1.2s forwards;
+    }
+
+    /* Corner handles */
+    .accent-box::before,
+    .accent-box::after,
+    .accent-handle-bl,
+    .accent-handle-br {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: var(--color-primary);
+      border-radius: 2px;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    }
+
+    /* Top-left */
+    .accent-box::before {
+      top: -5px;
+      left: -5px;
+    }
+
+    /* Top-right */
+    .accent-box::after {
+      top: -5px;
+      right: -5px;
+    }
+
+    /* Bottom-left */
+    .accent-handle-bl {
+      position: absolute;
+      bottom: -5px;
+      left: -5px;
+    }
+
+    /* Bottom-right */
+    .accent-handle-br {
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+    }
+
+    @keyframes boxAppear {
+      from { opacity: 0; transform: scale(1.1); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     .hero-subtitle {
@@ -605,6 +686,1045 @@
       font-weight: 600;
       color: var(--color-primary-dark);
       opacity: 0.8;
+    }
+
+    /* Leads Dashboard Illustration */
+    .leads-dashboard {
+      background: #1e1b4b;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: 0 8px 32px rgba(30, 27, 75, 0.3);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .leads-header {
+      margin-bottom: 16px;
+    }
+
+    .leads-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      color: #c4f54a;
+      margin-bottom: 12px;
+    }
+
+    .leads-title svg {
+      stroke: #c4f54a;
+    }
+
+    .leads-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .leads-search {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      flex: 1;
+    }
+
+    .leads-search svg { stroke: rgba(255,255,255,0.4); }
+
+    .leads-filter {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .leads-filter svg { stroke: rgba(255,255,255,0.5); }
+
+    .leads-table-header {
+      display: grid;
+      grid-template-columns: 48px 1fr 1fr;
+      gap: 8px;
+      padding: 8px 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .leads-row {
+      display: grid;
+      grid-template-columns: 48px 32px 1fr 1fr;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 4px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .leads-row-fade {
+      opacity: 0.4;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    }
+
+    .leads-source {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .leads-source-linkedin { background: #0a66c2; }
+    .leads-source-google { background: #fff; color: #4285f4; font-size: 0.8rem; }
+    .leads-source-csv { background: #10b981; font-size: 0.55rem; text-transform: uppercase; }
+
+    .leads-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .leads-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .leads-company {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Audit mockup */
+    .audit-mockup {
+      background: #1e1b4b;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(30, 27, 75, 0.3);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .audit-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .audit-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #c4f54a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .audit-badge {
+      font-size: 0.55rem;
+      font-weight: 700;
+      background: rgba(34,197,94,0.15);
+      color: #22c55e;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .audit-score-ring {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: conic-gradient(#3B82F6 0deg, #3B82F6 252deg, rgba(255,255,255,0.1) 252deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+
+    .audit-score-inner {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #1e1b4b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .audit-score-value {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .audit-score-label {
+      font-size: 0.45rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.5);
+      margin-top: 2px;
+    }
+
+    .audit-items {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .audit-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .audit-item-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .audit-item-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .audit-item-icon.green { background: rgba(34,197,94,0.2); }
+    .audit-item-icon.yellow { background: rgba(250,204,21,0.2); }
+    .audit-item-icon.red { background: rgba(248,113,113,0.2); }
+
+    .audit-item-name {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .audit-item-status {
+      font-size: 0.55rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .audit-item-status.ok { color: #22c55e; background: rgba(34,197,94,0.15); }
+    .audit-item-status.warning { color: #facc15; background: rgba(250,204,21,0.15); }
+    .audit-item-status.alert { color: #f87171; background: rgba(248,113,113,0.15); }
+
+    .audit-bar {
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.1);
+      margin-top: 4px;
+      overflow: hidden;
+    }
+
+    .audit-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+    }
+
+    .audit-bar-fill.green { background: #22c55e; }
+    .audit-bar-fill.yellow { background: #facc15; }
+    .audit-bar-fill.red { background: #f87171; }
+
+    .audit-footer {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .audit-footer-text {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .audit-footer-btn {
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: #1e1b4b;
+      background: #c4f54a;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+
+    /* Competitor mockup */
+    .competitor-mockup {
+      background: #1e1b4b;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(30, 27, 75, 0.3);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .competitor-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .competitor-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #c4f54a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .competitor-count {
+      font-size: 0.55rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.08);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .competitor-table-header {
+      display: grid;
+      grid-template-columns: 1.2fr 0.7fr 0.8fr 0.6fr;
+      gap: 6px;
+      padding: 8px 4px;
+      font-size: 0.5rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .competitor-row {
+      display: grid;
+      grid-template-columns: 1.2fr 0.7fr 0.8fr 0.6fr;
+      gap: 6px;
+      align-items: center;
+      padding: 10px 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .competitor-row:last-child {
+      border-bottom: none;
+      opacity: 0.4;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    }
+
+    .competitor-name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .competitor-flag {
+      font-size: 0.85rem;
+    }
+
+    .competitor-company {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .competitor-sub {
+      font-size: 0.5rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .competitor-price {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .competitor-channel {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+
+    .competitor-tag {
+      font-size: 0.45rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.7);
+    }
+
+    .competitor-tag.active { background: rgba(59,130,246,0.25); color: #93c5fd; }
+    .competitor-tag.ecom { background: rgba(168,85,247,0.25); color: #d8b4fe; }
+    .competitor-tag.salon { background: rgba(34,197,94,0.2); color: #86efac; }
+
+    .competitor-digital {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .competitor-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .competitor-dot.on { background: #22c55e; }
+    .competitor-dot.off { background: rgba(255,255,255,0.15); }
+
+    .competitor-digital-label {
+      font-size: 0.45rem;
+      color: rgba(255,255,255,0.4);
+      margin-left: 2px;
+    }
+
+    /* Toolkit mockup */
+    .toolkit-mockup {
+      background: #1e1b4b;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(30, 27, 75, 0.3);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .toolkit-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .toolkit-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #c4f54a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toolkit-badge {
+      font-size: 0.55rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.08);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .toolkit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .toolkit-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .toolkit-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toolkit-card-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .toolkit-card-icon.blue { background: rgba(59,130,246,0.25); }
+    .toolkit-card-icon.green { background: rgba(34,197,94,0.2); }
+    .toolkit-card-icon.purple { background: rgba(168,85,247,0.25); }
+    .toolkit-card-icon.amber { background: rgba(245,158,11,0.25); }
+    .toolkit-card-icon.rose { background: rgba(244,63,94,0.2); }
+
+    .toolkit-card-name {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .toolkit-card-detail {
+      font-size: 0.55rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.35;
+    }
+
+    .toolkit-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+      margin-top: 2px;
+    }
+
+    .toolkit-tag {
+      font-size: 0.42rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.6);
+    }
+
+    .toolkit-tag.lang { background: rgba(59,130,246,0.2); color: #93c5fd; }
+    .toolkit-tag.seo { background: rgba(34,197,94,0.2); color: #86efac; }
+    .toolkit-tag.ecom { background: rgba(168,85,247,0.2); color: #d8b4fe; }
+    .toolkit-tag.event { background: rgba(245,158,11,0.2); color: #fcd34d; }
+    .toolkit-tag.press { background: rgba(244,63,94,0.2); color: #fda4af; }
+
+    .toolkit-card-bar {
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.08);
+      margin-top: auto;
+      overflow: hidden;
+    }
+
+    .toolkit-card-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+    }
+
+    .toolkit-card-bar-fill.blue { background: #3B82F6; }
+    .toolkit-card-bar-fill.green { background: #22c55e; }
+    .toolkit-card-bar-fill.purple { background: #a855f7; }
+    .toolkit-card-bar-fill.amber { background: #f59e0b; }
+    .toolkit-card-bar-fill.rose { background: #f43f5e; }
+
+    .toolkit-card-full {
+      grid-column: 1 / -1;
+      opacity: 0.5;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    }
+
+    /* Landing page mockup */
+    .lp-mockup {
+      background: #1e1b4b;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(30, 27, 75, 0.3);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .lp-browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .lp-browser-dots {
+      display: flex;
+      gap: 5px;
+    }
+
+    .lp-browser-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .lp-browser-dots span:nth-child(1) { background: #ef4444; }
+    .lp-browser-dots span:nth-child(2) { background: #f59e0b; }
+    .lp-browser-dots span:nth-child(3) { background: #22c55e; }
+
+    .lp-browser-url {
+      flex: 1;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.5);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lp-browser-url .lp-lock {
+      color: #22c55e;
+      font-size: 0.65rem;
+    }
+
+    .lp-page {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .lp-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .lp-nav-brand {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #1e1b4b;
+    }
+
+    .lp-nav-brand span { color: var(--color-primary); }
+
+    .lp-nav-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .lp-nav-links span {
+      font-size: 0.55rem;
+      color: #9ca3af;
+      font-weight: 500;
+    }
+
+    .lp-nav-cta {
+      font-size: 0.55rem;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .lp-hero {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      padding: 20px 16px 16px;
+      text-align: center;
+    }
+
+    .lp-hero-flag {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .lp-hero h4 {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #1e1b4b;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .lp-hero p {
+      font-size: 0.55rem;
+      color: #6b7280;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .lp-hero-btn {
+      display: inline-block;
+      font-size: 0.55rem;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 5px 14px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .lp-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 12px 16px;
+    }
+
+    .lp-feature {
+      text-align: center;
+      padding: 8px 4px;
+    }
+
+    .lp-feature-icon {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .lp-feature-text {
+      font-size: 0.5rem;
+      color: #6b7280;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .lp-footer-bar {
+      background: #1e1b4b;
+      padding: 6px 16px;
+      text-align: center;
+    }
+
+    .lp-footer-bar span {
+      font-size: 0.45rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .lp-lang-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-full);
+      padding: 4px 10px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #c4f54a;
+      margin-top: 12px;
+    }
+
+    /* News mockup */
+    .news-mockup {
+      background: #1e1b4b;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(30, 27, 75, 0.3);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .news-page {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .news-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px;
+      background: #1e1b4b;
+      color: #fff;
+    }
+
+    .news-topbar-brand {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .news-topbar-nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    .news-topbar-nav span {
+      font-size: 0.5rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+    }
+
+    .news-topbar-live {
+      font-size: 0.5rem;
+      font-weight: 700;
+      color: #f87171;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .news-topbar-live::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #f87171;
+      border-radius: 50%;
+      animation: livePulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes livePulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .news-headline {
+      padding: 14px 14px 10px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .news-headline-tag {
+      display: inline-block;
+      font-size: 0.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      background: var(--color-primary-light);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .news-headline h4 {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .news-headline-meta {
+      font-size: 0.5rem;
+      color: #9ca3af;
+    }
+
+    .news-articles {
+      padding: 10px 14px;
+    }
+
+    .news-article-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .news-article-row:last-child {
+      border-bottom: none;
+      opacity: 0.5;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    }
+
+    .news-article-flag {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .news-article-text {
+      flex: 1;
+    }
+
+    .news-article-text h5 {
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+
+    .news-article-text span {
+      font-size: 0.48rem;
+      color: #9ca3af;
+    }
+
+    .news-article-tag {
+      font-size: 0.45rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
+    }
+
+    .news-tag-salon { background: #FEF3C7; color: #92400E; }
+    .news-tag-loi { background: #DBEAFE; color: #1E40AF; }
+    .news-tag-presse { background: #D1FAE5; color: #065F46; }
+    .news-tag-politique { background: #FEE2E2; color: #991B1B; }
+
+    .news-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-full);
+      padding: 4px 10px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #c4f54a;
+      margin-top: 12px;
+    }
+
+    /* Tender mockup */
+    .tender-mockup {
+      background: #1e1b4b;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(30, 27, 75, 0.3);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .tender-search {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+    }
+
+    .tender-search-input {
+      flex: 1;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .tender-search-btn {
+      width: 30px;
+      height: 30px;
+      background: var(--color-primary);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tender-search-btn svg {
+      stroke: #fff;
+    }
+
+    .tender-count {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #c4f54a;
+      margin-bottom: 10px;
+    }
+
+    .tender-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .tender-card:last-child {
+      margin-bottom: 0;
+      opacity: 0.5;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    }
+
+    .tender-status {
+      display: inline-block;
+      font-size: 0.55rem;
+      font-weight: 700;
+      color: #22c55e;
+      background: rgba(34,197,94,0.15);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      margin-bottom: 6px;
+    }
+
+    .tender-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.35;
+      margin-bottom: 8px;
+      padding-right: 28px;
+    }
+
+    .tender-meta {
+      display: flex;
+      gap: 20px;
+    }
+
+    .tender-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .tender-meta-label {
+      font-size: 0.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .tender-meta-value {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .tender-meta-value.urgent {
+      color: #f87171;
+    }
+
+    .tender-meta-date {
+      font-size: 0.55rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .tender-arrow {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      width: 24px;
+      height: 24px;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tender-arrow svg {
+      stroke: rgba(255,255,255,0.5);
     }
 
     /* Mini pricing cards */
@@ -1089,11 +2209,78 @@
       font-size: 0.875rem;
       color: var(--color-text-secondary);
       font-weight: 500;
+      text-align: center;
+    }
+
+    /* CTA Form */
+    .cta-form {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .cta-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .cta-form-group {
+      margin-bottom: 12px;
+    }
+
+    .cta-form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 6px;
+    }
+
+    .cta-form-group label .optional {
+      font-weight: 400;
+      color: var(--color-text-secondary);
+      font-size: 0.78rem;
+    }
+
+    .cta-form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-family);
+      font-size: 0.92rem;
+      color: var(--color-text);
+      background: #fff;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta-form-group input:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    .cta-form-group input::placeholder {
+      color: #9CA3AF;
+    }
+
+    .cta-form-submit {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .cta-form-submit .btn {
+      width: 100%;
+      justify-content: center;
     }
 
     @media (max-width: 768px) {
       .cta-inner {
         padding: 60px 24px;
+      }
+      .cta-form-row {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1207,7 +2394,7 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0;
       margin-top: 60px;
       border: 1px solid var(--color-border);
@@ -1239,6 +2426,7 @@
     .pricing-card-name {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       margin-bottom: 12px;
     }
@@ -1314,12 +2502,13 @@
 
     .pricing-features-list li {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 8px;
       padding: 8px 0;
-      font-size: 14px;
+      font-size: 12.5px;
       color: var(--color-text);
       border-bottom: 1px solid var(--color-border);
+      line-height: 1.4;
     }
 
     .pricing-features-list li:last-child {
@@ -1331,6 +2520,26 @@
       font-weight: 700;
       font-size: 16px;
       flex-shrink: 0;
+    }
+
+    .pricing-disabled {
+      color: #D1D5DB;
+    }
+
+    .pricing-disabled .pricing-check {
+      color: #EF4444;
+    }
+
+    .pricing-common-banner {
+      background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%);
+      color: #fff;
+      text-align: center;
+      padding: 20px 32px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 32px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
     @media (max-width: 860px) {
@@ -1361,10 +2570,11 @@
         <nav>
           <ul class="nav">
             <li><a href="#offre">Offre</a></li>
-            <li><a href="#pricing">Prix</a></li>
-            <li><a href="#methode">Méthode</a></li>
-            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#pricing">Tarifs</a></li>
+
+            <li><a href="etude-de-cas.html">Étude de cas</a></li>
             <li><a href="#faq">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
           </ul>
         </nav>
 
@@ -1551,19 +2761,19 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-pill fade-in">
-          <span class="pill">&#x1F30D; La plateforme export digitalisée</span>
+          <span class="pill">&#x1F30D; Le premier dispositif export qui allie présence digitale et terrain 🇫🇷</span>
         </div>
 
         <h1 class="fade-in" style="transition-delay: 0.1s">
-          L'ultime outil pour votre développement&nbsp;<span class="accent">EXPORT</span>
+          Vous n'êtes plus qu'à un clic de <span class="handwritten-highlight">booster</span> votre développement <span class="accent">EXPORT<span class="accent-box"><span class="accent-handle-bl"></span><span class="accent-handle-br"></span></span></span> 🚀
         </h1>
 
         <p class="hero-subtitle fade-in" style="transition-delay: 0.2s">
-          ExportPilot combine expertise terrain, data et digital pour ouvrir vos marchés à l'international. Vous restez l'acteur commercial, nous ouvrons les portes.
+          ExportPilot combine expertise terrain, data et digital pour gravir de nouveaux sommets internationaux.
         </p>
 
         <div class="hero-ctas fade-in" style="transition-delay: 0.3s">
-          <a href="#cta" class="btn btn-primary btn-lg">Demander mon audit gratuit</a>
+          <a href="#cta" class="btn btn-primary btn-lg">Demander une démo</a>
           <a href="#offre" class="btn btn-secondary btn-lg">Découvrir l'offre</a>
         </div>
 
@@ -1592,21 +2802,22 @@
         </div>
 
         <div class="stat-item">
-          <div class="stat-number">26%</div>
-          <div class="stat-label">abandonnent l'export après la première année</div>
+          <div class="stat-number" style="color:#DC2626;">26%</div>
+          <div class="stat-label"><span class="handwritten-highlight">abandonnent</span> l'export après la première année</div>
         </div>
 
         <div class="stat-item">
-          <div class="stat-number">8+</div>
+          <div class="stat-number">10+</div>
           <div class="stat-label">ans d'expertise terrain sur les marchés internationaux</div>
         </div>
 
         <div class="stat-item">
           <div class="stat-number">N°1</div>
-          <div class="stat-label">cause d'abandon : la difficulté à prospecter</div>
+          <div class="stat-label">cause d'abandon : le <span class="handwritten-highlight">manque de dispositif d'accompagnement</span> des entreprises françaises</div>
         </div>
 
       </div>
+      <p class="fade-in" style="text-align:center; margin-top:24px; font-size:0.8rem; color:var(--color-text-muted);">Source : <a href="https://media.businessfrance.fr/actualites/bilan-export-2024-a9a05-0fea0.html" target="_blank" rel="noopener" style="color:var(--color-primary); text-decoration:underline;">Bilan export 2024 — Business France</a></p>
     </div>
   </section>
 
@@ -1617,27 +2828,72 @@
     <div class="container">
 
       <div class="offre-header fade-in">
-        <h2 class="section-title">Une offre complète pour chaque étape de votre export</h2>
-        <p class="section-subtitle" style="margin: 0 auto;">De l'audit initial à l'accompagnement terrain, ExportPilot structure votre développement international.</p>
+        <h2 class="section-title">Votre <span class="handwritten-highlight">dashboard</span> est alimenté quotidiennement avec l'essentiel pour performer sur vos marchés internationaux 🌍</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">De l'audit initial à l'accompagnement terrain, ExportPilot structure toutes les informations primordiales. Place à l'<span class="handwritten-highlight">action</span> !</p>
       </div>
 
       <!-- Pillar 1 — Audit Export -->
       <div class="pillar fade-in">
         <div class="pillar-content">
           <div class="pillar-badge">
-            <span class="badge">Point d'entrée obligatoire</span>
+            <span class="badge">Point d'entrée</span>
           </div>
-          <h3>Le diagnostic qui change tout</h3>
+          <h3>Un diagnostic complet pour partir du bon pied : choisir les bonnes cibles</h3>
           <p>
             Avant de prospecter, avant d'investir, avant de recruter — comprenez vraiment votre potentiel export. Notre audit analyse votre produit, votre marché cible, vos concurrents et vos capacités opérationnelles pour définir une stratégie sur mesure.
           </p>
           <div class="pillar-price">100% gratuit — sans engagement</div>
-          <a href="#cta" class="pillar-link">Demander mon audit gratuit &#x2192;</a>
+          <a href="#cta" class="pillar-link">Demander une démo &#x2192;</a>
         </div>
         <div class="pillar-visual">
-          <div class="visual-placeholder">
-            <div class="visual-icon">🔍</div>
-            <div class="visual-label">Audit Export — Diagnostic stratégique</div>
+          <div class="audit-mockup">
+            <div class="audit-header">
+              <div class="audit-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+                Audit Export
+              </div>
+              <div class="audit-badge">Complété</div>
+            </div>
+            <div class="audit-score-ring">
+              <div class="audit-score-inner">
+                <div class="audit-score-value">70</div>
+                <div class="audit-score-label">Score</div>
+              </div>
+            </div>
+            <div class="audit-items">
+              <div class="audit-item">
+                <div class="audit-item-left">
+                  <div class="audit-item-icon green">✓</div>
+                  <div class="audit-item-name">Produit</div>
+                </div>
+                <div class="audit-item-status ok">Prêt</div>
+              </div>
+              <div class="audit-item">
+                <div class="audit-item-left">
+                  <div class="audit-item-icon yellow">⚠</div>
+                  <div class="audit-item-name">Logistique</div>
+                </div>
+                <div class="audit-item-status warning">À adapter</div>
+              </div>
+              <div class="audit-item">
+                <div class="audit-item-left">
+                  <div class="audit-item-icon green">✓</div>
+                  <div class="audit-item-name">Marché cible</div>
+                </div>
+                <div class="audit-item-status ok">Validé</div>
+              </div>
+              <div class="audit-item">
+                <div class="audit-item-left">
+                  <div class="audit-item-icon red">✗</div>
+                  <div class="audit-item-name">Réglementaire</div>
+                </div>
+                <div class="audit-item-status alert">Action requise</div>
+              </div>
+            </div>
+            <div class="audit-footer">
+              <div class="audit-footer-text">Dernière mise à jour : 28 mars 2026</div>
+              <div class="audit-footer-btn">Voir le rapport</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1648,16 +2904,120 @@
           <div class="pillar-badge">
             <span class="badge">Prospection digitale</span>
           </div>
-          <h3>Des séquences automatisées qui trouvent vos clients</h3>
+          <h3>Une prospection ultra ciblée dans les territoires visés</h3>
           <p>
-            Notre méthode de prospection repose sur des séquences multicanales ultra-ciblées : identification précise de vos acheteurs potentiels, enrichissement des contacts, puis enchaînement automatisé d'emails personnalisés et de relances calibrées. Chaque séquence cible un segment marché défini avec vous — secteur, taille d'entreprise, zone géographique. Vous recevez des leads qualifiés, prêts à être contactés.
+            Notre méthode de prospection repose sur des séquences multicanales ultra-ciblées : identification précise de vos acheteurs potentiels, enrichissement des contacts, puis enchaînement automatisé d'emails personnalisés et de relances calibrées. Chaque séquence cible un segment marché défini avec vous — secteur, taille d'entreprise, zone géographique. Votre dashboard est automatiquement mis à jour avec les <span class="handwritten-highlight">prospects les plus chauds</span> - prêts à être contactés !
           </p>
           <a href="#pricing" class="pillar-link">Voir nos formules &#x2192;</a>
         </div>
         <div class="pillar-visual">
-          <div class="visual-placeholder">
-            <div class="visual-icon">🎯</div>
-            <div class="visual-label">Séquences de prospection automatisées</div>
+          <div class="leads-dashboard">
+            <div class="leads-header">
+              <div class="leads-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>My leads: <strong>6 534</strong></span>
+              </div>
+              <div class="leads-controls">
+                <div class="leads-search">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span>Search...</span>
+                </div>
+                <div class="leads-filter">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+                  <span>Filter</span>
+                </div>
+              </div>
+            </div>
+            <div class="leads-table-header">
+              <span class="leads-col-source">Source</span>
+              <span class="leads-col-name">Name</span>
+              <span class="leads-col-company">Company</span>
+            </div>
+            <div class="leads-row">
+              <div class="leads-source leads-source-linkedin">in</div>
+              <div class="leads-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">LA</div>
+              <div class="leads-name">Laure Arnaud</div>
+              <div class="leads-company">Bright Scale</div>
+            </div>
+            <div class="leads-row">
+              <div class="leads-source leads-source-google">G</div>
+              <div class="leads-avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">NP</div>
+              <div class="leads-name">Nicolas Perret</div>
+              <div class="leads-company">Digital Agency</div>
+            </div>
+            <div class="leads-row">
+              <div class="leads-source leads-source-csv">csv</div>
+              <div class="leads-avatar" style="background: linear-gradient(135deg, #10b981, #059669);">AB</div>
+              <div class="leads-name">Agnes Berry</div>
+              <div class="leads-company">Alma Conseil</div>
+            </div>
+            <div class="leads-row leads-row-fade">
+              <div class="leads-source leads-source-linkedin">in</div>
+              <div class="leads-avatar" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">MT</div>
+              <div class="leads-name">Marc Thibault</div>
+              <div class="leads-company"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar — Landing page locale -->
+      <div class="pillar fade-in">
+        <div class="pillar-content">
+          <div class="pillar-badge">
+            <span class="badge">Présence digitale</span>
+          </div>
+          <h3>Une landing page pour maximiser votre visibilité</h3>
+          <p>
+            Nous créons une <a href="blog/landing-page-export.html" style="color:var(--color-primary); text-decoration:underline; font-weight:600;">landing page</a> dédiée à chaque marché cible : un résumé percutant de votre offre, traduit et adapté dans la langue locale. Vous gagnez immédiatement en crédibilité auprès de vos prospects étrangers et vous facilitez le travail de vos campagnes de prospection digitale.
+          </p>
+          <a href="#cta" class="pillar-link">Demander une démo &#x2192;</a>
+        </div>
+        <div class="pillar-visual">
+          <div class="lp-mockup">
+            <div class="lp-browser-bar">
+              <div class="lp-browser-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="lp-browser-url">
+                <span class="lp-lock">&#x1F512;</span> votre-entreprise.pl
+              </div>
+            </div>
+            <div class="lp-page">
+              <div class="lp-nav">
+                <div class="lp-nav-brand">Votre<span>Marque</span></div>
+                <div class="lp-nav-links">
+                  <span>Produkty</span>
+                  <span>O nas</span>
+                  <span>Kontakt</span>
+                </div>
+                <div class="lp-nav-cta">Zapytaj o ofertę</div>
+              </div>
+              <div class="lp-hero">
+                <div class="lp-hero-flag">🇵🇱</div>
+                <h4>Innowacyjne rozwiązania<br/>dla polskiego rynku</h4>
+                <p>Oferujemy najwyższej jakości produkty dostosowane do potrzeb lokalnego rynku. Zaufaj ekspertom z wieloletnim doświadczeniem.</p>
+                <div class="lp-hero-btn">Skontaktuj się z nami →</div>
+              </div>
+              <div class="lp-features">
+                <div class="lp-feature">
+                  <div class="lp-feature-icon">📦</div>
+                  <div class="lp-feature-text">Szybka dostawa</div>
+                </div>
+                <div class="lp-feature">
+                  <div class="lp-feature-icon">🤝</div>
+                  <div class="lp-feature-text">Lokalne wsparcie</div>
+                </div>
+                <div class="lp-feature">
+                  <div class="lp-feature-icon">✅</div>
+                  <div class="lp-feature-text">Certyfikaty UE</div>
+                </div>
+              </div>
+              <div class="lp-footer-bar">
+                <span>© 2026 VotreMarque Polska — Wszelkie prawa zastrzeżone</span>
+              </div>
+            </div>
+            <div class="lp-lang-badge">🌍 Traduit et adapté en polonais</div>
           </div>
         </div>
       </div>
@@ -1670,14 +3030,84 @@
           </div>
           <h3>Gardez un coup d'avance sur vos concurrents</h3>
           <p>
-            Qui sont vos concurrents sur la zone cible ? Quels prix pratiquent-ils ? Quels distributeurs utilisent-ils ? Notre veille concurrentielle vous donne une vision claire et actualisée du paysage compétitif. Vous savez exactement comment vous positionner, quels arguments mettre en avant et où se trouvent les opportunités que vos concurrents n'ont pas encore exploitées.
+            Qui sont vos concurrents sur la zone cible ? Quels prix pratiquent-ils ? Quels distributeurs utilisent-ils ? Sont-ils actifs sur les réseaux sociaux ? Lesquels ? Notre veille concurrentielle vous donne une vision claire et actualisée du paysage compétitif. Vous savez exactement comment vous positionner, quels arguments mettre en avant et où se trouvent les opportunités que vos concurrents n'ont pas encore exploitées.
           </p>
           <a href="#cta" class="pillar-link">En savoir plus &#x2192;</a>
         </div>
         <div class="pillar-visual">
-          <div class="visual-placeholder">
-            <div class="visual-icon">🔍</div>
-            <div class="visual-label">Veille concurrentielle en continu</div>
+          <div class="competitor-mockup">
+            <div class="competitor-header">
+              <div class="competitor-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                Veille concurrentielle
+              </div>
+              <div class="competitor-count">12 concurrents suivis</div>
+            </div>
+            <div class="competitor-table-header">
+              <div>Entreprise</div>
+              <div>Prix moyen</div>
+              <div>Canaux</div>
+              <div>Digital</div>
+            </div>
+            <div class="competitor-row">
+              <div class="competitor-name">
+                <div class="competitor-flag">🇩🇪</div>
+                <div>
+                  <div class="competitor-company">Müller GmbH</div>
+                  <div class="competitor-sub">Allemagne · Machines-outils</div>
+                </div>
+              </div>
+              <div class="competitor-price">-12%</div>
+              <div class="competitor-channel">
+                <span class="competitor-tag active">LinkedIn</span>
+                <span class="competitor-tag salon">Salon EMO</span>
+              </div>
+              <div class="competitor-digital">
+                <span class="competitor-dot on"></span>
+                <span class="competitor-dot on"></span>
+                <span class="competitor-dot off"></span>
+                <span class="competitor-digital-label">6/10</span>
+              </div>
+            </div>
+            <div class="competitor-row">
+              <div class="competitor-name">
+                <div class="competitor-flag">🇮🇹</div>
+                <div>
+                  <div class="competitor-company">Rossi Industria</div>
+                  <div class="competitor-sub">Italie · Équipements</div>
+                </div>
+              </div>
+              <div class="competitor-price">-5%</div>
+              <div class="competitor-channel">
+                <span class="competitor-tag ecom">E-commerce</span>
+                <span class="competitor-tag active">LinkedIn</span>
+              </div>
+              <div class="competitor-digital">
+                <span class="competitor-dot on"></span>
+                <span class="competitor-dot on"></span>
+                <span class="competitor-dot on"></span>
+                <span class="competitor-digital-label">8/10</span>
+              </div>
+            </div>
+            <div class="competitor-row">
+              <div class="competitor-name">
+                <div class="competitor-flag">🇪🇸</div>
+                <div>
+                  <div class="competitor-company">Ibérica Tools</div>
+                  <div class="competitor-sub">Espagne · Outillage</div>
+                </div>
+              </div>
+              <div class="competitor-price">+3%</div>
+              <div class="competitor-channel">
+                <span class="competitor-tag salon">Salon BIEMH</span>
+              </div>
+              <div class="competitor-digital">
+                <span class="competitor-dot on"></span>
+                <span class="competitor-dot off"></span>
+                <span class="competitor-dot off"></span>
+                <span class="competitor-digital-label">3/10</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1692,12 +3122,238 @@
           <p>
             Notre outil de veille des appels d'offre internationaux est un atout décisif pour prendre le pouls de l'activité de vos pays cibles. Marchés publics, projets privés, consultations sectorielles — vous êtes alerté en temps réel des opportunités qui correspondent à votre offre. C'est la meilleure façon de détecter la demande avant vos concurrents et de vous positionner au bon moment.
           </p>
-          <a href="#cta" class="pillar-link">Demander mon audit gratuit &#x2192;</a>
+          <a href="#cta" class="pillar-link">Demander une démo &#x2192;</a>
         </div>
         <div class="pillar-visual">
-          <div class="visual-placeholder">
-            <div class="visual-icon">📡</div>
-            <div class="visual-label">Veille appels d'offre en temps réel</div>
+          <div class="tender-mockup">
+            <div class="tender-search">
+              <span class="tender-search-input">Tapez votre recherche</span>
+              <div class="tender-search-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </div>
+            </div>
+            <div class="tender-count">37 appels d'offres en cours</div>
+
+            <div class="tender-card">
+              <div class="tender-status">Marché en cours</div>
+              <div class="tender-title">Fornitura di attrezzature industriali per il Porto di Genova</div>
+              <div class="tender-meta">
+                <div class="tender-meta-item">
+                  <span class="tender-meta-label">Localisation</span>
+                  <span class="tender-meta-value">🇮🇹 Italie</span>
+                </div>
+                <div class="tender-meta-item">
+                  <span class="tender-meta-label">Temps restant</span>
+                  <span class="tender-meta-value urgent">2 jours, 14 heures</span>
+                  <span class="tender-meta-date">06/04/2026</span>
+                </div>
+                <div class="tender-meta-item">
+                  <span class="tender-meta-label">Lots</span>
+                  <span class="tender-meta-value">12 lots</span>
+                </div>
+              </div>
+              <div class="tender-arrow">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+
+            <div class="tender-card">
+              <div class="tender-status">Marché en cours</div>
+              <div class="tender-title">Adquisición de maquinaria para el Parque Nacional Río Pilcomayo</div>
+              <div class="tender-meta">
+                <div class="tender-meta-item">
+                  <span class="tender-meta-label">Localisation</span>
+                  <span class="tender-meta-value">🇦🇷 Argentine</span>
+                </div>
+                <div class="tender-meta-item">
+                  <span class="tender-meta-label">Temps restant</span>
+                  <span class="tender-meta-value urgent">5 jours, 8 heures</span>
+                  <span class="tender-meta-date">09/04/2026</span>
+                </div>
+                <div class="tender-meta-item">
+                  <span class="tender-meta-label">Lots</span>
+                  <span class="tender-meta-value">24 lots</span>
+                </div>
+              </div>
+              <div class="tender-arrow">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+
+            <div class="tender-card">
+              <div class="tender-status">Marché en cours</div>
+              <div class="tender-title">توريد معدات صناعية لميناء جدة الإسلامي</div>
+              <div class="tender-meta">
+                <div class="tender-meta-item">
+                  <span class="tender-meta-label">Localisation</span>
+                  <span class="tender-meta-value">🇸🇦 Arabie saoudite</span>
+                </div>
+                <div class="tender-meta-item">
+                  <span class="tender-meta-label">Temps restant</span>
+                  <span class="tender-meta-value">1 semaine, 3 jours</span>
+                  <span class="tender-meta-date">14/04/2026</span>
+                </div>
+                <div class="tender-meta-item">
+                  <span class="tender-meta-label">Lots</span>
+                  <span class="tender-meta-value">8 lots</span>
+                </div>
+              </div>
+              <div class="tender-arrow">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 5 — Veille sectorielle -->
+      <div class="pillar fade-in">
+        <div class="pillar-content">
+          <div class="pillar-badge">
+            <span class="badge">Intelligence marché</span>
+          </div>
+          <h3>Toute l'actualité de votre secteur sur le marché cible 📰</h3>
+          <p>
+            Recevez une information complète sur votre secteur d'activité dans le pays cible. Résumés de presse, salons professionnels, évolutions législatives, impacts politiques à surveiller — ne ratez rien de ce qui peut influencer votre positionnement. Une veille structurée pour prendre les bonnes décisions au bon moment.
+          </p>
+          <a href="#cta" class="pillar-link">Demander une démo &#x2192;</a>
+        </div>
+        <div class="pillar-visual">
+          <div class="news-mockup">
+            <div class="news-page">
+              <div class="news-topbar">
+                <div class="news-topbar-brand">EXPORT MONITOR</div>
+                <div class="news-topbar-nav">
+                  <span>Industrie</span>
+                  <span>Réglementaire</span>
+                  <span>Salons</span>
+                </div>
+                <div class="news-topbar-live">LIVE</div>
+              </div>
+              <div class="news-headline">
+                <div class="news-headline-tag">À la une</div>
+                <h4>L'Italie renforce ses normes d'importation sur les équipements industriels</h4>
+                <div class="news-headline-meta">Reuters · Il y a 2 heures</div>
+              </div>
+              <div class="news-articles">
+                <div class="news-article-row">
+                  <div class="news-article-flag">🇦🇷</div>
+                  <div class="news-article-text">
+                    <h5>ExpoIndustria Buenos Aires — inscriptions ouvertes</h5>
+                    <span>Salon · 12–15 sept. 2026</span>
+                  </div>
+                  <div class="news-article-tag news-tag-salon">Salon</div>
+                </div>
+                <div class="news-article-row">
+                  <div class="news-article-flag">🇸🇦</div>
+                  <div class="news-article-text">
+                    <h5>Nouvelle loi sur les investissements étrangers à Riyad</h5>
+                    <span>Al Arabiya · Il y a 5 heures</span>
+                  </div>
+                  <div class="news-article-tag news-tag-loi">Loi</div>
+                </div>
+                <div class="news-article-row">
+                  <div class="news-article-flag">🇵🇱</div>
+                  <div class="news-article-text">
+                    <h5>La Pologne accélère ses achats dans le secteur agro</h5>
+                    <span>Rzeczpospolita · Il y a 8 heures</span>
+                  </div>
+                  <div class="news-article-tag news-tag-presse">Presse</div>
+                </div>
+                <div class="news-article-row">
+                  <div class="news-article-flag">🇮🇹</div>
+                  <div class="news-article-text">
+                    <h5>Élections régionales en Lombardie : impact sur les marchés publics</h5>
+                    <span>Corriere della Sera · Hier</span>
+                  </div>
+                  <div class="news-article-tag news-tag-politique">Politique</div>
+                </div>
+              </div>
+            </div>
+            <div class="news-badge">📡 Veille en temps réel — 4 pays surveillés</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 7 — Supports de vente & presse locale -->
+      <div class="pillar fade-in">
+        <div class="pillar-content">
+          <div class="pillar-badge">
+            <span class="badge">On ne s'arrête pas là !</span>
+          </div>
+          <h3>Encore plus de leviers pour accélérer votre développement</h3>
+          <p>
+            Nous proposons également la rédaction de vos supports commerciaux dans la langue du marché cible, une réflexion SEO international pour améliorer votre visibilité sur les marchés visés, l'adaptation de votre site e-commerce pour l'international (traduction, devises, UX locale), l'inscription aux salons ciblés de votre secteur, ou encore la publication d'articles de presse dans les médias locaux.
+          </p>
+          <a href="#cta" class="pillar-link">Demander un devis gratuit &#x2192;</a>
+        </div>
+        <div class="pillar-visual">
+          <div class="toolkit-mockup">
+            <div class="toolkit-header">
+              <div class="toolkit-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                Services complémentaires
+              </div>
+              <div class="toolkit-badge">5 leviers</div>
+            </div>
+            <div class="toolkit-grid">
+              <div class="toolkit-card">
+                <div class="toolkit-card-header">
+                  <div class="toolkit-card-icon blue">📄</div>
+                  <div class="toolkit-card-name">Supports commerciaux</div>
+                </div>
+                <div class="toolkit-card-detail">Brochures, fiches produit, présentations</div>
+                <div class="toolkit-card-tags">
+                  <span class="toolkit-tag lang">🇩🇪 DE</span>
+                  <span class="toolkit-tag lang">🇬🇧 EN</span>
+                  <span class="toolkit-tag lang">🇪🇸 ES</span>
+                </div>
+                <div class="toolkit-card-bar"><div class="toolkit-card-bar-fill blue" style="width:85%"></div></div>
+              </div>
+              <div class="toolkit-card">
+                <div class="toolkit-card-header">
+                  <div class="toolkit-card-icon green">🔎</div>
+                  <div class="toolkit-card-name">SEO international</div>
+                </div>
+                <div class="toolkit-card-detail">Mots-clés locaux, positionnement marché</div>
+                <div class="toolkit-card-tags">
+                  <span class="toolkit-tag seo">Google.de</span>
+                  <span class="toolkit-tag seo">Google.co.uk</span>
+                </div>
+                <div class="toolkit-card-bar"><div class="toolkit-card-bar-fill green" style="width:60%"></div></div>
+              </div>
+              <div class="toolkit-card">
+                <div class="toolkit-card-header">
+                  <div class="toolkit-card-icon purple">🛒</div>
+                  <div class="toolkit-card-name">E-commerce</div>
+                </div>
+                <div class="toolkit-card-detail">Traduction, devises, UX locale</div>
+                <div class="toolkit-card-tags">
+                  <span class="toolkit-tag ecom">€ / £ / $</span>
+                  <span class="toolkit-tag ecom">UX</span>
+                </div>
+                <div class="toolkit-card-bar"><div class="toolkit-card-bar-fill purple" style="width:45%"></div></div>
+              </div>
+              <div class="toolkit-card">
+                <div class="toolkit-card-header">
+                  <div class="toolkit-card-icon amber">🎪</div>
+                  <div class="toolkit-card-name">Salons & événements</div>
+                </div>
+                <div class="toolkit-card-detail">Inscription, logistique, stand</div>
+                <div class="toolkit-card-tags">
+                  <span class="toolkit-tag event">EMO 2026</span>
+                  <span class="toolkit-tag event">MIDEST</span>
+                </div>
+                <div class="toolkit-card-bar"><div class="toolkit-card-bar-fill amber" style="width:70%"></div></div>
+              </div>
+              <div class="toolkit-card toolkit-card-full">
+                <div class="toolkit-card-header">
+                  <div class="toolkit-card-icon rose">📰</div>
+                  <div class="toolkit-card-name">Presse & médias locaux</div>
+                </div>
+                <div class="toolkit-card-detail">Articles, communiqués, relations presse sur les marchés cibles</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1711,7 +3367,7 @@
   <section class="pricing-section" id="pricing">
     <div class="container">
       <h2 class="section-title fade-in">Des formules claires, sans surprise</h2>
-      <p class="section-subtitle fade-in">Engagement 6 mois minimum. Vous gardez le contrôle, on structure votre croissance export.</p>
+      <p class="section-subtitle fade-in">Engagement 3 mois minimum. On structure, vous gardez le contrôle.</p>
 
       <div class="pricing-grid fade-in">
 
@@ -1721,31 +3377,39 @@
             <div class="pricing-card-name">
               <h3>Starter</h3>
             </div>
-            <p class="pricing-card-desc">Pour les PME qui démarrent à l'export et veulent structurer leur première démarche.</p>
+            <p class="pricing-card-desc">Pour ceux qui démarrent à l'export et veulent structurer leur démarche.</p>
           </div>
           <div class="pricing-price">
-            <div class="pricing-amount">390 € <span class="pricing-unit">/mois</span></div>
+            <div class="pricing-amount">590 € <span class="pricing-unit">/mois</span></div>
           </div>
-          <div class="pricing-billing">HT · Engagement 6 mois</div>
+          <div class="pricing-billing">HT · Engagement 3 mois</div>
           <a href="#cta" class="btn btn-secondary">Choisir Starter</a>
 
           <div class="pricing-features-group">
-            <div class="pricing-features-label">Prospection</div>
+            <div class="pricing-features-label">Inclus</div>
             <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> Accès illimité à votre dashboard</li>
               <li><span class="pricing-check">✓</span> Sourcing de prospects ciblés</li>
-              <li><span class="pricing-check">✓</span> 1 campagne de prospection digitale</li>
-              <li><span class="pricing-check">✓</span> Qualification des leads</li>
-              <li><span class="pricing-check">✓</span> 3 leads qualifiés</li>
-              <li><span class="pricing-check">✓</span> Suivi live des appels d'offre dans le pays cible</li>
-              <li><span class="pricing-check">✓</span> Suivi live de vos concurrents sur la zone définie</li>
+              <li><span class="pricing-check">✓</span> 1 pays cible</li>
+              <li><span class="pricing-check">✓</span> 5 leads qualifiés par mois et par pays (Email et/ou Téléphone)</li>
+              <li><span class="pricing-check">✓</span> Enrichissement et vérification des contacts</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Création d'une landing page</li>
+              <li><span class="pricing-check">✓</span> Suivi live des appels d'offre dans les pays cibles</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Recherche et suivi live de vos concurrents sur la zone définie</li>
+              <li><span class="pricing-check">✓</span> Suivi live de l'actualité de vos pays cibles</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Analyse des canaux de distribution par pays</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Recommandations de salons sectoriels</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Publication de pense-bêtes et astuces export (Incoterms, Douanes…)</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Aide au financement et dépôt des dossiers</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Présence physique sur salon (en sus)</li>
             </ul>
           </div>
           <div class="pricing-features-group">
             <div class="pricing-features-label">Suivi</div>
             <ul class="pricing-features-list">
-              <li><span class="pricing-check">✓</span> Reporting mensuel</li>
-              <li><span class="pricing-check">✓</span> 1 point stratégique / mois</li>
-              <li><span class="pricing-check">✓</span> Accès dashboard client</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Synthèse complète hebdomadaire par e-mail</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Rapport mensuel de performance</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Accès à un interlocuteur dédié</li>
             </ul>
           </div>
         </div>
@@ -1757,33 +3421,39 @@
               <h3>Business</h3>
               <span class="pricing-badge-popular">Populaire</span>
             </div>
-            <p class="pricing-card-desc">Pour les PME ambitieuses qui veulent accélérer sur plusieurs marchés en parallèle.</p>
+            <p class="pricing-card-desc">Pour les ambitieux qui veulent accélérer sur plusieurs marchés en parallèle.</p>
           </div>
           <div class="pricing-price">
-            <div class="pricing-amount">590 € <span class="pricing-unit">/mois</span></div>
+            <div class="pricing-amount">890 € <span class="pricing-unit">/mois</span></div>
           </div>
-          <div class="pricing-billing">HT · Engagement 6 mois</div>
+          <div class="pricing-billing">HT · Engagement 3 mois</div>
           <a href="#cta" class="btn btn-primary">Choisir Business</a>
 
           <div class="pricing-features-group">
-            <div class="pricing-features-label">Prospection</div>
+            <div class="pricing-features-label">Inclus</div>
             <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> Accès illimité à votre dashboard</li>
               <li><span class="pricing-check">✓</span> Sourcing de prospects ciblés</li>
-              <li><span class="pricing-check">✓</span> 3 campagnes de prospection digitale</li>
-              <li><span class="pricing-check">✓</span> Qualification des leads</li>
-              <li><span class="pricing-check">✓</span> 3 leads qualifiés</li>
-              <li><span class="pricing-check">✓</span> Suivi live des appels d'offre dans le pays cible</li>
-              <li><span class="pricing-check">✓</span> Suivi live de vos concurrents sur la zone définie</li>
-              <li><span class="pricing-check">✓</span> Veille concurrentielle</li>
+              <li><span class="pricing-check">✓</span> 2 pays cibles</li>
+              <li><span class="pricing-check">✓</span> 5 leads qualifiés par mois et par pays (Email et/ou Téléphone)</li>
+              <li><span class="pricing-check">✓</span> Enrichissement et vérification des contacts</li>
+              <li><span class="pricing-check">✓</span> Création d'une landing page</li>
+              <li><span class="pricing-check">✓</span> Suivi live des appels d'offre dans les pays cibles</li>
+              <li><span class="pricing-check">✓</span> Recherche et suivi live de vos concurrents sur la zone définie</li>
+              <li><span class="pricing-check">✓</span> Suivi live de l'actualité de vos pays cibles</li>
+              <li><span class="pricing-check">✓</span> Analyse des canaux de distribution par pays</li>
+              <li><span class="pricing-check">✓</span> Recommandations de salons sectoriels</li>
+              <li><span class="pricing-check">✓</span> Publication de pense-bêtes et astuces export (Incoterms, Douanes…)</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Aide au financement et dépôt des dossiers</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Présence physique sur salon (en sus)</li>
             </ul>
           </div>
           <div class="pricing-features-group">
             <div class="pricing-features-label">Suivi</div>
             <ul class="pricing-features-list">
-              <li><span class="pricing-check">✓</span> Reporting bi-mensuel</li>
-              <li><span class="pricing-check">✓</span> 2 points stratégiques / mois</li>
-              <li><span class="pricing-check">✓</span> Accès dashboard client</li>
-              <li><span class="pricing-check">✓</span> Support prioritaire</li>
+              <li><span class="pricing-check">✓</span> Synthèse complète hebdomadaire par e-mail</li>
+              <li><span class="pricing-check">✓</span> Rapport mensuel de performance</li>
+              <li><span class="pricing-check">✓</span> Accès à un interlocuteur dédié</li>
             </ul>
           </div>
         </div>
@@ -1794,35 +3464,39 @@
             <div class="pricing-card-name">
               <h3>Expert</h3>
             </div>
-            <p class="pricing-card-desc">Pour les entreprises qui veulent un accompagnement intensif avec présence terrain dédiée.</p>
+            <p class="pricing-card-desc">Pour les entreprises qui veulent un accompagnement intensif.</p>
           </div>
           <div class="pricing-price">
-            <div class="pricing-amount">990 € <span class="pricing-unit">/mois</span></div>
+            <div class="pricing-amount">1 490 € <span class="pricing-unit">/mois</span></div>
           </div>
-          <div class="pricing-billing">HT · Engagement 6 mois</div>
+          <div class="pricing-billing">HT · Engagement 3 mois</div>
           <a href="#cta" class="btn btn-secondary">Choisir Expert</a>
 
           <div class="pricing-features-group">
-            <div class="pricing-features-label">Prospection</div>
+            <div class="pricing-features-label">Inclus</div>
             <ul class="pricing-features-list">
-              <li><span class="pricing-check">✓</span> Sourcing illimité de prospects</li>
-              <li><span class="pricing-check">✓</span> Campagnes de prospection illimitées</li>
-              <li><span class="pricing-check">✓</span> Qualification des leads</li>
-              <li><span class="pricing-check">✓</span> 3 leads qualifiés</li>
-              <li><span class="pricing-check">✓</span> Suivi live des appels d'offre dans le pays cible</li>
-              <li><span class="pricing-check">✓</span> Suivi live de vos concurrents sur la zone définie</li>
-              <li><span class="pricing-check">✓</span> Veille concurrentielle approfondie</li>
-              <li><span class="pricing-check">✓</span> Intelligence douanière (Trasic)</li>
+              <li><span class="pricing-check">✓</span> Accès illimité à votre dashboard</li>
+              <li><span class="pricing-check">✓</span> Sourcing de prospects ciblés</li>
+              <li><span class="pricing-check">✓</span> 3 pays cibles</li>
+              <li><span class="pricing-check">✓</span> 5 leads qualifiés par mois et par pays (Email et/ou Téléphone)</li>
+              <li><span class="pricing-check">✓</span> Enrichissement et vérification des contacts</li>
+              <li><span class="pricing-check">✓</span> Création d'une landing page</li>
+              <li><span class="pricing-check">✓</span> Suivi live des appels d'offre dans les pays cibles</li>
+              <li><span class="pricing-check">✓</span> Recherche et suivi live de vos concurrents sur la zone définie</li>
+              <li><span class="pricing-check">✓</span> Suivi live de l'actualité de vos pays cibles</li>
+              <li><span class="pricing-check">✓</span> Analyse des canaux de distribution par pays</li>
+              <li><span class="pricing-check">✓</span> Recommandations de salons sectoriels</li>
+              <li><span class="pricing-check">✓</span> Publication de pense-bêtes et astuces export (Incoterms, Douanes…)</li>
+              <li><span class="pricing-check">✓</span> Aide au financement et dépôt des dossiers</li>
+              <li><span class="pricing-check">✓</span> Présence physique sur salon (en sus)</li>
             </ul>
           </div>
           <div class="pricing-features-group">
             <div class="pricing-features-label">Suivi</div>
             <ul class="pricing-features-list">
-              <li><span class="pricing-check">✓</span> Reporting hebdomadaire</li>
-              <li><span class="pricing-check">✓</span> Points stratégiques illimités</li>
-              <li><span class="pricing-check">✓</span> Accès dashboard client</li>
-              <li><span class="pricing-check">✓</span> Support prioritaire 24/48h</li>
-              <li><span class="pricing-check">✓</span> Expert dédié</li>
+              <li><span class="pricing-check">✓</span> Synthèse complète hebdomadaire par e-mail</li>
+              <li><span class="pricing-check">✓</span> Rapport mensuel de performance</li>
+              <li><span class="pricing-check">✓</span> Accès à un interlocuteur dédié</li>
             </ul>
           </div>
         </div>
@@ -1839,10 +3513,10 @@
       <div class="why-inner fade-in">
 
         <h2 class="section-title">
-          Pas un cabinet de conseil classique.<br/>Votre passeur digital vers l'export.
+          Zéro commission - 100% résultat
         </h2>
         <p class="section-subtitle">
-          Une approche radicalement différente : transparente sur les chiffres, structurée par la data, ancrée dans la réalité du terrain.
+          Vos prospects deviennent vos clients — aucun intermédiaire, aucune commission demandée.<br/><strong>Le fruit de notre travail <span class="handwritten-highlight">vous appartient</span>.</strong>
         </p>
 
         <div class="why-cards">
@@ -1859,7 +3533,7 @@
             <div class="why-card-icon">💻</div>
             <h3>Méthodologie digitalisée</h3>
             <p>
-              Kompass, Apollo, Skylead, Make — des outils de prospection et d'automatisation de pointe pilotés par nos experts. Votre pipeline de prospects qualifiés est alimenté en continu, avec reporting en temps réel sur votre dashboard.
+              Des outils de prospection et d'automatisation de pointe pilotés par nos experts. Votre pipeline de prospects qualifiés est alimenté en continu, avec reporting en temps réel sur votre dashboard.
             </p>
           </div>
 
@@ -1874,7 +3548,7 @@
         </div>
 
         <div class="why-cta-group">
-          <a href="#cta" class="btn btn-primary btn-lg">Demander mon audit gratuit</a>
+          <a href="#cta" class="btn btn-primary btn-lg">Demander une démo</a>
           <span class="why-note">100% gratuit · Sans engagement · Réponse sous 48h</span>
         </div>
 
@@ -1889,28 +3563,28 @@
     <div class="container">
 
       <div class="methode-header fade-in">
-        <h2 class="section-title">3 étapes pour lancer votre export</h2>
-        <p class="section-subtitle">Un parcours clair, structuré, sans surprise.</p>
+        <h2 class="section-title">De l'audit au terrain en 3 étapes</h2>
+        <p class="section-subtitle">Un parcours clair pour passer à l'action rapidement.</p>
       </div>
 
       <div class="steps-row fade-in">
 
         <div class="step-item">
           <div class="step-number">1</div>
-          <h3>Audit export</h3>
-          <p>On analyse votre potentiel, vos marchés et votre capacité opérationnelle.</p>
+          <h3>Audit Export</h3>
+          <p>Nous analysons votre potentiel et vos capacités à réussir sur les marchés cibles.</p>
         </div>
 
         <div class="step-item">
           <div class="step-number">2</div>
-          <h3>Plan d'action</h3>
-          <p>Vous recevez une feuille de route claire : marchés cibles, stratégie, outils.</p>
+          <h3>Choix de votre pack</h3>
+          <p>Si l'audit export est concluant, nous vous orientons vers la meilleure offre.</p>
         </div>
 
         <div class="step-item">
           <div class="step-number">3</div>
-          <h3>Accompagnement</h3>
-          <p>On vous accompagne avec un abonnement mensuel et des missions terrain ciblées.</p>
+          <h3>Début de la mission</h3>
+          <p>On vous accompagne pour performer à l'international.</p>
         </div>
 
       </div>
@@ -1981,6 +3655,16 @@
       <div class="faq-list fade-in">
 
         <div class="faq-item">
+          <button class="faq-question" id="faq-q0" aria-expanded="false">
+            <span class="faq-question-text">Comment arrivez-vous à pratiquer des prix aussi attractifs ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region" aria-labelledby="faq-q0">
+            <div class="faq-answer-inner">Nous rationalisons nos coûts logiciels en mutualisant les outils entre nos clients, et nos techniques de prospection et de veille sont rodées pour être efficaces dès le premier jour. Surtout, notre modèle repose sur une logique de chasse collective : les entreprises françaises accompagnées par ExportPilot partagent une infrastructure commune, ce qui permet à chacune d'accéder à des services de haut niveau à une fraction du coût habituel.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
           <button class="faq-question" id="faq-q1" aria-expanded="false">
             <span class="faq-question-text">L'audit export est-il vraiment gratuit ?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
@@ -1992,21 +3676,21 @@
 
         <div class="faq-item">
           <button class="faq-question" id="faq-q2" aria-expanded="false">
-            <span class="faq-question-text">Quelle est la durée d'engagement ?</span>
+            <span class="faq-question-text">Pourquoi un abonnement de 3 mois minimum ?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" role="region" aria-labelledby="faq-q2">
-            <div class="faq-answer-inner">Les abonnements mensuels ont un engagement minimum de 6 mois. Ce délai est nécessaire pour obtenir des résultats mesurables à l'international. L'audit, lui, est un service ponctuel sans engagement de suite.</div>
+            <div class="faq-answer-inner">Le développement international est un processus long. Entre l'identification des bons interlocuteurs, les premiers contacts, les relances et la construction d'une relation commerciale, il faut compter plusieurs mois avant d'obtenir des résultats concrets. Trois mois, c'est le minimum pour lancer les campagnes, ajuster la stratégie et commencer à générer des opportunités réelles. L'audit, lui, reste un service ponctuel sans engagement.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" id="faq-q3" aria-expanded="false">
-            <span class="faq-question-text">En quoi ExportPilot est différent d'un cabinet de conseil ?</span>
+            <span class="faq-question-text">En quoi ExportPilot est différent d'un agent commercial ?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" role="region" aria-labelledby="faq-q3">
-            <div class="faq-answer-inner">Nous sommes un « passeur », pas un cabinet traditionnel. Notre approche est 100% digitalisée, transparente sur les ratios de conversion, et orientée terrain. Pas de rapports PowerPoint interminables — des actions concrètes et des résultats mesurables.</div>
+            <div class="faq-answer-inner">Nous ne réclamons aucune commission ou salaire fixe. Nous ne sommes pas uniquement tournés sur le commercial mais activons également tous les leviers permettant de performer dans un environnement international : visibilité, analyse et veille, et bien sûr prospection.</div>
           </div>
         </div>
 
@@ -2016,13 +3700,13 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" role="region" aria-labelledby="faq-q4">
-            <div class="faq-answer-inner">Notre expertise couvre l'Afrique, le Maghreb, le Moyen-Orient et l'Europe de l'Est. Nous sommes également ouverts à d'autres zones géographiques selon votre projet et nos partenaires locaux.</div>
+            <div class="faq-answer-inner">Notre expertise couvre l'Europe, le Moyen-Orient, la Scandinavie, l'Amérique du Nord, l'Amérique du Sud, l'Afrique et l'Océanie. L'Asie n'est pour le moment pas disponible.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" id="faq-q5" aria-expanded="false">
-            <span class="faq-question-text">Je n'ai jamais exporté, c'est pour moi ?</span>
+            <span class="faq-question-text">Nous n'avons jamais exporté, c'est pour nous ?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" role="region" aria-labelledby="faq-q5">
@@ -2032,11 +3716,11 @@
 
         <div class="faq-item">
           <button class="faq-question" id="faq-q6" aria-expanded="false">
-            <span class="faq-question-text">Que comprend l'abonnement mensuel ?</span>
+            <span class="faq-question-text">Peut-on passer d'une formule à l'autre ?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" role="region" aria-labelledby="faq-q6">
-            <div class="faq-answer-inner">Selon la formule choisie (Starter, Business ou Expert), l'abonnement inclut : sourcing de prospects, campagnes de prospection digitale, suivi des leads, reporting mensuel, et un accès à notre dashboard client. Les missions terrain sont vendues séparément.</div>
+            <div class="faq-answer-inner">Oui. Après la période des 3 mois, vous avez la possibilité d'upgrader votre formule et de passer à la vitesse supérieure.</div>
           </div>
         </div>
 
@@ -2050,10 +3734,37 @@
   <section class="cta-section" id="cta">
     <div class="container">
       <div class="cta-inner fade-in">
-        <h2 class="section-title">Prêt à ouvrir de nouveaux marchés ?</h2>
-        <p class="section-subtitle">Commencez par un audit export 100% gratuit. Sans engagement, sans surprise.</p>
-        <a href="mailto:contact@exportpilot.fr" class="btn btn-primary btn-lg">Demander mon audit gratuit</a>
-        <p class="cta-mention">Audit gratuit · Sans engagement · Réponse sous 48h</p>
+        <h2 class="section-title" style="white-space: nowrap;">Prêt à ouvrir de nouveaux marchés ?</h2>
+        <p class="section-subtitle">Commencez par un audit export 100% gratuit.<br/>Sans engagement, sans surprise.</p>
+
+        <form class="cta-form" id="cta-form" onsubmit="return handleCtaForm(event)">
+          <div class="cta-form-row">
+            <div class="cta-form-group">
+              <label for="cta-nom">Nom</label>
+              <input type="text" id="cta-nom" name="nom" placeholder="Dupont" required />
+            </div>
+            <div class="cta-form-group">
+              <label for="cta-prenom">Prénom</label>
+              <input type="text" id="cta-prenom" name="prenom" placeholder="Marie" required />
+            </div>
+          </div>
+          <div class="cta-form-group">
+            <label for="cta-societe">Nom de la société</label>
+            <input type="text" id="cta-societe" name="societe" placeholder="Ma Société SAS" required />
+          </div>
+          <div class="cta-form-group">
+            <label for="cta-email">Email professionnel</label>
+            <input type="email" id="cta-email" name="email" placeholder="marie@masociete.fr" required />
+          </div>
+          <div class="cta-form-group">
+            <label for="cta-tel">Numéro de téléphone <span class="optional">(facultatif)</span></label>
+            <input type="tel" id="cta-tel" name="telephone" placeholder="+33 6 12 34 56 78" />
+          </div>
+          <div class="cta-form-submit">
+            <button type="submit" class="btn btn-primary btn-lg">Discutons de votre projet</button>
+          </div>
+          <p class="cta-mention">Audit gratuit · Sans engagement · Réponse sous 48h</p>
+        </form>
       </div>
     </div>
   </section>
@@ -2068,7 +3779,7 @@
         <!-- Brand -->
         <div class="footer-brand">
           <div class="footer-logo">Export<span>Pilot</span></div>
-          <p class="footer-tagline">Votre passeur digital vers l'export. Expertise terrain, data et accompagnement structuré pour PME françaises.</p>
+          <p class="footer-tagline">Votre passeur digital vers l'export. Expertise terrain, data et accompagnement structuré pour TPE, PME et ETI françaises.</p>
         </div>
 
         <!-- Navigation -->
@@ -2076,10 +3787,12 @@
           <h4>Navigation</h4>
           <ul>
             <li><a href="#offre">Offre</a></li>
-            <li><a href="#pricing">Prix</a></li>
-            <li><a href="#methode">Méthode</a></li>
+            <li><a href="#pricing">Tarifs</a></li>
+
+            <li><a href="etude-de-cas.html">Étude de cas</a></li>
             <li><a href="#temoignages">Témoignages</a></li>
             <li><a href="#faq">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
           </ul>
         </div>
 
@@ -2087,9 +3800,9 @@
         <div class="footer-col">
           <h4>Légal</h4>
           <ul>
-            <li><a href="#">Mentions légales</a></li>
-            <li><a href="#">Politique de confidentialité</a></li>
-            <li><a href="#">CGV</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+            <li><a href="cgv.html">CGV</a></li>
           </ul>
         </div>
 
@@ -2118,6 +3831,32 @@
        TASK 10 — JS CONSOLIDATED
        ============================== -->
   <script>
+    function handleCtaForm(e) {
+      e.preventDefault();
+      var form = e.target;
+      var data = {
+        nom: form.nom.value,
+        prenom: form.prenom.value,
+        societe: form.societe.value,
+        email: form.email.value,
+        telephone: form.telephone.value || ''
+      };
+      var subject = encodeURIComponent('Demande audit export — ' + data.societe);
+      var body = encodeURIComponent(
+        'Nom : ' + data.nom + '\n' +
+        'Prénom : ' + data.prenom + '\n' +
+        'Société : ' + data.societe + '\n' +
+        'Email : ' + data.email + '\n' +
+        'Téléphone : ' + (data.telephone || 'Non renseigné') + '\n'
+      );
+      window.location.href = 'mailto:contact@exportpilot.fr?subject=' + subject + '&body=' + body;
+      var btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Demande envoyée ✓';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      return false;
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
 
       // ---- Header scroll shadow ----

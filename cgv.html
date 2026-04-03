@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conditions Generales de Vente d'ExportPilot — services de conseil export, prospection digitale et veille pour TPE, PME et ETI francaises." />
+  <meta name="robots" content="index, follow" />
+  <title>Conditions Generales de Vente | ExportPilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-primary: #3B82F6;
+      --color-primary-dark: #1E40AF;
+      --color-primary-light: #DBEAFE;
+      --color-primary-lighter: #EFF6FF;
+      --color-text: #111827;
+      --color-text-secondary: #6B7280;
+      --color-bg: #FFFFFF;
+      --color-bg-alt: #F8FAFC;
+      --color-border: #E5E7EB;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 48px;
+      --radius-full: 999px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-card-hover: 0 4px 12px rgba(0,0,0,0.12);
+      --max-width: 1140px;
+      --font-family: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==============================
+       HEADER
+       ============================== */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background-color: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      border-bottom-color: var(--color-border);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+    .logo span { color: var(--color-primary); }
+
+    .nav {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    .nav a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover { color: var(--color-text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-family);
+      font-size: 0.925rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-lg { padding: 16px 32px; font-size: 1rem; }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(59,130,246,0.35);
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+    }
+
+    /* ==============================
+       ARTICLE HERO
+       ============================== */
+    .article-hero {
+      padding: 140px 0 64px;
+      background: linear-gradient(180deg, #EFF6FF 0%, rgba(219,234,254,0.2) 40%, #FFFFFF 100%);
+    }
+
+    .article-hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .article-breadcrumb a {
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    .article-breadcrumb a:hover { text-decoration: underline; }
+
+    .article-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .article-hero h1 .highlight {
+      color: var(--color-primary);
+    }
+
+    .article-lead {
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+      max-width: 700px;
+    }
+
+    /* ==============================
+       ARTICLE BODY
+       ============================== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding-bottom: 80px;
+    }
+
+    .article-body h2 {
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin: 56px 0 20px;
+      color: var(--color-text);
+    }
+
+    .article-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 36px 0 12px;
+      color: var(--color-text);
+    }
+
+    .article-body p {
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .article-body strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 20px;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .article-body li {
+      margin-bottom: 8px;
+      font-size: 1.02rem;
+    }
+
+    .article-body .update-date {
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
+      font-style: italic;
+      margin-bottom: 32px;
+    }
+
+    /* ==============================
+       FOOTER
+       ============================== */
+    .footer {
+      background: #0F172A;
+      color: #94A3B8;
+      padding: 64px 0 32px;
+      font-size: 0.875rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col li { margin-bottom: 10px; }
+
+    .footer-col a {
+      color: #94A3B8;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover { color: #fff; }
+
+    .footer-brand .logo { margin-bottom: 12px; color: #fff; }
+    .footer-brand .logo span { color: var(--color-primary); }
+
+    .footer-tagline {
+      color: #94A3B8;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #94A3B8;
+      margin-bottom: 10px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-link:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      text-align: center;
+      color: #64748B;
+      font-size: 0.8rem;
+    }
+
+    /* Fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">Export<span>Pilot</span></a>
+
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html#offre">Offre</a></li>
+            <li><a href="index.html#pricing">Tarifs</a></li>
+            <li><a href="index.html#methode">Methode</a></li>
+            <li><a href="etude-de-cas.html">Etude de cas</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-cta">
+          <a href="index.html#cta" class="btn btn-primary btn-lg">Audit gratuit</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="container">
+      <div class="article-hero-inner fade-in">
+        <div class="article-breadcrumb">
+          <a href="index.html">Accueil</a>
+          <span>/</span>
+          <span>Conditions Generales de Vente</span>
+        </div>
+
+        <h1 class="fade-in" style="transition-delay: 0.1s">
+          Conditions <span class="highlight">Generales de Vente</span>
+        </h1>
+
+        <p class="article-lead fade-in" style="transition-delay: 0.2s">
+          Les presentes Conditions Generales de Vente regissent l'ensemble des relations contractuelles entre ExportPilot et ses clients professionnels.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <div class="container">
+    <article class="article-body">
+
+      <p class="update-date fade-in">Derniere mise a jour : 3 avril 2026</p>
+
+      <!-- Article 1 -->
+      <h2 class="fade-in">Article 1 &mdash; Objet</h2>
+
+      <p class="fade-in">Les presentes Conditions Generales de Vente (ci-apres &laquo; CGV &raquo;) ont pour objet de definir les conditions dans lesquelles la societe ExportPilot (ci-apres &laquo; le Prestataire &raquo;) fournit des services de conseil en developpement export, de prospection digitale internationale, de veille concurrentielle et de veille sur les appels d'offre a ses clients professionnels (ci-apres &laquo; le Client &raquo;).</p>
+
+      <p class="fade-in">Toute commande de services implique l'acceptation sans reserve par le Client des presentes CGV, qui prevalent sur tout autre document du Client, et notamment sur ses propres conditions generales d'achat.</p>
+
+      <!-- Article 2 -->
+      <h2 class="fade-in">Article 2 &mdash; Champ d'application</h2>
+
+      <p class="fade-in">Les presentes CGV s'appliquent a l'ensemble des prestations de services realisees par le Prestataire pour le compte de ses clients professionnels (personnes morales ou personnes physiques agissant dans le cadre de leur activite professionnelle), qu'il s'agisse de TPE, PME ou ETI.</p>
+
+      <p class="fade-in">Elles sont applicables a compter de leur date de mise en ligne et prevalent sur toute version anterieure. Le Prestataire se reserve le droit de modifier les presentes CGV a tout moment. Les CGV applicables sont celles en vigueur a la date de signature du devis ou du bon de commande.</p>
+
+      <!-- Article 3 -->
+      <h2 class="fade-in">Article 3 &mdash; Services proposes</h2>
+
+      <p class="fade-in">Le Prestataire propose les categories de services suivantes :</p>
+
+      <h3 class="fade-in">3.1 Audit export</h3>
+      <p class="fade-in">Analyse de la maturite export du Client, evaluation de l'offre produit pour les marches cibles, etude reglementaire et positionnement concurrentiel. L'audit constitue un prealable obligatoire a toute mission d'accompagnement. Son tarif est compris entre 990 &euro; et 2 990 &euro; HT selon le perimetre defini.</p>
+
+      <h3 class="fade-in">3.2 Abonnements mensuels</h3>
+      <p class="fade-in">Le Prestataire propose trois formules d'accompagnement mensuel :</p>
+      <ul class="fade-in">
+        <li><strong>Starter (590 &euro; HT/mois)</strong> &mdash; prospection digitale, veille concurrentielle et veille appels d'offre sur un marche cible</li>
+        <li><strong>Business (790 &euro; HT/mois)</strong> &mdash; accompagnement elargi incluant la gestion multicanale, le reporting avance et l'accompagnement strategique</li>
+        <li><strong>Expert (2 490 &euro; HT/mois)</strong> &mdash; accompagnement premium multi-marches avec chef de projet dedie, missions terrain et pilotage complet</li>
+      </ul>
+      <p class="fade-in">Les abonnements sont souscrits pour une duree minimale d'engagement de trois (3) mois. Au-dela de cette periode initiale, l'abonnement se renouvelle tacitement par periodes d'un (1) mois, sauf denonciation dans les conditions prevues a l'article 10.</p>
+
+      <h3 class="fade-in">3.3 Missions terrain et salons</h3>
+      <p class="fade-in">Missions de prospection sur le terrain, participation a des salons professionnels internationaux, organisation de rendez-vous commerciaux en presentiel. Ces prestations font l'objet de devis specifiques et sont facturees hors abonnement.</p>
+
+      <h3 class="fade-in">3.4 Services one-shot</h3>
+      <p class="fade-in">Prestations ponctuelles incluant notamment : formation export, accompagnement a la conformite reglementaire, conseil en financement export, recrutement d'agents commerciaux a l'international. Ces services font l'objet de devis individuels.</p>
+
+      <!-- Article 4 -->
+      <h2 class="fade-in">Article 4 &mdash; Tarifs et modalites de paiement</h2>
+
+      <h3 class="fade-in">4.1 Tarifs</h3>
+      <p class="fade-in">Les tarifs des prestations sont ceux en vigueur au jour de la signature du devis ou du bon de commande. Ils sont exprimes en euros et hors taxes (HT). La TVA applicable sera ajoutee au taux en vigueur au jour de la facturation.</p>
+
+      <p class="fade-in">Le Prestataire se reserve le droit de reviser ses tarifs a tout moment. Toute modification tarifaire sera communiquee au Client avec un preavis minimum de trente (30) jours et ne sera applicable qu'aux commandes ulterieures.</p>
+
+      <h3 class="fade-in">4.2 Modalites de paiement</h3>
+      <ul class="fade-in">
+        <li><strong>Audit export :</strong> 50 % a la commande, 50 % a la remise du livrable final.</li>
+        <li><strong>Abonnements mensuels :</strong> facturation mensuelle en debut de mois, payable a reception de la facture. Le premier mois est facture a la signature du contrat.</li>
+        <li><strong>Missions terrain et salons :</strong> 50 % a la commande, solde a la remise du compte rendu de mission.</li>
+        <li><strong>Services one-shot :</strong> selon les conditions definies dans le devis specifique.</li>
+      </ul>
+
+      <h3 class="fade-in">4.3 Retard de paiement</h3>
+      <p class="fade-in">En cas de retard de paiement, des penalites de retard seront exigibles de plein droit, sans qu'un rappel soit necessaire, au taux d'interet applique par la Banque Centrale Europeenne a son operation de refinancement la plus recente, majore de dix (10) points de pourcentage. Une indemnite forfaitaire de quarante (40) euros pour frais de recouvrement sera egalement due, conformement aux articles L.441-10 et D.441-5 du Code de commerce.</p>
+
+      <p class="fade-in">En outre, le Prestataire se reserve le droit de suspendre ou de resilier l'ensemble des prestations en cours en cas de non-paiement dans les quinze (15) jours suivant l'envoi d'une mise en demeure restee sans effet.</p>
+
+      <!-- Article 5 -->
+      <h2 class="fade-in">Article 5 &mdash; Conditions d'execution</h2>
+
+      <h3 class="fade-in">5.1 Delais</h3>
+      <p class="fade-in">Les delais d'execution des prestations sont communiques a titre indicatif lors de la signature du devis. Le Prestataire s'engage a mettre en oeuvre tous les moyens necessaires pour respecter les delais convenus, mais ne saurait etre tenu responsable des retards causes par le Client ou par des circonstances independantes de sa volonte.</p>
+
+      <h3 class="fade-in">5.2 Moyens</h3>
+      <p class="fade-in">Le Prestataire est soumis a une obligation de moyens. Il s'engage a executer les prestations avec diligence et dans les regles de l'art, conformement aux pratiques en vigueur dans la profession. Les resultats commerciaux (nombre de leads, taux de conversion, contrats signes) ne constituent en aucun cas une obligation de resultat.</p>
+
+      <h3 class="fade-in">5.3 Reporting</h3>
+      <p class="fade-in">Le Client beneficie d'un acces a un tableau de bord en ligne lui permettant de suivre l'avancement des prestations. Un rapport d'activite detaille est fourni selon la periodicite prevue dans le contrat (mensuelle ou trimestrielle selon la formule souscrite).</p>
+
+      <!-- Article 6 -->
+      <h2 class="fade-in">Article 6 &mdash; Obligations du Client</h2>
+
+      <p class="fade-in">Le Client s'engage a :</p>
+
+      <ul class="fade-in">
+        <li>Fournir au Prestataire l'ensemble des informations, documents et elements necessaires a la bonne execution des prestations, dans les delais convenus.</li>
+        <li>Designer un interlocuteur unique habilite a valider les orientations strategiques et les livrables intermediaires.</li>
+        <li>Collaborer activement avec le Prestataire, notamment en participant aux points de suivi et en repondant aux sollicitations dans un delai raisonnable.</li>
+        <li>Informer le Prestataire de tout changement susceptible d'affecter l'execution des prestations (evolution de l'offre produit, modification de la strategie commerciale, contraintes reglementaires nouvelles).</li>
+        <li>Respecter les obligations legales applicables a son activite, notamment en matiere de reglementation douaniere et de conformite des produits exportes.</li>
+      </ul>
+
+      <p class="fade-in">Tout retard ou manquement du Client dans l'execution de ses obligations pourra entrainer un report proportionnel des delais d'execution du Prestataire, sans que cela ne puisse engager la responsabilite de ce dernier.</p>
+
+      <!-- Article 7 -->
+      <h2 class="fade-in">Article 7 &mdash; Responsabilite</h2>
+
+      <h3 class="fade-in">7.1 Limitation de responsabilite</h3>
+      <p class="fade-in">La responsabilite du Prestataire est limitee aux dommages directs et previsibles resultant d'un manquement prouve a ses obligations contractuelles. En tout etat de cause, la responsabilite totale du Prestataire ne pourra exceder le montant des sommes effectivement percues au titre du contrat concerne au cours des douze (12) derniers mois.</p>
+
+      <h3 class="fade-in">7.2 Exclusions</h3>
+      <p class="fade-in">Le Prestataire ne saurait etre tenu responsable :</p>
+      <ul class="fade-in">
+        <li>Des dommages indirects tels que perte de chiffre d'affaires, perte de clientele, perte de chance, prejudice d'image ou toute perte financiere indirecte.</li>
+        <li>Des resultats commerciaux obtenus par le Client a la suite des prestations (le Prestataire intervenant en qualite de conseil et d'intermediaire, la decision commerciale finale relevant exclusivement du Client).</li>
+        <li>Des informations erronees ou incompletes fournies par le Client.</li>
+        <li>Des defaillances ou modifications des outils et plateformes tiers utilises dans le cadre des prestations (bases de donnees, plateformes de prospection, reseaux sociaux).</li>
+      </ul>
+
+      <!-- Article 8 -->
+      <h2 class="fade-in">Article 8 &mdash; Propriete intellectuelle</h2>
+
+      <p class="fade-in">L'ensemble des methodes, outils, modeles, templates, sequences de prospection, analyses et livrables produits par le Prestataire dans le cadre de ses prestations demeurent sa propriete intellectuelle exclusive.</p>
+
+      <p class="fade-in">Le Client se voit accorder une licence d'utilisation non exclusive, non cessible et non transferable sur les livrables qui lui sont remis, pour les seuls besoins de son activite export et pour la duree du contrat. Cette licence est etendue sans limitation de duree pour les livrables remis dans le cadre de l'audit export, sous reserve du paiement integral de la prestation.</p>
+
+      <p class="fade-in">Le Client s'interdit de reproduire, diffuser, revendre ou mettre a disposition de tiers les methodes, outils et livrables du Prestataire sans autorisation ecrite prealable.</p>
+
+      <!-- Article 9 -->
+      <h2 class="fade-in">Article 9 &mdash; Confidentialite</h2>
+
+      <p class="fade-in">Chacune des parties s'engage a traiter comme confidentielles toutes les informations techniques, commerciales, financieres ou strategiques communiquees par l'autre partie dans le cadre de l'execution du contrat (ci-apres &laquo; Informations Confidentielles &raquo;).</p>
+
+      <p class="fade-in">Cette obligation de confidentialite couvre notamment :</p>
+      <ul class="fade-in">
+        <li>Les donnees relatives aux prospects, clients et partenaires identifies dans le cadre de la prospection.</li>
+        <li>Les informations relatives a l'offre produit, aux tarifs et a la strategie commerciale du Client.</li>
+        <li>Les methodes, outils et processus propres au Prestataire.</li>
+        <li>Toute information expressement designee comme confidentielle par l'une des parties.</li>
+      </ul>
+
+      <p class="fade-in">Cette obligation de confidentialite s'applique pendant toute la duree du contrat et pendant une periode de deux (2) ans suivant son expiration ou sa resiliation, sauf accord contraire des parties.</p>
+
+      <p class="fade-in">Sont exclues de cette obligation les informations qui sont ou deviennent publiques sans faute de la partie receptrice, qui etaient deja en possession de la partie receptrice avant leur communication, ou dont la divulgation est imposee par la loi ou une autorite competente.</p>
+
+      <!-- Article 10 -->
+      <h2 class="fade-in">Article 10 &mdash; Resiliation</h2>
+
+      <h3 class="fade-in">10.1 Resiliation des abonnements</h3>
+      <p class="fade-in">Pendant la periode d'engagement initiale de trois (3) mois, l'abonnement ne peut etre resilie par le Client sauf manquement grave du Prestataire. Au-dela de cette periode, le Client peut resilier l'abonnement par lettre recommandee avec accuse de reception ou par email avec accuse de lecture, en respectant un preavis de trente (30) jours avant la prochaine echeance mensuelle.</p>
+
+      <h3 class="fade-in">10.2 Resiliation des prestations ponctuelles</h3>
+      <p class="fade-in">Pour les audits, missions terrain et services one-shot, toute annulation par le Client apres signature du devis entrainera la facturation des sommes suivantes :</p>
+      <ul class="fade-in">
+        <li>Annulation plus de quinze (15) jours avant le debut de la prestation : retention de l'acompte verse.</li>
+        <li>Annulation moins de quinze (15) jours avant le debut de la prestation : facturation de 50 % du montant total de la prestation.</li>
+        <li>Annulation apres le debut de la prestation : facturation de l'integralite du montant.</li>
+      </ul>
+
+      <h3 class="fade-in">10.3 Resiliation pour faute</h3>
+      <p class="fade-in">En cas de manquement grave de l'une des parties a ses obligations contractuelles, l'autre partie pourra resilier le contrat de plein droit, quinze (15) jours apres l'envoi d'une mise en demeure restee sans effet, adressee par lettre recommandee avec accuse de reception. La resiliation pour faute n'ouvre droit a aucune indemnite au profit de la partie defaillante.</p>
+
+      <!-- Article 11 -->
+      <h2 class="fade-in">Article 11 &mdash; Force majeure</h2>
+
+      <p class="fade-in">Aucune des parties ne pourra etre tenue responsable de l'inexecution ou du retard dans l'execution de l'une de ses obligations si cette inexecution ou ce retard resulte d'un cas de force majeure au sens de l'article 1218 du Code civil.</p>
+
+      <p class="fade-in">Sont notamment consideres comme des cas de force majeure : les catastrophes naturelles, les epidemies et pandemies, les guerres, les actes de terrorisme, les greves generales, les incendies, les inondations, les defaillances de reseaux de telecommunications, les decisions gouvernementales ou reglementaires empechant l'execution du contrat, et plus generalement tout evenement imprevisible, irresistible et exterieur aux parties.</p>
+
+      <p class="fade-in">La partie affectee par un cas de force majeure devra en informer l'autre partie dans les meilleurs delais. Si le cas de force majeure se prolonge au-dela de trois (3) mois, chacune des parties pourra resilier le contrat sans indemnite, par lettre recommandee avec accuse de reception.</p>
+
+      <!-- Article 12 -->
+      <h2 class="fade-in">Article 12 &mdash; Droit applicable et litiges</h2>
+
+      <p class="fade-in">Les presentes CGV sont regies par le droit francais.</p>
+
+      <p class="fade-in">En cas de litige relatif a l'interpretation ou a l'execution des presentes CGV, les parties s'engagent a rechercher une solution amiable dans un delai de trente (30) jours a compter de la notification du differend par l'une des parties a l'autre.</p>
+
+      <p class="fade-in">A defaut d'accord amiable dans ce delai, le litige sera soumis a la competence exclusive des tribunaux de commerce de Paris, nonobstant pluralite de defendeurs ou appel en garantie, y compris pour les procedures d'urgence ou les procedures conservatoires, en refere ou par requete.</p>
+
+    </article>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div class="logo">Export<span>Pilot</span></div>
+          <p class="footer-tagline">Votre passeur digital vers l'export pour TPE, PME et ETI francaises.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html#offre">Offre</a></li>
+            <li><a href="index.html#pricing">Tarifs</a></li>
+            <li><a href="index.html#methode">Methode</a></li>
+            <li><a href="etude-de-cas.html">Etude de cas</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="mentions-legales.html">Mentions legales</a></li>
+            <li><a href="politique-confidentialite.html">Politique de confidentialite</a></li>
+            <li><a href="cgv.html">CGV</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@exportpilot.fr" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            contact@exportpilot.fr
+          </a>
+          <a href="https://www.linkedin.com/company/exportpilot" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn ExportPilot
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ExportPilot. Tous droits reserves.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Header scroll shadow
+      var header = document.getElementById('header');
+      function onScroll() {
+        if (window.scrollY > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Fade-in observer
+      var fadeEls = document.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        var fadeObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                fadeObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        fadeEls.forEach(function (el) { fadeObserver.observe(el); });
+      } else {
+        fadeEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+    });
+  </script>
+</body>
+</html>

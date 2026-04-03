@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Comment PackFrance a conquis le marché polonais de l'emballage agroalimentaire grâce à ExportPilot : landing page locale, prospection digitale, appels d'offre et partenaire distributeur." />
+  <meta name="robots" content="index, follow" />
+  <title>Étude de cas — PackFrance conquiert la Pologne | ExportPilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-primary: #3B82F6;
+      --color-primary-dark: #1E40AF;
+      --color-primary-light: #DBEAFE;
+      --color-primary-lighter: #EFF6FF;
+      --color-text: #111827;
+      --color-text-secondary: #6B7280;
+      --color-bg: #FFFFFF;
+      --color-bg-alt: #F8FAFC;
+      --color-border: #E5E7EB;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 48px;
+      --radius-full: 999px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-card-hover: 0 4px 12px rgba(0,0,0,0.12);
+      --max-width: 1140px;
+      --font-family: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==============================
+       HEADER (same as index)
+       ============================== */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background-color: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      border-bottom-color: var(--color-border);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+    .logo span { color: var(--color-primary); }
+
+    .nav {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    .nav a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover { color: var(--color-text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-family);
+      font-size: 0.925rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-lg { padding: 16px 32px; font-size: 1rem; }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(59,130,246,0.35);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-primary-lighter);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+    }
+
+    /* ==============================
+       ARTICLE HERO
+       ============================== */
+    .article-hero {
+      padding: 140px 0 64px;
+      background: linear-gradient(180deg, #EFF6FF 0%, rgba(219,234,254,0.2) 40%, #FFFFFF 100%);
+    }
+
+    .article-hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .article-breadcrumb a {
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    .article-breadcrumb a:hover { text-decoration: underline; }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .article-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 600;
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+    }
+
+    .article-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .article-hero h1 .highlight {
+      color: var(--color-primary);
+    }
+
+    .article-lead {
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+      max-width: 700px;
+    }
+
+    /* ==============================
+       ARTICLE COVER IMAGE
+       ============================== */
+    .article-cover {
+      max-width: 900px;
+      margin: 0 auto 64px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    .article-cover-img {
+      width: 100%;
+      height: 420px;
+      background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 50%, #dbeafe 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .cover-flags {
+      font-size: 3.5rem;
+      display: flex;
+      gap: 24px;
+    }
+
+    .cover-label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      opacity: 0.9;
+      letter-spacing: 0.02em;
+    }
+
+    .cover-arrow {
+      font-size: 2rem;
+      opacity: 0.7;
+      animation: arrowPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes arrowPulse {
+      0%, 100% { transform: translateX(0); opacity: 0.5; }
+      50% { transform: translateX(8px); opacity: 1; }
+    }
+
+    /* ==============================
+       ARTICLE BODY
+       ============================== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding-bottom: 80px;
+    }
+
+    .article-body h2 {
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin: 56px 0 20px;
+      color: var(--color-text);
+    }
+
+    .article-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 36px 0 12px;
+      color: var(--color-text);
+    }
+
+    .article-body p {
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .article-body strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 20px;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .article-body li {
+      margin-bottom: 8px;
+      font-size: 1.02rem;
+    }
+
+    /* Inline image blocks */
+    .article-img {
+      margin: 40px 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--color-border);
+    }
+
+    .article-img-placeholder {
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+    }
+
+    .article-img-placeholder .img-icon {
+      font-size: 2.5rem;
+    }
+
+    .article-img-caption {
+      padding: 12px 16px;
+      background: var(--color-bg-alt);
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* Key metrics banner */
+    .metrics-banner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 48px 0;
+      padding: 32px;
+      background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%);
+      border-radius: var(--radius-md);
+      color: #fff;
+    }
+
+    .metric-item {
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: #fff;
+    }
+
+    .metric-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      opacity: 0.8;
+      margin-top: 4px;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .metrics-banner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding: 24px;
+      }
+    }
+
+    /* Quote / Testimonial */
+    .article-quote {
+      margin: 48px 0;
+      padding: 32px 32px 32px 40px;
+      background: var(--color-primary-lighter);
+      border-left: 4px solid var(--color-primary);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .article-quote p {
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.75;
+      color: var(--color-text);
+      margin-bottom: 12px;
+    }
+
+    .article-quote cite {
+      font-size: 0.88rem;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+    }
+
+    /* Timeline / Step cards */
+    .step-card {
+      margin: 32px 0;
+      padding: 28px;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+    }
+
+    .step-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .step-card-header h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .step-card p {
+      margin-bottom: 12px;
+    }
+
+    .step-card p:last-child { margin-bottom: 0; }
+
+    /* CTA Banner */
+    .article-cta {
+      margin: 64px 0 0;
+      padding: 48px;
+      background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%);
+      border-radius: var(--radius-md);
+      text-align: center;
+      color: #fff;
+    }
+
+    .article-cta h2 {
+      color: #fff;
+      margin: 0 0 12px;
+      font-size: 1.5rem;
+    }
+
+    .article-cta p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 28px;
+      font-size: 1.05rem;
+    }
+
+    .article-cta .btn-primary {
+      background: #fff;
+      color: var(--color-primary-dark);
+      border-color: #fff;
+    }
+
+    .article-cta .btn-primary:hover {
+      background: #f0f4ff;
+      border-color: #f0f4ff;
+      box-shadow: 0 6px 20px rgba(255,255,255,0.25);
+    }
+
+    /* ==============================
+       FOOTER (same as index)
+       ============================== */
+    .footer {
+      background: #0F172A;
+      color: #94A3B8;
+      padding: 64px 0 32px;
+      font-size: 0.875rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col li { margin-bottom: 10px; }
+
+    .footer-col a {
+      color: #94A3B8;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover { color: #fff; }
+
+    .footer-brand .logo { margin-bottom: 12px; color: #fff; }
+    .footer-brand .logo span { color: var(--color-primary); }
+
+    .footer-tagline {
+      color: #94A3B8;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #94A3B8;
+      margin-bottom: 10px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-link:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      text-align: center;
+      color: #64748B;
+      font-size: 0.8rem;
+    }
+
+    /* Fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">Export<span>Pilot</span></a>
+
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html#offre">Offre</a></li>
+            <li><a href="index.html#pricing">Prix</a></li>
+            <li><a href="index.html#methode">Méthode</a></li>
+            <li><a href="etude-de-cas.html" style="color: var(--color-primary); font-weight: 600;">Étude de cas</a></li>
+            <li><a href="index.html#temoignages">Témoignages</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-cta">
+          <a href="index.html#cta" class="btn btn-primary btn-lg">Audit gratuit</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="container">
+      <div class="article-hero-inner fade-in">
+        <div class="article-breadcrumb">
+          <a href="index.html">Accueil</a>
+          <span>/</span>
+          <span>Étude de cas</span>
+        </div>
+
+        <div class="article-meta">
+          <span class="article-tag">Emballage plastique</span>
+          <span class="article-tag">Agroalimentaire</span>
+          <span class="article-tag">Pologne</span>
+        </div>
+
+        <h1 class="fade-in" style="transition-delay: 0.1s">
+          Comment <span class="highlight">PackFrance</span> a conquis le marché polonais de l'emballage agroalimentaire
+        </h1>
+
+        <p class="article-lead fade-in" style="transition-delay: 0.2s">
+          PME lyonnaise spécialisée dans les emballages plastiques pour l'industrie agroalimentaire, PackFrance souhaitait s'implanter en Pologne. En 8 mois, ExportPilot a transformé cette ambition en un flux d'affaires récurrent. Voici comment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER IMAGE -->
+  <div class="container">
+    <div class="article-cover fade-in">
+      <div class="article-cover-img">
+        <div class="cover-overlay">
+          <div class="cover-flags">&#x1F1EB;&#x1F1F7; <span class="cover-arrow">&#x2192;</span> &#x1F1F5;&#x1F1F1;</div>
+          <div class="cover-label">Lyon &rarr; Varsovie &bull; Emballage agroalimentaire &bull; 8 mois</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <div class="container">
+    <article class="article-body">
+
+      <!-- Metrics banner -->
+      <div class="metrics-banner fade-in">
+        <div class="metric-item">
+          <div class="metric-value">47</div>
+          <div class="metric-label">Leads qualifiés</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">12</div>
+          <div class="metric-label">RDV obtenus</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">3</div>
+          <div class="metric-label">Appels d'offre remportés</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">1</div>
+          <div class="metric-label">Distributeur signé</div>
+        </div>
+      </div>
+
+      <!-- Le contexte -->
+      <h2 class="fade-in">Le contexte : une PME ambitieuse face à un marché inconnu</h2>
+
+      <p class="fade-in">PackFrance est une PME basée à Lyon, fondée en 2008, qui emploie 45 personnes. L'entreprise conçoit et fabrique des emballages plastiques (barquettes, films, sachets) destinés aux industriels de l'agroalimentaire : producteurs de plats préparés, laiteries, conditionneurs de fruits et légumes.</p>
+
+      <p class="fade-in">Avec un chiffre d'affaires de 8,5 M&euro; dont 95 % réalisés en France, la direction souhaitait diversifier sa clientèle et réduire sa dépendance au marché domestique. <strong>La Pologne a été identifiée comme cible prioritaire</strong> : 4e producteur agroalimentaire européen, forte demande en emballages conformes aux normes UE, et des coûts de production compétitifs attirant de nombreux industriels.</p>
+
+      <p class="fade-in">Problème : PackFrance n'avait ni contacts en Pologne, ni connaissance du tissu économique local, ni les ressources internes pour mener une prospection à l'international. C'est à ce moment que l'entreprise a fait appel à ExportPilot.</p>
+
+      <!-- Photo placeholder -->
+      <div class="article-img fade-in">
+        <div class="article-img-placeholder" style="background: linear-gradient(135deg, var(--color-primary-light), #e0e7ff);">
+          <div class="img-icon">&#x1F3ED;</div>
+          <span>Lignes de production PackFrance &mdash; site de Lyon</span>
+        </div>
+        <div class="article-img-caption">Les lignes de production PackFrance fabriquent plus de 200 millions d'emballages par an, conformes aux normes alimentaires européennes.</div>
+      </div>
+
+      <!-- L'audit -->
+      <h2 class="fade-in">Phase 1 : L'audit export &mdash; poser les fondations</h2>
+
+      <p class="fade-in">Avant toute action commerciale, ExportPilot a réalisé un <strong>audit export complet</strong> de PackFrance. L'objectif : évaluer la maturité export de l'entreprise, identifier les forces à valoriser et les points de blocage à lever.</p>
+
+      <div class="step-card fade-in">
+        <div class="step-card-header">
+          <div class="step-number">1</div>
+          <h3>Analyse de l'offre produit</h3>
+        </div>
+        <p>Mapping des gammes PackFrance vs. les besoins identifiés du marché polonais. Résultat : les barquettes PP et les films multicouches correspondent aux segments en croissance (plats préparés, produits frais sous atmosphère modifiée).</p>
+      </div>
+
+      <div class="step-card fade-in">
+        <div class="step-card-header">
+          <div class="step-number">2</div>
+          <h3>Étude réglementaire</h3>
+        </div>
+        <p>Vérification de la conformité des certifications PackFrance (BRC Packaging, ISO 22000) avec les exigences polonaises. Aucune certification supplémentaire n'était requise, mais un étiquetage en polonais des fiches techniques était nécessaire.</p>
+      </div>
+
+      <div class="step-card fade-in">
+        <div class="step-card-header">
+          <div class="step-number">3</div>
+          <h3>Positionnement prix</h3>
+        </div>
+        <p>Benchmark des prix pratiqués par les fabricants polonais et les importateurs actifs. PackFrance se positionne en <strong>milieu-haut de gamme</strong>, un créneau porteur auprès des industriels exportateurs polonais qui ont besoin d'emballages premium pour leurs propres marchés occidentaux.</p>
+      </div>
+
+      <div class="article-quote fade-in">
+        <p>&laquo; L'audit nous a ouvert les yeux. On pensait que notre prix serait un frein en Pologne. En réalité, les industriels polonais qui exportent vers l'Allemagne et la France cherchent exactement notre qualité d'emballage. &raquo;</p>
+        <cite>Thomas Renard, Directeur Commercial &mdash; PackFrance</cite>
+      </div>
+
+      <!-- Landing page locale -->
+      <h2 class="fade-in">Phase 2 : Création d'une landing page en polonais</h2>
+
+      <p class="fade-in">Pour crédibiliser la démarche auprès des prospects polonais, ExportPilot a conçu une <strong>landing page dédiée en langue polonaise</strong>, hébergée sur un sous-domaine de PackFrance.</p>
+
+      <p class="fade-in">Cette page n'est pas une simple traduction du site français. Elle a été pensée pour le marché local :</p>
+
+      <ul class="fade-in">
+        <li><strong>Argumentaire adapté</strong> &mdash; mise en avant des certifications reconnues en Pologne, focus sur les délais de livraison depuis Lyon (48h via transport routier)</li>
+        <li><strong>Témoignages localisés</strong> &mdash; intégration progressive de retours clients polonais au fur et à mesure de la prospection</li>
+        <li><strong>Formulaire de contact</strong> avec réponse automatique en polonais et transfert en temps réel vers le CRM PackFrance</li>
+        <li><strong>SEO local</strong> &mdash; optimisation sur les requêtes clés : <em>"opakowania plastikowe dla przemysłu spożywczego"</em>, <em>"dostawca opakowań z Francji"</em></li>
+      </ul>
+
+      <div class="article-img fade-in">
+        <div class="article-img-placeholder" style="background: linear-gradient(135deg, #dbeafe, #eff6ff);">
+          <div class="img-icon">&#x1F4BB;</div>
+          <span>Landing page PackFrance &mdash; version polonaise</span>
+        </div>
+        <div class="article-img-caption">La landing page en polonais a généré 23 demandes de contact organiques sur 6 mois, en complément de la prospection active.</div>
+      </div>
+
+      <!-- Prospection digitale -->
+      <h2 class="fade-in">Phase 3 : Prospection digitale en langue locale</h2>
+
+      <p class="fade-in">C'est le c&oelig;ur du dispositif ExportPilot. Une fois l'audit validé et la landing page en ligne, les <strong>campagnes de prospection multicanales</strong> ont été lancées, entièrement en polonais.</p>
+
+      <h3 class="fade-in">Sourcing des prospects</h3>
+      <p class="fade-in">À partir des bases Kompass et Apollo, ExportPilot a identifié <strong>312 entreprises cibles</strong> en Pologne : producteurs agroalimentaires de taille moyenne (CA 5-50 M&euro;), conditionneurs, et distributeurs d'emballages industriels. Chaque contact a été enrichi (décideur, email vérifié, profil LinkedIn).</p>
+
+      <h3 class="fade-in">Séquences automatisées</h3>
+      <p class="fade-in">Via Skylead, des séquences de prospection ont été déployées en 3 vagues :</p>
+
+      <ol class="fade-in">
+        <li><strong>Email d'introduction</strong> en polonais, personnalisé par secteur (laiterie, plats préparés, fruits &amp; légumes), mentionnant un avantage concret (certification BRC, livraison 48h)</li>
+        <li><strong>Relance LinkedIn</strong> &mdash; connexion + message personnalisé au décideur (directeur achats ou directeur technique)</li>
+        <li><strong>Email de valeur</strong> &mdash; envoi d'une fiche comparative montrant le coût total de possession (qualité supérieure = moins de pertes en ligne de conditionnement)</li>
+      </ol>
+
+      <div class="article-img fade-in">
+        <div class="article-img-placeholder" style="background: linear-gradient(135deg, #1e3a5f, #1e40af); color: #c4f54a;">
+          <div class="img-icon">&#x1F3AF;</div>
+          <span style="color: rgba(255,255,255,0.8);">Dashboard de prospection &mdash; 47 leads qualifiés en 6 mois</span>
+        </div>
+        <div class="article-img-caption">Le tableau de bord ExportPilot permet à PackFrance de suivre en temps réel l'avancement de chaque lead.</div>
+      </div>
+
+      <p class="fade-in"><strong>Résultats de la prospection :</strong> sur 312 entreprises contactées, 47 ont manifesté un intérêt (taux de réponse de 15 %), et 12 rendez-vous commerciaux ont été organisés en visioconférence avec interprète polonais-français.</p>
+
+      <!-- Appels d'offre -->
+      <h2 class="fade-in">Phase 4 : Veille appels d'offre &mdash; saisir les opportunités</h2>
+
+      <p class="fade-in">En parallèle de la prospection sortante, ExportPilot a activé sa <strong>veille automatisée sur les appels d'offre polonais</strong> dans le secteur de l'emballage alimentaire. Le système surveille en continu les plateformes de marchés publics et privés :</p>
+
+      <ul class="fade-in">
+        <li><strong>TED (Tenders Electronic Daily)</strong> pour les marchés publics européens</li>
+        <li><strong>Portails d'achat</strong> des grands groupes agroalimentaires polonais (Maspex, Mlekpol, Sokołów)</li>
+        <li><strong>Alertes sectorielles</strong> via les fédérations professionnelles polonaises de l'emballage</li>
+      </ul>
+
+      <p class="fade-in">En 8 mois, <strong>7 appels d'offre pertinents</strong> ont été identifiés. ExportPilot a accompagné PackFrance dans la constitution des dossiers de réponse (traduction, mise en conformité documentaire, argumentaire technique adapté). <strong>3 appels d'offre ont été remportés</strong>, générant un volume de commandes de 340 000 &euro; sur 12 mois.</p>
+
+      <div class="article-quote fade-in">
+        <p>&laquo; Sans la veille d'ExportPilot, on n'aurait jamais eu connaissance de ces appels d'offre. Le marché polonais ne fonctionne pas comme en France — il faut connaître les bons canaux. ExportPilot les connaissait. &raquo;</p>
+        <cite>Thomas Renard, Directeur Commercial &mdash; PackFrance</cite>
+      </div>
+
+      <!-- Distributeur local -->
+      <h2 class="fade-in">Phase 5 : Trouver le bon partenaire distributeur</h2>
+
+      <p class="fade-in">Pour pérenniser la présence en Pologne sans ouvrir de bureau local, PackFrance avait besoin d'un <strong>distributeur-partenaire capable de gérer le stock tampon, la relation client locale et le service après-vente</strong>.</p>
+
+      <p class="fade-in">ExportPilot a mené un processus structuré :</p>
+
+      <div class="step-card fade-in">
+        <div class="step-card-header">
+          <div class="step-number">1</div>
+          <h3>Identification &amp; shortlist</h3>
+        </div>
+        <p>Cartographie de 18 distributeurs d'emballages industriels actifs en Pologne. Filtrage sur les critères définis avec PackFrance : couverture nationale, expérience agroalimentaire, capacité de stockage &ge; 500 m&sup2;, portefeuille complémentaire (pas de concurrence directe).</p>
+      </div>
+
+      <div class="step-card fade-in">
+        <div class="step-card-header">
+          <div class="step-number">2</div>
+          <h3>Prise de contact &amp; qualification</h3>
+        </div>
+        <p>Approche directe de 8 distributeurs shortlistés, en polonais. Entretiens de qualification sur leurs capacités logistiques, leur réseau de clients agroalimentaires, et leur intérêt pour une marque française premium.</p>
+      </div>
+
+      <div class="step-card fade-in">
+        <div class="step-card-header">
+          <div class="step-number">3</div>
+          <h3>Mise en relation &amp; négociation</h3>
+        </div>
+        <p>Organisation de 3 réunions entre PackFrance et les distributeurs finalistes. ExportPilot a facilité les échanges (traduction, préparation des présentations techniques en polonais, conseil sur les pratiques commerciales locales).</p>
+      </div>
+
+      <div class="step-card fade-in">
+        <div class="step-card-header">
+          <div class="step-number">4</div>
+          <h3>Signature du partenariat</h3>
+        </div>
+        <p><strong>PolPack Distribution</strong>, basé à Łódź, a été retenu. L'accord prévoit une exclusivité régionale sur 3 voïvodies, un stock tampon de 2 conteneurs, et un objectif de CA de 500 000 &euro; la première année. PolPack distribue déjà des fournitures d'emballage pour Mlekpol et Mlekovita — un réseau idéal pour les produits PackFrance.</p>
+      </div>
+
+      <div class="article-img fade-in">
+        <div class="article-img-placeholder" style="background: linear-gradient(135deg, #dcfce7, #d1fae5);">
+          <div class="img-icon">&#x1F91D;</div>
+          <span>Signature du partenariat PackFrance &times; PolPack Distribution</span>
+        </div>
+        <div class="article-img-caption">Thomas Renard (PackFrance) et Marek Kowalski (PolPack Distribution) lors de la signature de l'accord de distribution à Łódź.</div>
+      </div>
+
+      <!-- Bilan -->
+      <h2 class="fade-in">Bilan : 8 mois pour passer de 0 à un marché structuré</h2>
+
+      <div class="metrics-banner fade-in">
+        <div class="metric-item">
+          <div class="metric-value">340 K&euro;</div>
+          <div class="metric-label">Commandes appels d'offre</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">500 K&euro;</div>
+          <div class="metric-label">Objectif distributeur an 1</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">15 %</div>
+          <div class="metric-label">Taux de réponse prospection</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">8 mois</div>
+          <div class="metric-label">Du diagnostic au 1er contrat</div>
+        </div>
+      </div>
+
+      <p class="fade-in">En 8 mois, PackFrance est passée d'une connaissance nulle du marché polonais à une <strong>présence commerciale structurée</strong> avec :</p>
+
+      <ul class="fade-in">
+        <li>Une <strong>landing page</strong> en polonais qui continue de générer des leads entrants</li>
+        <li>Un <strong>pipeline de 47 prospects qualifiés</strong> dans l'industrie agroalimentaire polonaise</li>
+        <li><strong>3 contrats</strong> remportés via appels d'offre, pour un volume de 340 000 &euro;</li>
+        <li>Un <strong>distributeur exclusif</strong> implanté avec un objectif de 500 000 &euro; en année 1</li>
+        <li>Un CA export Pologne projeté à <strong>840 000 &euro;</strong> la première année, soit ~10 % du CA total</li>
+      </ul>
+
+      <div class="article-quote fade-in">
+        <p>&laquo; On partait de zéro en Pologne. Aujourd'hui, c'est notre premier marché export et il représentera bientôt 10 % de notre chiffre d'affaires. ExportPilot a fait exactement ce qu'ils promettent : ils ont ouvert les portes, et on est entrés. &raquo;</p>
+        <cite>Thomas Renard, Directeur Commercial &mdash; PackFrance</cite>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta fade-in">
+        <h2>Votre marché vous attend</h2>
+        <p>Comme PackFrance, ouvrez vos portes à l'international. Commencez par un audit export gratuit.</p>
+        <a href="index.html#cta" class="btn btn-primary btn-lg">Demander mon audit gratuit</a>
+      </div>
+
+    </article>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div class="logo">Export<span>Pilot</span></div>
+          <p class="footer-tagline">Votre passeur digital vers l'export. Expertise terrain, data et accompagnement structuré pour PME françaises.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html#offre">Offre</a></li>
+            <li><a href="index.html#pricing">Prix</a></li>
+            <li><a href="index.html#methode">Méthode</a></li>
+            <li><a href="etude-de-cas.html">Étude de cas</a></li>
+            <li><a href="index.html#temoignages">Témoignages</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+            <li><a href="cgv.html">CGV</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@exportpilot.fr" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            contact@exportpilot.fr
+          </a>
+          <a href="https://www.linkedin.com/company/exportpilot" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn ExportPilot
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ExportPilot. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Header scroll shadow
+      var header = document.getElementById('header');
+      function onScroll() {
+        if (window.scrollY > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Fade-in observer
+      var fadeEls = document.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        var fadeObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                fadeObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        fadeEls.forEach(function (el) { fadeObserver.observe(el); });
+      } else {
+        fadeEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Politique de confidentialité d'ExportPilot. Informations sur la collecte, le traitement et la protection de vos données personnelles conformément au RGPD." />
+  <meta name="robots" content="index, follow" />
+  <title>Politique de confidentialité | ExportPilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-primary: #3B82F6;
+      --color-primary-dark: #1E40AF;
+      --color-primary-light: #DBEAFE;
+      --color-primary-lighter: #EFF6FF;
+      --color-text: #111827;
+      --color-text-secondary: #6B7280;
+      --color-bg: #FFFFFF;
+      --color-bg-alt: #F8FAFC;
+      --color-border: #E5E7EB;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 48px;
+      --radius-full: 999px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-card-hover: 0 4px 12px rgba(0,0,0,0.12);
+      --max-width: 1140px;
+      --font-family: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==============================
+       HEADER
+       ============================== */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background-color: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      border-bottom-color: var(--color-border);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+    .logo span { color: var(--color-primary); }
+
+    .nav {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    .nav a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover { color: var(--color-text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-family);
+      font-size: 0.925rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-lg { padding: 16px 32px; font-size: 1rem; }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(59,130,246,0.35);
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+    }
+
+    /* ==============================
+       ARTICLE HERO
+       ============================== */
+    .article-hero {
+      padding: 140px 0 64px;
+      background: linear-gradient(180deg, #EFF6FF 0%, rgba(219,234,254,0.2) 40%, #FFFFFF 100%);
+    }
+
+    .article-hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .article-breadcrumb a {
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    .article-breadcrumb a:hover { text-decoration: underline; }
+
+    .article-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .article-hero h1 .highlight {
+      color: var(--color-primary);
+    }
+
+    .article-lead {
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+      max-width: 700px;
+    }
+
+    /* ==============================
+       ARTICLE BODY
+       ============================== */
+    .article-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 0 96px;
+    }
+
+    .article-body h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin: 48px 0 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .article-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 32px 0 12px;
+    }
+
+    .article-body p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 24px 24px;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .article-body li {
+      margin-bottom: 8px;
+    }
+
+    .article-body strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .article-body a {
+      color: var(--color-primary);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .article-body a:hover {
+      color: var(--color-primary-dark);
+    }
+
+    .last-update {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--color-primary-lighter);
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      margin-bottom: 32px;
+    }
+
+    /* ==============================
+       FOOTER
+       ============================== */
+    .footer {
+      background: #0F172A;
+      color: #94A3B8;
+      padding: 64px 0 32px;
+      font-size: 0.875rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col li { margin-bottom: 10px; }
+
+    .footer-col a {
+      color: #94A3B8;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover { color: #fff; }
+
+    .footer-brand .logo { margin-bottom: 12px; color: #fff; }
+    .footer-brand .logo span { color: var(--color-primary); }
+
+    .footer-tagline {
+      color: #94A3B8;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #94A3B8;
+      margin-bottom: 10px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-link:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      text-align: center;
+      color: #64748B;
+      font-size: 0.8rem;
+    }
+
+    /* Fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">Export<span>Pilot</span></a>
+
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html#offre">Offre</a></li>
+            <li><a href="index.html#pricing">Tarifs</a></li>
+            <li><a href="index.html#methode">M&eacute;thode</a></li>
+            <li><a href="etude-de-cas.html">&Eacute;tude de cas</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-cta">
+          <a href="index.html#cta" class="btn btn-primary btn-lg">Audit gratuit</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="container">
+      <div class="article-hero-inner fade-in">
+        <div class="article-breadcrumb">
+          <a href="index.html">Accueil</a>
+          <span>/</span>
+          <span>Politique de confidentialit&eacute;</span>
+        </div>
+
+        <h1 class="fade-in" style="transition-delay: 0.1s">
+          Politique de <span class="highlight">confidentialit&eacute;</span>
+        </h1>
+
+        <p class="article-lead fade-in" style="transition-delay: 0.2s">
+          ExportPilot s'engage &agrave; prot&eacute;ger la vie priv&eacute;e de ses utilisateurs. Cette page d&eacute;taille la mani&egrave;re dont nous collectons, utilisons et prot&eacute;geons vos donn&eacute;es personnelles, conform&eacute;ment au R&egrave;glement G&eacute;n&eacute;ral sur la Protection des Donn&eacute;es (RGPD).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <div class="container">
+    <article class="article-body">
+
+      <div class="last-update fade-in">Derni&egrave;re mise &agrave; jour : 3 avril 2026</div>
+
+      <!-- 1. Responsable du traitement -->
+      <h2 class="fade-in">1. Responsable du traitement</h2>
+
+      <p class="fade-in">Le responsable du traitement des donn&eacute;es personnelles collect&eacute;es sur le site exportpilot.fr est :</p>
+
+      <ul class="fade-in">
+        <li><strong>Raison sociale :</strong> ExportPilot</li>
+        <li><strong>Adresse e-mail :</strong> <a href="mailto:contact@exportpilot.fr">contact@exportpilot.fr</a></li>
+      </ul>
+
+      <p class="fade-in">Pour toute question relative &agrave; la protection de vos donn&eacute;es personnelles, vous pouvez nous contacter &agrave; l'adresse ci-dessus.</p>
+
+      <!-- 2. Données collectées -->
+      <h2 class="fade-in">2. Donn&eacute;es collect&eacute;es</h2>
+
+      <p class="fade-in">Dans le cadre de l'utilisation de notre site et de nos services, nous sommes susceptibles de collecter les donn&eacute;es personnelles suivantes :</p>
+
+      <ul class="fade-in">
+        <li><strong>Nom et pr&eacute;nom</strong></li>
+        <li><strong>Adresse e-mail</strong></li>
+        <li><strong>Num&eacute;ro de t&eacute;l&eacute;phone</strong></li>
+        <li><strong>Nom de la soci&eacute;t&eacute;</strong></li>
+        <li><strong>Fonction / poste occup&eacute;</strong></li>
+      </ul>
+
+      <p class="fade-in">Ces donn&eacute;es sont collect&eacute;es via les formulaires de contact et de demande d'audit pr&eacute;sents sur notre site. Aucune donn&eacute;e n'est collect&eacute;e &agrave; votre insu.</p>
+
+      <!-- 3. Finalités du traitement -->
+      <h2 class="fade-in">3. Finalit&eacute;s du traitement</h2>
+
+      <p class="fade-in">Les donn&eacute;es personnelles collect&eacute;es sont utilis&eacute;es pour les finalit&eacute;s suivantes :</p>
+
+      <ul class="fade-in">
+        <li><strong>R&eacute;pondre &agrave; vos demandes</strong> de contact ou de renseignement</li>
+        <li><strong>Traiter les demandes d'audit export</strong> et vous recontacter dans le cadre de notre offre de services</li>
+        <li><strong>Envoyer des communications commerciales</strong> relatives &agrave; nos services (uniquement avec votre consentement pr&eacute;alable)</li>
+        <li><strong>Am&eacute;liorer notre site et nos services</strong> gr&acirc;ce &agrave; l'analyse statistique anonymis&eacute;e de la fr&eacute;quentation</li>
+        <li><strong>Respecter nos obligations l&eacute;gales</strong> et r&eacute;glementaires</li>
+      </ul>
+
+      <!-- 4. Base légale -->
+      <h2 class="fade-in">4. Base l&eacute;gale du traitement</h2>
+
+      <p class="fade-in">Le traitement de vos donn&eacute;es personnelles repose sur les bases l&eacute;gales suivantes :</p>
+
+      <ul class="fade-in">
+        <li><strong>Votre consentement</strong> (article 6.1.a du RGPD) &mdash; lorsque vous remplissez un formulaire de contact ou vous inscrivez &agrave; notre newsletter</li>
+        <li><strong>L'ex&eacute;cution d'un contrat ou de mesures pr&eacute;contractuelles</strong> (article 6.1.b du RGPD) &mdash; lorsque vous demandez un audit export ou souscrivez &agrave; l'un de nos abonnements</li>
+        <li><strong>L'int&eacute;r&ecirc;t l&eacute;gitime</strong> (article 6.1.f du RGPD) &mdash; pour l'am&eacute;lioration de nos services et la s&eacute;curit&eacute; de notre site</li>
+      </ul>
+
+      <!-- 5. Durée de conservation -->
+      <h2 class="fade-in">5. Dur&eacute;e de conservation</h2>
+
+      <p class="fade-in">Vos donn&eacute;es personnelles sont conserv&eacute;es pendant une dur&eacute;e proportionn&eacute;e &agrave; la finalit&eacute; pour laquelle elles ont &eacute;t&eacute; collect&eacute;es :</p>
+
+      <ul class="fade-in">
+        <li><strong>Donn&eacute;es de contact (prospects) :</strong> 3 ans &agrave; compter du dernier contact</li>
+        <li><strong>Donn&eacute;es clients :</strong> pendant toute la dur&eacute;e de la relation contractuelle, puis 5 ans &agrave; compter de la fin du contrat (obligations comptables et fiscales)</li>
+        <li><strong>Donn&eacute;es de navigation (cookies) :</strong> 13 mois maximum</li>
+      </ul>
+
+      <p class="fade-in">Au-del&agrave; de ces dur&eacute;es, vos donn&eacute;es sont supprim&eacute;es ou anonymis&eacute;es de mani&egrave;re irr&eacute;versible.</p>
+
+      <!-- 6. Destinataires -->
+      <h2 class="fade-in">6. Destinataires des donn&eacute;es</h2>
+
+      <p class="fade-in">Vos donn&eacute;es personnelles sont destin&eacute;es exclusivement &agrave; l'&eacute;quipe ExportPilot. Elles peuvent &eacute;galement &ecirc;tre communiqu&eacute;es aux cat&eacute;gories de destinataires suivantes :</p>
+
+      <ul class="fade-in">
+        <li><strong>Sous-traitants techniques :</strong> h&eacute;bergeur du site, outils d'envoi d'e-mails, outils d'analyse statistique &mdash; dans le strict cadre des finalit&eacute;s d&eacute;crites ci-dessus</li>
+        <li><strong>Autorit&eacute;s comp&eacute;tentes :</strong> en cas d'obligation l&eacute;gale ou de r&eacute;quisition judiciaire</li>
+      </ul>
+
+      <p class="fade-in">ExportPilot ne vend, ne loue et ne c&egrave;de en aucun cas vos donn&eacute;es personnelles &agrave; des tiers &agrave; des fins commerciales.</p>
+
+      <!-- 7. Droits des utilisateurs -->
+      <h2 class="fade-in">7. Vos droits</h2>
+
+      <p class="fade-in">Conform&eacute;ment au RGPD, vous disposez des droits suivants sur vos donn&eacute;es personnelles :</p>
+
+      <ul class="fade-in">
+        <li><strong>Droit d'acc&egrave;s</strong> &mdash; obtenir la confirmation que vos donn&eacute;es sont trait&eacute;es et en recevoir une copie</li>
+        <li><strong>Droit de rectification</strong> &mdash; demander la correction de donn&eacute;es inexactes ou incompl&egrave;tes</li>
+        <li><strong>Droit &agrave; l'effacement</strong> &mdash; demander la suppression de vos donn&eacute;es dans les conditions pr&eacute;vues par la loi</li>
+        <li><strong>Droit &agrave; la portabilit&eacute;</strong> &mdash; recevoir vos donn&eacute;es dans un format structur&eacute;, couramment utilis&eacute; et lisible par machine</li>
+        <li><strong>Droit d'opposition</strong> &mdash; vous opposer au traitement de vos donn&eacute;es pour des motifs l&eacute;gitimes</li>
+        <li><strong>Droit &agrave; la limitation du traitement</strong> &mdash; demander le gel temporaire du traitement de vos donn&eacute;es</li>
+        <li><strong>Droit de retrait du consentement</strong> &mdash; retirer &agrave; tout moment le consentement que vous avez accord&eacute;</li>
+      </ul>
+
+      <p class="fade-in">Pour exercer ces droits, adressez votre demande par e-mail &agrave; <a href="mailto:contact@exportpilot.fr">contact@exportpilot.fr</a> en joignant une copie d'un justificatif d'identit&eacute;. Nous nous engageons &agrave; vous r&eacute;pondre dans un d&eacute;lai de 30 jours.</p>
+
+      <p class="fade-in">Si vous estimez que vos droits ne sont pas respect&eacute;s, vous pouvez &eacute;galement introduire une r&eacute;clamation aupr&egrave;s de la <strong>Commission Nationale de l'Informatique et des Libert&eacute;s (CNIL)</strong> : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>.</p>
+
+      <!-- 8. Cookies -->
+      <h2 class="fade-in">8. Cookies</h2>
+
+      <p class="fade-in">Notre site utilise des cookies pour assurer son bon fonctionnement et am&eacute;liorer votre exp&eacute;rience de navigation. Les cookies sont de petits fichiers texte stock&eacute;s sur votre appareil.</p>
+
+      <h3 class="fade-in">Types de cookies utilis&eacute;s</h3>
+
+      <ul class="fade-in">
+        <li><strong>Cookies essentiels :</strong> n&eacute;cessaires au fonctionnement du site (session, s&eacute;curit&eacute;). Ils ne n&eacute;cessitent pas votre consentement.</li>
+        <li><strong>Cookies analytiques :</strong> permettent de mesurer l'audience et la fr&eacute;quentation du site de mani&egrave;re anonymis&eacute;e. D&eacute;pos&eacute;s uniquement avec votre consentement.</li>
+      </ul>
+
+      <p class="fade-in">Vous pouvez &agrave; tout moment modifier vos pr&eacute;f&eacute;rences en mati&egrave;re de cookies via les param&egrave;tres de votre navigateur. La d&eacute;sactivation de certains cookies peut affecter votre exp&eacute;rience de navigation.</p>
+
+      <!-- 9. Modifications -->
+      <h2 class="fade-in">9. Modifications de la politique de confidentialit&eacute;</h2>
+
+      <p class="fade-in">ExportPilot se r&eacute;serve le droit de modifier la pr&eacute;sente politique de confidentialit&eacute; &agrave; tout moment afin de se conformer aux &eacute;volutions l&eacute;gislatives et r&eacute;glementaires ou d'adapter ses pratiques.</p>
+
+      <p class="fade-in">En cas de modification substantielle, nous vous en informerons par un avis visible sur notre site. La date de derni&egrave;re mise &agrave; jour est indiqu&eacute;e en haut de cette page. Nous vous invitons &agrave; consulter r&eacute;guli&egrave;rement cette page.</p>
+
+      <!-- 10. Contact -->
+      <h2 class="fade-in">10. Contact</h2>
+
+      <p class="fade-in">Pour toute question concernant la pr&eacute;sente politique de confidentialit&eacute; ou l'exercice de vos droits, vous pouvez nous contacter :</p>
+
+      <ul class="fade-in">
+        <li><strong>Par e-mail :</strong> <a href="mailto:contact@exportpilot.fr">contact@exportpilot.fr</a></li>
+        <li><strong>Par courrier :</strong> ExportPilot &mdash; Service Protection des Donn&eacute;es</li>
+      </ul>
+
+    </article>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div class="logo">Export<span>Pilot</span></div>
+          <p class="footer-tagline">Votre passeur digital vers l'export pour TPE, PME et ETI fran&ccedil;aises.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html#offre">Offre</a></li>
+            <li><a href="index.html#pricing">Tarifs</a></li>
+            <li><a href="index.html#methode">M&eacute;thode</a></li>
+            <li><a href="etude-de-cas.html">&Eacute;tude de cas</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>L&eacute;gal</h4>
+          <ul>
+            <li><a href="mentions-legales.html">Mentions l&eacute;gales</a></li>
+            <li><a href="politique-confidentialite.html">Politique de confidentialit&eacute;</a></li>
+            <li><a href="cgv.html">CGV</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@exportpilot.fr" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            contact@exportpilot.fr
+          </a>
+          <a href="https://www.linkedin.com/company/exportpilot" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn ExportPilot
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ExportPilot. Tous droits r&eacute;serv&eacute;s.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Header scroll shadow
+      var header = document.getElementById('header');
+      function onScroll() {
+        if (window.scrollY > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Fade-in observer
+      var fadeEls = document.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        var fadeObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                fadeObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        fadeEls.forEach(function (el) { fadeObserver.observe(el); });
+      } else {
+        fadeEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+    });
+  </script>
+</body>
+</html>

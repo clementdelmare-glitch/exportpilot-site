@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog ExportPilot — Conseils, retours d'expérience et actualités pour réussir votre développement export. Prospection digitale, marchés internationaux, conformité." />
+  <meta name="robots" content="index, follow" />
+  <title>Blog — Conseils et actualités export | ExportPilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-primary: #3B82F6;
+      --color-primary-dark: #1E40AF;
+      --color-primary-light: #DBEAFE;
+      --color-primary-lighter: #EFF6FF;
+      --color-text: #111827;
+      --color-text-secondary: #6B7280;
+      --color-bg: #FFFFFF;
+      --color-bg-alt: #F8FAFC;
+      --color-border: #E5E7EB;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 48px;
+      --radius-full: 999px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-card-hover: 0 4px 12px rgba(0,0,0,0.12);
+      --max-width: 1140px;
+      --font-family: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==============================
+       HEADER
+       ============================== */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background-color: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      border-bottom-color: var(--color-border);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+    .logo span { color: var(--color-primary); }
+
+    .nav {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    .nav a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover { color: var(--color-text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-family);
+      font-size: 0.925rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-lg { padding: 16px 32px; font-size: 1rem; }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(59,130,246,0.35);
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+    }
+
+    /* ==============================
+       BLOG HERO
+       ============================== */
+    .blog-hero {
+      padding: 140px 0 48px;
+      background: linear-gradient(180deg, #EFF6FF 0%, rgba(219,234,254,0.2) 40%, #FFFFFF 100%);
+      text-align: center;
+    }
+
+    .blog-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .blog-hero h1 .highlight {
+      color: var(--color-primary);
+    }
+
+    .blog-hero-lead {
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ==============================
+       BLOG GRID
+       ============================== */
+    .blog-section {
+      padding: 48px 0 80px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    @media (max-width: 900px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .blog-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .blog-card-thumb {
+      height: 200px;
+      background: #1e1b4b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      padding: 16px;
+      overflow: hidden;
+    }
+
+    .mini-lp {
+      width: 100%;
+      max-width: 220px;
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      transform: scale(0.95);
+    }
+
+    .mini-lp-bar {
+      height: 8px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      padding: 0 4px;
+      gap: 2px;
+    }
+
+    .mini-lp-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+    }
+
+    .mini-lp-dot.red { background: #f87171; }
+    .mini-lp-dot.yellow { background: #facc15; }
+    .mini-lp-dot.green { background: #22c55e; }
+
+    .mini-lp-hero {
+      background: linear-gradient(135deg, #3B82F6, #1E40AF);
+      padding: 12px 10px 10px;
+      text-align: center;
+    }
+
+    .mini-lp-flag {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .mini-lp-title {
+      font-size: 0.4rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .mini-lp-btn {
+      display: inline-block;
+      font-size: 0.3rem;
+      font-weight: 700;
+      color: #1E40AF;
+      background: #fff;
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    .mini-lp-body {
+      padding: 8px 10px;
+    }
+
+    .mini-lp-line {
+      height: 3px;
+      border-radius: 2px;
+      background: #e5e7eb;
+      margin-bottom: 4px;
+    }
+
+    .mini-lp-line.short { width: 60%; }
+    .mini-lp-line.medium { width: 80%; }
+
+    .mini-lp-form {
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .mini-lp-input {
+      height: 8px;
+      background: #f1f5f9;
+      border-radius: 2px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .mini-lp-submit {
+      height: 10px;
+      background: #3B82F6;
+      border-radius: 2px;
+      margin-top: 2px;
+    }
+
+    .blog-card-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .blog-card-tag {
+      display: inline-flex;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 600;
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .blog-card-date {
+      font-size: 0.78rem;
+      color: var(--color-text-secondary);
+    }
+
+    .blog-card-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 10px;
+      color: var(--color-text);
+    }
+
+    .blog-card-body p {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .blog-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      transition: gap 0.2s ease;
+    }
+
+    .blog-card:hover .blog-card-link {
+      gap: 10px;
+    }
+
+    /* Empty state */
+    .blog-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 64px 24px;
+      color: var(--color-text-secondary);
+    }
+
+    .blog-empty-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+
+    .blog-empty h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 8px;
+    }
+
+    .blog-empty p {
+      font-size: 1rem;
+      max-width: 420px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ==============================
+       FOOTER
+       ============================== */
+    .footer {
+      background: #0F172A;
+      color: #94A3B8;
+      padding: 64px 0 32px;
+      font-size: 0.875rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+
+    .footer-col a {
+      color: #94A3B8;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover { color: #fff; }
+
+    .footer-brand .logo { margin-bottom: 12px; color: #fff; }
+    .footer-brand .logo span { color: var(--color-primary); }
+
+    .footer-tagline {
+      color: #94A3B8;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #94A3B8;
+      margin-bottom: 10px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-link:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      text-align: center;
+      color: #64748B;
+      font-size: 0.8rem;
+    }
+
+    /* Fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">Export<span>Pilot</span></a>
+
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html#offre">Offre</a></li>
+            <li><a href="index.html#pricing">Prix</a></li>
+            <li><a href="index.html#methode">Méthode</a></li>
+            <li><a href="etude-de-cas.html">Étude de cas</a></li>
+            <li><a href="index.html#temoignages">Témoignages</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="blog.html" style="color: var(--color-primary); font-weight: 600;">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-cta">
+          <a href="index.html#cta" class="btn btn-primary btn-lg">Audit gratuit</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BLOG HERO -->
+  <section class="blog-hero">
+    <div class="container">
+      <div class="fade-in">
+        <h1>Le <span class="highlight">Blog</span> ExportPilot</h1>
+        <p class="blog-hero-lead">Conseils pratiques, retours d'expérience et actualités pour réussir votre développement à l'international.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG ARTICLES -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="blog-grid">
+
+        <a href="blog/landing-page-export.html" class="blog-card fade-in">
+          <div class="blog-card-thumb">
+            <div class="mini-lp">
+              <div class="mini-lp-bar">
+                <span class="mini-lp-dot red"></span>
+                <span class="mini-lp-dot yellow"></span>
+                <span class="mini-lp-dot green"></span>
+              </div>
+              <div class="mini-lp-hero">
+                <div class="mini-lp-flag">🇵🇱</div>
+                <div class="mini-lp-title">Votre offre adaptée<br>au marché polonais</div>
+                <div class="mini-lp-btn">Kontakt →</div>
+              </div>
+              <div class="mini-lp-body">
+                <div class="mini-lp-line medium"></div>
+                <div class="mini-lp-line"></div>
+                <div class="mini-lp-line short"></div>
+                <div class="mini-lp-form">
+                  <div class="mini-lp-input"></div>
+                  <div class="mini-lp-input"></div>
+                  <div class="mini-lp-submit"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">Prospection digitale</span>
+              <span class="blog-card-date">3 avril 2026</span>
+            </div>
+            <h3>Qu'est-ce qu'une landing page ? Le levier clé de votre prospection export</h3>
+            <p>Définition, composition, formulaire de contact et visibilité grâce à la langue locale : tout comprendre sur la landing page export.</p>
+            <span class="blog-card-link">Lire l'article →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div class="logo">Export<span>Pilot</span></div>
+          <p class="footer-tagline">Votre passeur digital vers l'export. Expertise terrain, data et accompagnement structuré pour PME françaises.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html#offre">Offre</a></li>
+            <li><a href="index.html#pricing">Prix</a></li>
+            <li><a href="index.html#methode">Méthode</a></li>
+            <li><a href="etude-de-cas.html">Étude de cas</a></li>
+            <li><a href="index.html#temoignages">Témoignages</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+            <li><a href="cgv.html">CGV</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@exportpilot.fr" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            contact@exportpilot.fr
+          </a>
+          <a href="https://www.linkedin.com/company/exportpilot" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn ExportPilot
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ExportPilot. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var header = document.getElementById('header');
+      function onScroll() {
+        if (window.scrollY > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var fadeEls = document.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        var fadeObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                fadeObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        fadeEls.forEach(function (el) { fadeObserver.observe(el); });
+      } else {
+        fadeEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mentions légales du site ExportPilot.fr — éditeur, hébergement, propriété intellectuelle, données personnelles, cookies et droit applicable." />
+  <meta name="robots" content="index, follow" />
+  <title>Mentions légales | ExportPilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-primary: #3B82F6;
+      --color-primary-dark: #1E40AF;
+      --color-primary-light: #DBEAFE;
+      --color-primary-lighter: #EFF6FF;
+      --color-text: #111827;
+      --color-text-secondary: #6B7280;
+      --color-bg: #FFFFFF;
+      --color-bg-alt: #F8FAFC;
+      --color-border: #E5E7EB;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 48px;
+      --radius-full: 999px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-card-hover: 0 4px 12px rgba(0,0,0,0.12);
+      --max-width: 1140px;
+      --font-family: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==============================
+       HEADER
+       ============================== */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background-color: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      border-bottom-color: var(--color-border);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+    .logo span { color: var(--color-primary); }
+
+    .nav {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    .nav a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover { color: var(--color-text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-family);
+      font-size: 0.925rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-lg { padding: 16px 32px; font-size: 1rem; }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(59,130,246,0.35);
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+    }
+
+    /* ==============================
+       ARTICLE HERO
+       ============================== */
+    .article-hero {
+      padding: 140px 0 64px;
+      background: linear-gradient(180deg, #EFF6FF 0%, rgba(219,234,254,0.2) 40%, #FFFFFF 100%);
+    }
+
+    .article-hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .article-breadcrumb a {
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    .article-breadcrumb a:hover { text-decoration: underline; }
+
+    .article-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .article-lead {
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+      max-width: 700px;
+    }
+
+    /* ==============================
+       ARTICLE BODY
+       ============================== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding-bottom: 80px;
+    }
+
+    .article-body h2 {
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin: 56px 0 20px;
+      color: var(--color-text);
+    }
+
+    .article-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 36px 0 12px;
+      color: var(--color-text);
+    }
+
+    .article-body p {
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .article-body strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 20px;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .article-body li {
+      margin-bottom: 8px;
+      font-size: 1.02rem;
+    }
+
+    .article-body a {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+
+    .article-body a:hover {
+      color: var(--color-primary-dark);
+    }
+
+    /* ==============================
+       FOOTER
+       ============================== */
+    .footer {
+      background: #0F172A;
+      color: #94A3B8;
+      padding: 64px 0 32px;
+      font-size: 0.875rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col li { margin-bottom: 10px; }
+
+    .footer-col a {
+      color: #94A3B8;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover { color: #fff; }
+
+    .footer-brand .logo { margin-bottom: 12px; color: #fff; }
+    .footer-brand .logo span { color: var(--color-primary); }
+
+    .footer-tagline {
+      color: #94A3B8;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #94A3B8;
+      margin-bottom: 10px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-link:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      text-align: center;
+      color: #64748B;
+      font-size: 0.8rem;
+    }
+
+    /* Fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">Export<span>Pilot</span></a>
+
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html#offre">Offre</a></li>
+            <li><a href="index.html#pricing">Tarifs</a></li>
+            <li><a href="index.html#methode">M&eacute;thode</a></li>
+            <li><a href="etude-de-cas.html">&Eacute;tude de cas</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-cta">
+          <a href="index.html#cta" class="btn btn-primary btn-lg">Audit gratuit</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="container">
+      <div class="article-hero-inner fade-in">
+        <div class="article-breadcrumb">
+          <a href="index.html">Accueil</a>
+          <span>/</span>
+          <span>Mentions l&eacute;gales</span>
+        </div>
+
+        <h1 class="fade-in" style="transition-delay: 0.1s">
+          Mentions l&eacute;gales
+        </h1>
+
+        <p class="article-lead fade-in" style="transition-delay: 0.2s">
+          Informations l&eacute;gales relatives au site exportpilot.fr, conform&eacute;ment aux dispositions de la loi n&deg; 2004-575 du 21 juin 2004 pour la confiance dans l'&eacute;conomie num&eacute;rique (LCEN).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <div class="container">
+    <article class="article-body">
+
+      <!-- 1. Éditeur du site -->
+      <h2 class="fade-in">1. &Eacute;diteur du site</h2>
+
+      <p class="fade-in">Le site <strong>exportpilot.fr</strong> est &eacute;dit&eacute; par :</p>
+
+      <ul class="fade-in">
+        <li><strong>Raison sociale :</strong> ExportPilot</li>
+        <li><strong>Forme juridique :</strong> [Forme juridique &agrave; compl&eacute;ter]</li>
+        <li><strong>Capital social :</strong> [Montant &agrave; compl&eacute;ter] &euro;</li>
+        <li><strong>SIRET :</strong> [Num&eacute;ro SIRET &agrave; compl&eacute;ter]</li>
+        <li><strong>RCS :</strong> [Ville et num&eacute;ro RCS &agrave; compl&eacute;ter]</li>
+        <li><strong>Num&eacute;ro de TVA intracommunautaire :</strong> [Num&eacute;ro TVA &agrave; compl&eacute;ter]</li>
+        <li><strong>Si&egrave;ge social :</strong> [Adresse compl&egrave;te &agrave; compl&eacute;ter]</li>
+        <li><strong>Directeur de la publication :</strong> [Nom du directeur de publication &agrave; compl&eacute;ter]</li>
+        <li><strong>Email :</strong> <a href="mailto:contact@exportpilot.fr">contact@exportpilot.fr</a></li>
+      </ul>
+
+      <!-- 2. Hébergement -->
+      <h2 class="fade-in">2. H&eacute;bergement</h2>
+
+      <p class="fade-in">Le site exportpilot.fr est h&eacute;berg&eacute; par :</p>
+
+      <ul class="fade-in">
+        <li><strong>H&eacute;bergeur :</strong> Hostinger International Ltd</li>
+        <li><strong>Adresse :</strong> 61 Lordou Vironos Street, 6023 Larnaca, Chypre</li>
+        <li><strong>Site web :</strong> <a href="https://www.hostinger.fr" target="_blank" rel="noopener noreferrer">www.hostinger.fr</a></li>
+      </ul>
+
+      <!-- 3. Propriété intellectuelle -->
+      <h2 class="fade-in">3. Propri&eacute;t&eacute; intellectuelle</h2>
+
+      <p class="fade-in">L'ensemble du contenu du site exportpilot.fr (textes, images, graphismes, logo, ic&ocirc;nes, vid&eacute;os, logiciels, bases de donn&eacute;es, structure g&eacute;n&eacute;rale) est la propri&eacute;t&eacute; exclusive d'ExportPilot ou de ses partenaires et est prot&eacute;g&eacute; par les lois fran&ccedil;aises et internationales relatives &agrave; la propri&eacute;t&eacute; intellectuelle.</p>
+
+      <p class="fade-in">Toute reproduction, repr&eacute;sentation, modification, publication, adaptation ou exploitation totale ou partielle du contenu du site, par quelque proc&eacute;d&eacute; que ce soit, est interdite sans l'autorisation &eacute;crite pr&eacute;alable d'ExportPilot, &agrave; l'exception de l'utilisation pour un usage priv&eacute; sous r&eacute;serve du respect des dispositions des articles L.122-5 et L.211-3 du Code de la propri&eacute;t&eacute; intellectuelle.</p>
+
+      <p class="fade-in">Toute exploitation non autoris&eacute;e du site ou de son contenu est constitutive de contrefa&ccedil;on et sera poursuivie conform&eacute;ment aux dispositions des articles L.335-2 et suivants du Code de la propri&eacute;t&eacute; intellectuelle.</p>
+
+      <!-- 4. Responsabilité -->
+      <h2 class="fade-in">4. Responsabilit&eacute;</h2>
+
+      <p class="fade-in">ExportPilot s'efforce d'assurer au mieux l'exactitude et la mise &agrave; jour des informations diffus&eacute;es sur le site. Toutefois, ExportPilot ne peut garantir l'exactitude, la pr&eacute;cision ou l'exhaustivit&eacute; des informations mises &agrave; disposition sur le site.</p>
+
+      <p class="fade-in">En cons&eacute;quence, ExportPilot d&eacute;cline toute responsabilit&eacute; :</p>
+
+      <ul class="fade-in">
+        <li>pour toute impr&eacute;cision, inexactitude ou omission portant sur des informations disponibles sur le site ;</li>
+        <li>pour tout dommage r&eacute;sultant d'une intrusion frauduleuse d'un tiers ayant entra&icirc;n&eacute; une modification des informations mises &agrave; disposition sur le site ;</li>
+        <li>et plus g&eacute;n&eacute;ralement, pour tout dommage direct ou indirect, quelles qu'en soient les causes, origines, natures ou cons&eacute;quences, provoqu&eacute; en raison de l'acc&egrave;s de quiconque au site ou de l'impossibilit&eacute; d'y acc&eacute;der.</li>
+      </ul>
+
+      <p class="fade-in">Le site peut contenir des liens hypertextes vers d'autres sites. ExportPilot n'exerce aucun contr&ocirc;le sur ces sites et d&eacute;cline toute responsabilit&eacute; quant &agrave; leur contenu.</p>
+
+      <!-- 5. Données personnelles -->
+      <h2 class="fade-in">5. Donn&eacute;es personnelles</h2>
+
+      <p class="fade-in">ExportPilot s'engage &agrave; prot&eacute;ger la vie priv&eacute;e des utilisateurs du site conform&eacute;ment au R&egrave;glement G&eacute;n&eacute;ral sur la Protection des Donn&eacute;es (RGPD &mdash; R&egrave;glement UE 2016/679) et &agrave; la loi Informatique et Libert&eacute;s du 6 janvier 1978 modifi&eacute;e.</p>
+
+      <p class="fade-in">Les donn&eacute;es personnelles collect&eacute;es via les formulaires du site (nom, email, t&eacute;l&eacute;phone, entreprise) sont destin&eacute;es exclusivement &agrave; ExportPilot et sont utilis&eacute;es pour r&eacute;pondre &agrave; vos demandes, assurer le suivi commercial et am&eacute;liorer nos services.</p>
+
+      <p class="fade-in">Conform&eacute;ment &agrave; la r&eacute;glementation en vigueur, vous disposez d'un droit d'acc&egrave;s, de rectification, de suppression, d'opposition, de limitation du traitement et de portabilit&eacute; de vos donn&eacute;es. Vous pouvez exercer ces droits en &eacute;crivant &agrave; : <a href="mailto:contact@exportpilot.fr">contact@exportpilot.fr</a>.</p>
+
+      <p class="fade-in">Pour plus de d&eacute;tails sur la mani&egrave;re dont nous traitons vos donn&eacute;es, veuillez consulter notre <a href="politique-confidentialite.html">Politique de confidentialit&eacute;</a>.</p>
+
+      <!-- 6. Cookies -->
+      <h2 class="fade-in">6. Cookies</h2>
+
+      <p class="fade-in">Le site exportpilot.fr est susceptible d'utiliser des cookies. Un cookie est un petit fichier texte d&eacute;pos&eacute; sur votre terminal (ordinateur, tablette, smartphone) lors de la visite d'un site web.</p>
+
+      <p class="fade-in">Les cookies utilis&eacute;s sur ce site peuvent avoir les finalit&eacute;s suivantes :</p>
+
+      <ul class="fade-in">
+        <li><strong>Cookies strictement n&eacute;cessaires :</strong> ils permettent le bon fonctionnement du site et ne peuvent pas &ecirc;tre d&eacute;sactiv&eacute;s.</li>
+        <li><strong>Cookies de mesure d'audience :</strong> ils permettent d'analyser la fr&eacute;quentation et l'utilisation du site afin d'en am&eacute;liorer les performances et le contenu.</li>
+        <li><strong>Cookies fonctionnels :</strong> ils permettent de m&eacute;moriser vos pr&eacute;f&eacute;rences et de personnaliser votre exp&eacute;rience de navigation.</li>
+      </ul>
+
+      <p class="fade-in">Vous pouvez &agrave; tout moment param&eacute;trer votre navigateur pour accepter ou refuser les cookies. Le refus de certains cookies peut toutefois limiter votre acc&egrave;s &agrave; certaines fonctionnalit&eacute;s du site.</p>
+
+      <!-- 7. Droit applicable -->
+      <h2 class="fade-in">7. Droit applicable</h2>
+
+      <p class="fade-in">Les pr&eacute;sentes mentions l&eacute;gales sont soumises au droit fran&ccedil;ais. En cas de litige, et apr&egrave;s tentative de recherche d'une solution amiable, les tribunaux fran&ccedil;ais seront seuls comp&eacute;tents.</p>
+
+      <p class="fade-in"><strong>Derni&egrave;re mise &agrave; jour :</strong> avril 2026.</p>
+
+    </article>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div class="logo">Export<span>Pilot</span></div>
+          <p class="footer-tagline">Votre passeur digital vers l'export pour TPE, PME et ETI fran&ccedil;aises.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html#offre">Offre</a></li>
+            <li><a href="index.html#pricing">Tarifs</a></li>
+            <li><a href="index.html#methode">M&eacute;thode</a></li>
+            <li><a href="etude-de-cas.html">&Eacute;tude de cas</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>L&eacute;gal</h4>
+          <ul>
+            <li><a href="mentions-legales.html">Mentions l&eacute;gales</a></li>
+            <li><a href="politique-confidentialite.html">Politique de confidentialit&eacute;</a></li>
+            <li><a href="cgv.html">CGV</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@exportpilot.fr" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            contact@exportpilot.fr
+          </a>
+          <a href="https://www.linkedin.com/company/exportpilot" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn ExportPilot
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ExportPilot. Tous droits r&eacute;serv&eacute;s.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Header scroll shadow
+      var header = document.getElementById('header');
+      function onScroll() {
+        if (window.scrollY > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Fade-in observer
+      var fadeEls = document.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        var fadeObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                fadeObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        fadeEls.forEach(function (el) { fadeObserver.observe(el); });
+      } else {
+        fadeEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+    });
+  </script>
+</body>
+</html>

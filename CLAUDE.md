@@ -9,7 +9,7 @@ Offre de conseil export digitalisée ciblant les PME françaises. Positionnement
 ## Architecture de l'offre
 
 1. **Audit export payant obligatoire** — point d'entrée, 990€–2 990€ HT
-2. **Abonnements mensuels** (6 mois min) — Starter 590€ / Business 790€ / Expert 2 490€ HT
+2. **Abonnements mensuels** (3 mois min) — Starter 590€ / Business 790€ / Expert 2 490€ HT
 3. **Missions terrain & salons** — vendues hors abonnements
 4. **Services one-shot** — formation, conformité, financement, recrutement agents
 
