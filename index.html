@@ -334,9 +334,76 @@
       flex-shrink: 0;
     }
 
+    /* Burger button */
+    .burger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1002;
+    }
+    .burger span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: var(--color-text);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .burger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .burger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .burger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      z-index: 999;
+      flex-direction: column;
+      gap: 16px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+    .mobile-menu a {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--color-border);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+    .mobile-menu a:hover {
+      color: var(--color-primary);
+    }
+
     @media (max-width: 860px) {
       .nav {
         display: none;
+      }
+      .header-cta {
+        display: none;
+      }
+      .burger {
+        display: block;
       }
     }
 
@@ -576,10 +643,20 @@
     @media (max-width: 600px) {
       .stats-grid {
         flex-direction: column;
+        align-items: center;
         gap: 32px;
+      }
+      .stat-item {
+        text-align: center;
+        padding: 0 16px;
+        width: 100%;
+        max-width: 100%;
       }
       .stat-item:not(:last-child)::after {
         display: none;
+      }
+      .stat-label {
+        max-width: 100%;
       }
     }
 
@@ -2590,7 +2667,6 @@
           <ul class="nav">
             <li><a href="#offre">Offre</a></li>
             <li><a href="#pricing">Tarifs</a></li>
-
             <li><a href="etude-de-cas.html">Étude de cas</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="blog.html">Blog</a></li>
@@ -2599,6 +2675,20 @@
 
         <div class="header-cta">
           <a href="#cta" class="btn btn-primary btn-lg">Audit gratuit</a>
+        </div>
+
+        <button class="burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- Menu mobile -->
+        <div class="mobile-menu" id="mobile-menu">
+          <a href="#offre">Offre</a>
+          <a href="#pricing">Tarifs</a>
+          <a href="etude-de-cas.html">Étude de cas</a>
+          <a href="#faq">FAQ</a>
+          <a href="blog.html">Blog</a>
+          <a href="#cta" class="btn btn-primary" style="text-align:center; margin-top:8px;">Audit gratuit</a>
         </div>
       </div>
     </div>
@@ -3880,6 +3970,23 @@
     });
 
     document.addEventListener('DOMContentLoaded', function () {
+
+      // ---- Burger menu ----
+      var burger = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (burger && mobileMenu) {
+        burger.addEventListener('click', function() {
+          burger.classList.toggle('active');
+          mobileMenu.classList.toggle('open');
+        });
+        // Fermer le menu au clic sur un lien
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            burger.classList.remove('active');
+            mobileMenu.classList.remove('open');
+          });
+        });
+      }
 
       // ---- Header scroll shadow ----
       var header = document.getElementById('header');
