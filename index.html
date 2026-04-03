@@ -2787,7 +2787,7 @@
         </h1>
 
         <p class="hero-subtitle fade-in" style="transition-delay: 0.2s">
-          ExportPilot combine expertise terrain, data et digital pour gravir de nouveaux sommets internationaux.
+          Vous êtes Dirigeants de PME, Responsable ou commercial Export ? L'export est au coeur de votre stratégie 2026 ?<br/><strong>Nous avons une solution pour vous accompagner !</strong>
         </p>
 
         <div class="hero-ctas fade-in" style="transition-delay: 0.3s">
@@ -3755,7 +3755,10 @@
         <h2 class="section-title">Prêt à ouvrir de nouveaux marchés ?</h2>
         <p class="section-subtitle">Commencez par un audit export 100% gratuit.<br/>Sans engagement, sans surprise.</p>
 
-        <form class="cta-form" id="cta-form" onsubmit="return handleCtaForm(event)">
+        <form class="cta-form" id="cta-form" action="https://formspree.io/f/meeprlgo" method="POST">
+          <input type="hidden" name="_subject" value="Nouvelle demande audit export — ExportPilot" />
+          <input type="hidden" name="_next" value="https://exportpilot.fr/index.html#cta" />
+          <input type="text" name="_gotcha" style="display:none" />
           <div class="cta-form-row">
             <div class="cta-form-group">
               <label for="cta-nom">Nom</label>
@@ -3849,31 +3852,31 @@
        TASK 10 — JS CONSOLIDATED
        ============================== -->
   <script>
-    function handleCtaForm(e) {
+    document.getElementById('cta-form').addEventListener('submit', function(e) {
       e.preventDefault();
       var form = e.target;
-      var data = {
-        nom: form.nom.value,
-        prenom: form.prenom.value,
-        societe: form.societe.value,
-        email: form.email.value,
-        telephone: form.telephone.value || ''
-      };
-      var subject = encodeURIComponent('Demande audit export — ' + data.societe);
-      var body = encodeURIComponent(
-        'Nom : ' + data.nom + '\n' +
-        'Prénom : ' + data.prenom + '\n' +
-        'Société : ' + data.societe + '\n' +
-        'Email : ' + data.email + '\n' +
-        'Téléphone : ' + (data.telephone || 'Non renseigné') + '\n'
-      );
-      window.location.href = 'mailto:contact@exportpilot.fr?subject=' + subject + '&body=' + body;
       var btn = form.querySelector('button[type="submit"]');
-      btn.textContent = 'Demande envoyée ✓';
+      btn.textContent = 'Envoi en cours...';
       btn.disabled = true;
-      btn.style.opacity = '0.7';
-      return false;
-    }
+
+      fetch('https://formspree.io/f/meeprlgo', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+        if (response.ok) {
+          btn.textContent = 'Demande envoyée ✓';
+          btn.style.background = '#10B981';
+          form.reset();
+        } else {
+          btn.textContent = 'Erreur — Réessayer';
+          btn.disabled = false;
+        }
+      }).catch(function() {
+        btn.textContent = 'Erreur — Réessayer';
+        btn.disabled = false;
+      });
+    });
 
     document.addEventListener('DOMContentLoaded', function () {
 
