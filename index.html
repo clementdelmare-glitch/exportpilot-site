@@ -43,6 +43,10 @@
       padding: 0;
     }
 
+    html, body {
+      overflow-x: hidden;
+    }
+
     body {
       font-family: var(--font-family);
       color: var(--color-text);
@@ -1796,6 +1800,20 @@
       .pillar-visual {
         flex: 0 0 auto;
         width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .pillar-content {
+        text-align: center;
+      }
+      .pillar-content .pillar-badge,
+      .pillar-content .pillar-link,
+      .pillar-content .pillar-price {
+        text-align: center;
+      }
+      .section-subtitle {
+        margin-left: auto;
+        margin-right: auto;
       }
     }
 
@@ -3734,7 +3752,7 @@
   <section class="cta-section" id="cta">
     <div class="container">
       <div class="cta-inner fade-in">
-        <h2 class="section-title" style="white-space: nowrap;">Prêt à ouvrir de nouveaux marchés ?</h2>
+        <h2 class="section-title">Prêt à ouvrir de nouveaux marchés ?</h2>
         <p class="section-subtitle">Commencez par un audit export 100% gratuit.<br/>Sans engagement, sans surprise.</p>
 
         <form class="cta-form" id="cta-form" onsubmit="return handleCtaForm(event)">
