@@ -249,6 +249,24 @@
       transform: rotate(-1deg);
     }
 
+    .red-strikethrough {
+      position: relative;
+      display: inline-block;
+    }
+
+    .red-strikethrough::after {
+      content: '';
+      position: absolute;
+      left: -4px;
+      right: -4px;
+      top: 50%;
+      height: 4px;
+      background: #EF4444;
+      border-radius: 2px;
+      transform: rotate(-2deg);
+      z-index: 1;
+    }
+
     /* ==============================
        FADE-IN ANIMATION
        ============================== */
@@ -675,6 +693,76 @@
     .offre-header .section-title {
       max-width: 640px;
       margin: 0 auto 16px;
+    }
+
+    /* Service Nav Cards */
+    .service-nav {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    .service-nav-card {
+      flex: 1;
+      min-width: 160px;
+      max-width: 200px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: var(--radius-md);
+      padding: 16px 16px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .service-nav-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.12);
+      transform: translateY(-4px);
+    }
+
+    .service-nav-card .nav-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .service-nav-card .nav-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.3;
+    }
+
+    .service-nav-card .nav-desc {
+      display: block;
+      font-size: 0.75rem;
+      color: #6b7280;
+      font-weight: 400;
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    .service-nav-group {
+      margin-bottom: 12px;
+    }
+
+    .service-nav-group-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #3B82F6;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #DBEAFE;
+    }
+
+    .service-nav-group .service-nav {
+      margin-top: 0;
     }
 
     .pillar {
@@ -2605,6 +2693,7 @@
       color: var(--color-text);
       border-bottom: 1px solid var(--color-border);
       line-height: 1.4;
+      text-align: left;
     }
 
     .pricing-features-list li:last-child {
@@ -2616,6 +2705,8 @@
       font-weight: 700;
       font-size: 16px;
       flex-shrink: 0;
+      width: 18px;
+      text-align: center;
     }
 
     .pricing-disabled {
@@ -2661,7 +2752,7 @@
   <header class="header" id="header">
     <div class="container">
       <div class="header-inner">
-        <a href="#" class="logo">Export<span>Pilot</span></a>
+        <a href="#" class="logo"><img src="logo/clem_dlmr.png" alt="ExportPilot" style="height:50px;"></a>
 
         <nav>
           <ul class="nav">
@@ -2870,7 +2961,7 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-pill fade-in">
-          <span class="pill">&#x1F30D; Le premier dispositif export qui allie présence digitale et terrain 🇫🇷</span>
+          <span class="pill">&#x1F30D; Faire rayonner les sociétés Françaises partout dans le monde 🇫🇷</span>
         </div>
 
         <h1 class="fade-in" style="transition-delay: 0.1s">
@@ -2878,7 +2969,7 @@
         </h1>
 
         <p class="hero-subtitle fade-in" style="transition-delay: 0.2s">
-          Vous êtes Dirigeants de PME, Responsable ou commercial Export ? L'export est au coeur de votre stratégie 2026 ?<br/><strong>Nous avons une solution pour vous accompagner !</strong>
+          Vous êtes Dirigeants, Responsable ou Commercial Export ?<br/>L'international est au coeur de votre stratégie 2026 ?<br/><strong>ExportPilot est la solution pour vous accompagner !</strong>
         </p>
 
         <div class="hero-ctas fade-in" style="transition-delay: 0.3s">
@@ -2903,10 +2994,11 @@
        ============================== -->
   <section class="stats-banner">
     <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center;">Un constat qui nous pousse à <span class="handwritten-highlight">agir</span></h2>
       <div class="stats-grid fade-in">
 
         <div class="stat-item">
-          <div class="stat-number">44&thinsp;500</div>
+          <div class="stat-number" style="color:#3B82F6;">44&thinsp;500</div>
           <div class="stat-label">nouvelles entreprises exportatrices chaque année en France</div>
         </div>
 
@@ -2916,12 +3008,7 @@
         </div>
 
         <div class="stat-item">
-          <div class="stat-number">10+</div>
-          <div class="stat-label">ans d'expertise terrain sur les marchés internationaux</div>
-        </div>
-
-        <div class="stat-item">
-          <div class="stat-number">N°1</div>
+          <div class="stat-number" style="color:#DC2626;">1<sup style="font-size:0.5em;">ère</sup></div>
           <div class="stat-label">cause d'abandon : le <span class="handwritten-highlight">manque de dispositif d'accompagnement</span> des entreprises françaises</div>
         </div>
 
@@ -2936,16 +3023,55 @@
   <section class="offre-section" id="offre">
     <div class="container">
 
-      <div class="offre-header fade-in">
-        <h2 class="section-title">Votre <span class="handwritten-highlight">dashboard</span> est alimenté quotidiennement avec l'essentiel pour performer sur vos marchés internationaux 🌍</h2>
-        <p class="section-subtitle" style="margin: 0 auto;">De l'audit initial à l'accompagnement terrain, ExportPilot structure toutes les informations primordiales. Place à l'<span class="handwritten-highlight">action</span> !</p>
+      <div class="offre-header fade-in" style="text-align:center;">
+        <h2 class="section-title">ExportPilot, c'est <span class="handwritten-highlight">quoi</span> ?</h2>
+        <p class="section-subtitle" style="margin: 0 auto; max-width: 720px;">ExportPilot est votre partenaire opérationnel pour conquérir de nouveaux marchés à l'international. Nous combinons <strong style="color:#3B82F6;">data, digital et terrain</strong> pour vous ouvrir toutes les portes de votre développement.</p>
+
+        <h3 style="margin-top:40px; font-size:1.3rem; font-weight:700; color:var(--color-text);">Notre <span class="handwritten-highlight">conviction</span></h3>
+        <p class="section-subtitle" style="margin: 0 auto; max-width: 720px;">Chez ExportPilot, nous sommes persuadés que le développement international passe par une <strong style="color:#3B82F6;">omniprésence multicanal</strong>. Nous activons tous les leviers disponibles pour vous faire connaître à votre cible.</p>
+
+        <h3 style="margin-top:40px; font-size:1.3rem; font-weight:700; color:var(--color-text);">Comment ça <span class="handwritten-highlight">marche</span> ?</h3>
+        <p class="section-subtitle" style="margin: 0 auto; max-width: 720px;">Après un diagnostic concret et précis permettant de statuer sur la pertinence de développement de vos produits sur le(s) marché(s) cible(s), vous avez accès à votre <strong style="color:#3B82F6;">dashboard personnalisé</strong> qui centralise l'ensemble des données nécessaires à votre développement.</p>
+
+        <div class="service-nav">
+          <a href="#pillar-digital" class="service-nav-card">
+            <span class="nav-icon">🌐</span>
+            <span class="nav-label">Présence digitale</span>
+            <span class="nav-desc">Landing page traduite pour chaque marché cible</span>
+          </a>
+          <a href="#pillar-prospection" class="service-nav-card">
+            <span class="nav-icon">🎯</span>
+            <span class="nav-label">Prospection ciblée</span>
+            <span class="nav-desc">Séquences multicanales pour toucher vos acheteurs</span>
+          </a>
+          <a href="#pillar-veille-concurrence" class="service-nav-card">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Veille concurrentielle</span>
+            <span class="nav-desc">Suivez vos concurrents en temps réel</span>
+          </a>
+          <a href="#pillar-appels-offre" class="service-nav-card">
+            <span class="nav-icon">📋</span>
+            <span class="nav-label">Appels d'offres</span>
+            <span class="nav-desc">Détectez les opportunités avant vos concurrents</span>
+          </a>
+          <a href="#pillar-actualites" class="service-nav-card">
+            <span class="nav-icon">📰</span>
+            <span class="nav-label">Actualités</span>
+            <span class="nav-desc">Restez informé des tendances de votre secteur</span>
+          </a>
+          <a href="#pillar-terrain" class="service-nav-card">
+            <span class="nav-icon">✈️</span>
+            <span class="nav-label">Présence terrain</span>
+            <span class="nav-desc">Salons, missions et rencontres sur vos marchés</span>
+          </a>
+        </div>
       </div>
 
       <!-- Pillar 1 — Audit Export -->
-      <div class="pillar fade-in">
+      <div class="pillar fade-in" id="pillar-audit">
         <div class="pillar-content">
           <div class="pillar-badge">
-            <span class="badge">Point d'entrée</span>
+            <span class="badge">Point d'entrée — Audit Export</span>
           </div>
           <h3>Un diagnostic complet pour partir du bon pied : choisir les bonnes cibles</h3>
           <p>
@@ -3007,11 +3133,50 @@
         </div>
       </div>
 
-      <!-- Pillar 2 — Prospection digitale -->
-      <div class="pillar fade-in">
+      <!-- Pillar — Présence digitale -->
+      <div class="pillar fade-in" id="pillar-digital">
         <div class="pillar-content">
           <div class="pillar-badge">
-            <span class="badge">Prospection digitale</span>
+            <span class="badge">Présence digitale</span>
+          </div>
+          <h3>Une landing page pour maximiser votre visibilité</h3>
+          <p>
+            Nous créons une <strong>landing page</strong> dédiée à chaque marché cible : un résumé percutant de votre offre, traduit et adapté dans la langue locale. Vous gagnez immédiatement en crédibilité auprès de vos prospects étrangers et vous facilitez le travail de vos campagnes de prospection digitale.
+          </p>
+          <a href="#contact" class="pillar-link">Voir nos exemples &#x2192;</a>
+        </div>
+        <div class="pillar-visual">
+          <div class="landing-mockup" style="background:#1e1b4b; border-radius:16px; padding:20px; max-width:480px; color:#fff; font-size:0.85rem;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px; background:#2d2a5e; border-radius:8px; padding:8px 12px;">
+              <span style="display:flex; gap:4px;"><span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:inline-block;"></span><span style="width:10px;height:10px;border-radius:50%;background:#febc2e;display:inline-block;"></span><span style="width:10px;height:10px;border-radius:50%;background:#28c840;display:inline-block;"></span></span>
+              <span style="flex:1; text-align:center; color:#94a3b8; font-size:0.75rem;">🔒 votre-entreprise.pl</span>
+            </div>
+            <div style="background:#fff; border-radius:12px; padding:24px; color:#111;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; font-size:0.8rem;">
+                <span style="font-weight:800;">Votre<span style="color:#3B82F6;">Marque</span></span>
+                <span style="color:#6b7280;">Produkty &nbsp; O nas &nbsp; Kontakt</span>
+                <span style="background:#3B82F6; color:#fff; padding:4px 10px; border-radius:6px; font-size:0.7rem;">Zapytaj o ofertę</span>
+              </div>
+              <div style="text-align:center; margin-bottom:16px;">🇵🇱</div>
+              <h4 style="text-align:center; font-size:1rem; margin-bottom:8px;">Innowacyjne rozwiązania<br>dla polskiego rynku</h4>
+              <p style="text-align:center; font-size:0.7rem; color:#6b7280; margin-bottom:16px;">Oferujemy najwyższej jakości produkty dostosowane do potrzeb lokalnego rynku.</p>
+              <div style="text-align:center; margin-bottom:20px;"><span style="background:#3B82F6; color:#fff; padding:8px 16px; border-radius:8px; font-size:0.75rem;">Skontaktuj się z nami →</span></div>
+              <div style="display:flex; justify-content:space-around; font-size:0.65rem; color:#6b7280; text-align:center;">
+                <span>📦<br>Szybka dostawa</span>
+                <span>🤝<br>Lokalne wsparcie</span>
+                <span>✅<br>Certyfikaty UE</span>
+              </div>
+            </div>
+            <div style="margin-top:12px;"><span style="background:#22c55e; color:#fff; padding:4px 12px; border-radius:20px; font-size:0.7rem;">🌍 Traduit et adapté en polonais</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 2 — Prospection digitale -->
+      <div class="pillar fade-in" id="pillar-prospection">
+        <div class="pillar-content">
+          <div class="pillar-badge">
+            <span class="badge">Prospection ciblée</span>
           </div>
           <h3>Une prospection ultra ciblée dans les territoires visés</h3>
           <p>
@@ -3070,72 +3235,11 @@
         </div>
       </div>
 
-      <!-- Pillar — Landing page locale -->
-      <div class="pillar fade-in">
-        <div class="pillar-content">
-          <div class="pillar-badge">
-            <span class="badge">Présence digitale</span>
-          </div>
-          <h3>Une landing page pour maximiser votre visibilité</h3>
-          <p>
-            Nous créons une <a href="blog/landing-page-export.html" style="color:var(--color-primary); text-decoration:underline; font-weight:600;">landing page</a> dédiée à chaque marché cible : un résumé percutant de votre offre, traduit et adapté dans la langue locale. Vous gagnez immédiatement en crédibilité auprès de vos prospects étrangers et vous facilitez le travail de vos campagnes de prospection digitale.
-          </p>
-          <a href="#cta" class="pillar-link">Demander une démo &#x2192;</a>
-        </div>
-        <div class="pillar-visual">
-          <div class="lp-mockup">
-            <div class="lp-browser-bar">
-              <div class="lp-browser-dots">
-                <span></span><span></span><span></span>
-              </div>
-              <div class="lp-browser-url">
-                <span class="lp-lock">&#x1F512;</span> votre-entreprise.pl
-              </div>
-            </div>
-            <div class="lp-page">
-              <div class="lp-nav">
-                <div class="lp-nav-brand">Votre<span>Marque</span></div>
-                <div class="lp-nav-links">
-                  <span>Produkty</span>
-                  <span>O nas</span>
-                  <span>Kontakt</span>
-                </div>
-                <div class="lp-nav-cta">Zapytaj o ofertę</div>
-              </div>
-              <div class="lp-hero">
-                <div class="lp-hero-flag">🇵🇱</div>
-                <h4>Innowacyjne rozwiązania<br/>dla polskiego rynku</h4>
-                <p>Oferujemy najwyższej jakości produkty dostosowane do potrzeb lokalnego rynku. Zaufaj ekspertom z wieloletnim doświadczeniem.</p>
-                <div class="lp-hero-btn">Skontaktuj się z nami →</div>
-              </div>
-              <div class="lp-features">
-                <div class="lp-feature">
-                  <div class="lp-feature-icon">📦</div>
-                  <div class="lp-feature-text">Szybka dostawa</div>
-                </div>
-                <div class="lp-feature">
-                  <div class="lp-feature-icon">🤝</div>
-                  <div class="lp-feature-text">Lokalne wsparcie</div>
-                </div>
-                <div class="lp-feature">
-                  <div class="lp-feature-icon">✅</div>
-                  <div class="lp-feature-text">Certyfikaty UE</div>
-                </div>
-              </div>
-              <div class="lp-footer-bar">
-                <span>© 2026 VotreMarque Polska — Wszelkie prawa zastrzeżone</span>
-              </div>
-            </div>
-            <div class="lp-lang-badge">🌍 Traduit et adapté en polonais</div>
-          </div>
-        </div>
-      </div>
-
       <!-- Pillar 3 — Veille concurrentielle -->
-      <div class="pillar fade-in">
+      <div class="pillar fade-in" id="pillar-veille-concurrence">
         <div class="pillar-content">
           <div class="pillar-badge">
-            <span class="badge">Intelligence marché</span>
+            <span class="badge">Veille concurrentielle</span>
           </div>
           <h3>Gardez un coup d'avance sur vos concurrents</h3>
           <p>
@@ -3222,10 +3326,10 @@
       </div>
 
       <!-- Pillar 4 — Veille appels d'offre -->
-      <div class="pillar fade-in">
+      <div class="pillar fade-in" id="pillar-appels-offre">
         <div class="pillar-content">
           <div class="pillar-badge">
-            <span class="badge">Veille stratégique</span>
+            <span class="badge">Veille stratégique — Appels d'offres</span>
           </div>
           <h3>Ne ratez plus aucun appel d'offre</h3>
           <p>
@@ -3385,7 +3489,7 @@
       </div>
 
       <!-- Pillar 7 — Supports de vente & presse locale -->
-      <div class="pillar fade-in">
+      <div class="pillar fade-in" id="pillar-supports">
         <div class="pillar-content">
           <div class="pillar-badge">
             <span class="badge">On ne s'arrête pas là !</span>
@@ -3495,20 +3599,35 @@
           <a href="#cta" class="btn btn-secondary">Choisir Starter</a>
 
           <div class="pricing-features-group">
-            <div class="pricing-features-label">Inclus</div>
+            <div class="pricing-features-label">Digital</div>
             <ul class="pricing-features-list">
               <li><span class="pricing-check">✓</span> Accès illimité à votre dashboard</li>
-              <li><span class="pricing-check">✓</span> Sourcing de prospects ciblés</li>
-              <li><span class="pricing-check">✓</span> 1 pays cible</li>
-              <li><span class="pricing-check">✓</span> 5 leads qualifiés par mois et par pays (Email et/ou Téléphone)</li>
-              <li><span class="pricing-check">✓</span> Enrichissement et vérification des contacts</li>
               <li class="pricing-disabled"><span class="pricing-check">✕</span> Création d'une landing page</li>
+            </ul>
+          </div>
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Prospection</div>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> <strong>Pays ciblé : 1</strong></li>
+              <li><span class="pricing-check">✓</span> Sourcing de prospects</li>
+              <li><span class="pricing-check">✓</span> Séquence LinkedIn et Emailing</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Enrichissement et vérification des contacts</li>
+            </ul>
+          </div>
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Veille</div>
+            <ul class="pricing-features-list">
               <li><span class="pricing-check">✓</span> Suivi live des appels d'offre dans les pays cibles</li>
-              <li class="pricing-disabled"><span class="pricing-check">✕</span> Recherche et suivi live de vos concurrents sur la zone définie</li>
               <li><span class="pricing-check">✓</span> Suivi live de l'actualité de vos pays cibles</li>
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Recherche et suivi live de vos concurrents sur la zone définie</li>
               <li class="pricing-disabled"><span class="pricing-check">✕</span> Analyse des canaux de distribution par pays</li>
-              <li class="pricing-disabled"><span class="pricing-check">✕</span> Recommandations de salons sectoriels</li>
               <li class="pricing-disabled"><span class="pricing-check">✕</span> Publication de pense-bêtes et astuces export (Incoterms, Douanes…)</li>
+            </ul>
+          </div>
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Terrain</div>
+            <ul class="pricing-features-list">
+              <li class="pricing-disabled"><span class="pricing-check">✕</span> Recommandations de salons sectoriels</li>
               <li class="pricing-disabled"><span class="pricing-check">✕</span> Aide au financement et dépôt des dossiers</li>
               <li class="pricing-disabled"><span class="pricing-check">✕</span> Présence physique sur salon (en sus)</li>
             </ul>
@@ -3539,20 +3658,35 @@
           <a href="#cta" class="btn btn-primary">Choisir Business</a>
 
           <div class="pricing-features-group">
-            <div class="pricing-features-label">Inclus</div>
+            <div class="pricing-features-label">Digital</div>
             <ul class="pricing-features-list">
               <li><span class="pricing-check">✓</span> Accès illimité à votre dashboard</li>
-              <li><span class="pricing-check">✓</span> Sourcing de prospects ciblés</li>
-              <li><span class="pricing-check">✓</span> 2 pays cibles</li>
-              <li><span class="pricing-check">✓</span> 5 leads qualifiés par mois et par pays (Email et/ou Téléphone)</li>
-              <li><span class="pricing-check">✓</span> Enrichissement et vérification des contacts</li>
               <li><span class="pricing-check">✓</span> Création d'une landing page</li>
+            </ul>
+          </div>
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Prospection</div>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> <strong>Pays ciblés : 2</strong></li>
+              <li><span class="pricing-check">✓</span> Sourcing de prospects</li>
+              <li><span class="pricing-check">✓</span> Séquence LinkedIn et Emailing</li>
+              <li><span class="pricing-check">✓</span> Enrichissement et vérification des contacts</li>
+            </ul>
+          </div>
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Veille</div>
+            <ul class="pricing-features-list">
               <li><span class="pricing-check">✓</span> Suivi live des appels d'offre dans les pays cibles</li>
-              <li><span class="pricing-check">✓</span> Recherche et suivi live de vos concurrents sur la zone définie</li>
               <li><span class="pricing-check">✓</span> Suivi live de l'actualité de vos pays cibles</li>
+              <li><span class="pricing-check">✓</span> Recherche et suivi live de vos concurrents sur la zone définie</li>
               <li><span class="pricing-check">✓</span> Analyse des canaux de distribution par pays</li>
-              <li><span class="pricing-check">✓</span> Recommandations de salons sectoriels</li>
               <li><span class="pricing-check">✓</span> Publication de pense-bêtes et astuces export (Incoterms, Douanes…)</li>
+            </ul>
+          </div>
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Terrain</div>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> Recommandations de salons sectoriels</li>
               <li class="pricing-disabled"><span class="pricing-check">✕</span> Aide au financement et dépôt des dossiers</li>
               <li class="pricing-disabled"><span class="pricing-check">✕</span> Présence physique sur salon (en sus)</li>
             </ul>
@@ -3582,20 +3716,35 @@
           <a href="#cta" class="btn btn-secondary">Choisir Expert</a>
 
           <div class="pricing-features-group">
-            <div class="pricing-features-label">Inclus</div>
+            <div class="pricing-features-label">Digital</div>
             <ul class="pricing-features-list">
               <li><span class="pricing-check">✓</span> Accès illimité à votre dashboard</li>
-              <li><span class="pricing-check">✓</span> Sourcing de prospects ciblés</li>
-              <li><span class="pricing-check">✓</span> 3 pays cibles</li>
-              <li><span class="pricing-check">✓</span> 5 leads qualifiés par mois et par pays (Email et/ou Téléphone)</li>
-              <li><span class="pricing-check">✓</span> Enrichissement et vérification des contacts</li>
               <li><span class="pricing-check">✓</span> Création d'une landing page</li>
+            </ul>
+          </div>
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Prospection</div>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> <strong>Pays ciblés : 3</strong></li>
+              <li><span class="pricing-check">✓</span> Sourcing de prospects</li>
+              <li><span class="pricing-check">✓</span> Séquence LinkedIn et Emailing</li>
+              <li><span class="pricing-check">✓</span> Enrichissement et vérification des contacts</li>
+            </ul>
+          </div>
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Veille</div>
+            <ul class="pricing-features-list">
               <li><span class="pricing-check">✓</span> Suivi live des appels d'offre dans les pays cibles</li>
-              <li><span class="pricing-check">✓</span> Recherche et suivi live de vos concurrents sur la zone définie</li>
               <li><span class="pricing-check">✓</span> Suivi live de l'actualité de vos pays cibles</li>
+              <li><span class="pricing-check">✓</span> Recherche et suivi live de vos concurrents sur la zone définie</li>
               <li><span class="pricing-check">✓</span> Analyse des canaux de distribution par pays</li>
-              <li><span class="pricing-check">✓</span> Recommandations de salons sectoriels</li>
               <li><span class="pricing-check">✓</span> Publication de pense-bêtes et astuces export (Incoterms, Douanes…)</li>
+            </ul>
+          </div>
+          <div class="pricing-features-group">
+            <div class="pricing-features-label">Terrain</div>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-check">✓</span> Recommandations de salons sectoriels</li>
               <li><span class="pricing-check">✓</span> Aide au financement et dépôt des dossiers</li>
               <li><span class="pricing-check">✓</span> Présence physique sur salon (en sus)</li>
             </ul>
@@ -3622,7 +3771,7 @@
       <div class="why-inner fade-in">
 
         <h2 class="section-title">
-          <span class="handwritten-highlight">Zéro</span> commission - 100% résultat
+          <span class="red-strikethrough">Zéro commission</span> - 100% résultat
         </h2>
         <p class="section-subtitle">
           Vos prospects deviennent vos clients — aucun intermédiaire, aucune commission demandée.<br/><strong>Le fruit de notre travail <span class="handwritten-highlight">vous appartient</span>.</strong>
@@ -3632,15 +3781,15 @@
 
           <div class="why-card">
             <div class="why-card-icon">📈</div>
-            <h3>Transparence</h3>
+            <h3>Un investissement</h3>
             <p>
-              Nous partageons nos ratios de conversion, nos méthodes et nos limites. Vous savez exactement ce que vous achetez, pourquoi, et quels résultats attendre à chaque étape. Pas de promesses floues, pas d'effet tunnel.
+              Grâce à nos coûts fixes, vous maîtrisez parfaitement votre budget. Pas de mauvaises surprises, pas de frais supplémentaires.
             </p>
           </div>
 
           <div class="why-card">
             <div class="why-card-icon">💻</div>
-            <h3>Méthodologie digitalisée</h3>
+            <h3>Une méthodologie digitalisée</h3>
             <p>
               Des outils de prospection et d'automatisation de pointe pilotés par nos experts. Votre pipeline de prospects qualifiés est alimenté en continu, avec reporting en temps réel sur votre dashboard.
             </p>
@@ -3648,9 +3797,9 @@
 
           <div class="why-card">
             <div class="why-card-icon">🤝</div>
-            <h3>Passeur terrain</h3>
+            <h3>Focalisez-vous sur vos ventes</h3>
             <p>
-              Nous ouvrons les portes, vous faites le commercial. Notre rôle est de qualifier, introduire et préparer vos rendez-vous. Vous gardez la main sur votre relation client et votre image de marque à l'international.
+              Notre dispositif vous permet de vous consacrer pleinement à la vente et à la défense de vos produits. Nous nous occupons du travail en amont, vous permettant de performer plus rapidement.
             </p>
           </div>
 
@@ -3658,7 +3807,7 @@
 
         <div class="why-cta-group">
           <a href="#cta" class="btn btn-primary btn-lg">Demander une démo</a>
-          <span class="why-note">100% gratuit · Sans engagement · Réponse sous 48h</span>
+          <span class="why-note">100% gratuit · Sans engagement</span>
         </div>
 
       </div>
@@ -3843,7 +3992,7 @@
   <section class="cta-section" id="cta">
     <div class="container">
       <div class="cta-inner fade-in">
-        <h2 class="section-title">Prêt à ouvrir de nouveaux marchés ?</h2>
+        <h2 class="section-title">Prêt à ouvrir de nouveaux marchés&nbsp;?</h2>
         <p class="section-subtitle">Commencez par un audit export 100% gratuit.<br/>Sans engagement, sans surprise.</p>
 
         <form class="cta-form" id="cta-form" action="https://formspree.io/f/meeprlgo" method="POST">
