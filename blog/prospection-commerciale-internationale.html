@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prospection commerciale internationale : stratégie multicanale, outils digitaux, présence terrain et veille concurrentielle. Guide complet pour les PME françaises qui veulent développer leurs ventes à l'export." />
+  <meta name="robots" content="index, follow" />
+  <title>Prospection commerciale internationale : guide complet pour les PME | ExportPilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-primary: #3B82F6;
+      --color-primary-dark: #1E40AF;
+      --color-primary-light: #DBEAFE;
+      --color-primary-lighter: #EFF6FF;
+      --color-text: #111827;
+      --color-text-secondary: #6B7280;
+      --color-bg: #FFFFFF;
+      --color-bg-alt: #F8FAFC;
+      --color-border: #E5E7EB;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 48px;
+      --radius-full: 999px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-card-hover: 0 4px 12px rgba(0,0,0,0.12);
+      --max-width: 1140px;
+      --font-family: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==============================
+       HEADER
+       ============================== */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background-color: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      border-bottom-color: var(--color-border);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+    .logo span { color: var(--color-primary); }
+
+    .nav {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    .nav a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover { color: var(--color-text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-family);
+      font-size: 0.925rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-lg { padding: 16px 32px; font-size: 1rem; }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(59,130,246,0.35);
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+    }
+
+    /* ==============================
+       ARTICLE HERO
+       ============================== */
+    .article-hero {
+      padding: 120px 0 48px;
+      background: linear-gradient(180deg, #EFF6FF 0%, rgba(219,234,254,0.2) 40%, #FFFFFF 100%);
+    }
+
+    .article-hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--color-primary);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--color-primary-dark);
+    }
+
+    .breadcrumb .sep {
+      color: var(--color-border);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .article-tag {
+      display: inline-flex;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 600;
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .article-date,
+    .article-reading-time {
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+    }
+
+    .article-reading-time::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: var(--color-border);
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+
+    .article-hero h1 .highlight {
+      color: var(--color-primary);
+    }
+
+    .article-hero-lead {
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ==============================
+       ARTICLE CONTENT
+       ============================== */
+    .article-section {
+      padding: 48px 0 80px;
+    }
+
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+
+    .article-content h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+
+    .article-content p {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: 20px;
+      padding-left: 24px;
+    }
+
+    .article-content li {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    .article-content strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid var(--color-primary);
+      background: var(--color-primary-lighter);
+      padding: 20px 24px;
+      margin: 32px 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .article-content blockquote p {
+      color: var(--color-primary-dark);
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    .article-content a {
+      color: var(--color-primary);
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .article-content a:hover {
+      border-bottom-color: var(--color-primary);
+    }
+
+    /* Info box */
+    .info-box {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin: 32px 0;
+    }
+
+    .info-box h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+
+    .info-box ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .info-box li {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+
+    /* CTA box */
+    .article-cta {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      border-radius: var(--radius-md);
+      padding: 40px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .article-cta h3 {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      margin-top: 0;
+    }
+
+    .article-cta p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-white {
+      background-color: #fff;
+      color: var(--color-primary-dark);
+      border-color: #fff;
+      font-weight: 700;
+    }
+
+    .btn-white:hover {
+      background-color: var(--color-primary-lighter);
+      border-color: var(--color-primary-lighter);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* ==============================
+       FOOTER
+       ============================== */
+    .footer {
+      background: #F1F5F9;
+      color: #4B5563;
+      padding: 64px 0 32px;
+      font-size: 0.875rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    .footer-col h4 {
+      color: #111827;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+
+    .footer-col a {
+      color: #4B5563;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover { color: #1E40AF; }
+
+    .footer-brand .logo { margin-bottom: 12px; color: #111827; }
+    .footer-brand .logo span { color: var(--color-primary); }
+
+    .footer-tagline {
+      color: #4B5563;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #4B5563;
+      margin-bottom: 10px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-link:hover { color: #1E40AF; }
+
+    .footer-bottom {
+      border-top: 1px solid #D1D5DB;
+      padding-top: 24px;
+      text-align: center;
+      color: #6B7280;
+      font-size: 0.8rem;
+    }
+
+    /* Fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../index.html" class="logo"><img src="../logo/Logo_ExportPilot.png" alt="ExportPilot" style="height:32px;"></a>
+
+        <nav>
+          <ul class="nav">
+            <li><a href="../index.html#offre">Offre</a></li>
+            <li><a href="../index.html#pricing">Tarifs</a></li>
+            <li><a href="../etude-de-cas.html">Étude de cas</a></li>
+            <li><a href="../index.html#faq">FAQ</a></li>
+            <li><a href="../blog.html" style="color: var(--color-primary); font-weight: 600;">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-cta">
+          <a href="../index.html#cta" class="btn btn-primary" style="padding:10px 24px; font-size:0.9rem;">Audit gratuit</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="container">
+      <div class="article-hero-inner fade-in">
+
+        <div class="breadcrumb">
+          <a href="../index.html">Accueil</a>
+          <span class="sep">/</span>
+          <a href="../blog.html">Blog</a>
+          <span class="sep">/</span>
+          <span>Prospection commerciale internationale</span>
+        </div>
+
+        <div class="article-meta">
+          <span class="article-tag">Prospection export</span>
+          <span class="article-date">8 avril 2026</span>
+          <span class="article-reading-time">15 min de lecture</span>
+        </div>
+
+        <h1><span class="highlight">Prospection commerciale internationale</span> : le guide complet pour développer vos ventes à l'export</h1>
+        <p class="article-hero-lead">Emails, LinkedIn, salons professionnels, veille concurrentielle, appels d'offres : une prospection export efficace ne repose pas sur un seul canal. Découvrez comment construire une stratégie multicanale qui génère des leads qualifiés à l'international.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE IMAGE -->
+  <div class="container" style="margin-top: -20px; margin-bottom: 40px;">
+    <img src="../logo/business-strategy-success-target-goals.jpg" alt="Prospection commerciale internationale" style="width:100%; max-width:900px; margin:0 auto; display:block; border-radius:12px; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
+  </div>
+
+  <!-- ARTICLE CONTENT -->
+  <section class="article-section">
+    <div class="container">
+      <div class="article-content">
+
+        <!-- SECTION 1 -->
+        <div class="fade-in">
+          <h2>Pourquoi la prospection internationale est un levier stratégique pour les PME françaises</h2>
+
+          <p>En 2024, selon Business France, environ 44 500 entreprises françaises exportent régulièrement. Pourtant, la France compte plus de 150 000 PME et ETI qui ont le potentiel d'exporter mais ne franchissent pas le pas — ou abandonnent après une première tentative infructueuse. Le taux d'abandon parmi les primo-exportateurs atteint 26 %.</p>
+
+          <p>La raison principale de ces échecs n'est pas la qualité des produits français. C'est l'absence de méthode structurée pour aller chercher des clients à l'étranger. Beaucoup de dirigeants pensent qu'il suffit de traduire leur site web, de s'inscrire sur une marketplace ou d'attendre qu'un importateur les contacte. Dans la réalité, <strong>l'export se gagne par la prospection active</strong>.</p>
+
+          <p>La prospection commerciale internationale consiste à identifier, contacter et convertir des acheteurs potentiels dans des marchés étrangers. Elle diffère fondamentalement de la prospection nationale : les cycles de vente sont plus longs, les interlocuteurs ont des cultures d'achat différentes, et la concurrence est mondiale.</p>
+
+          <blockquote>
+            <p>L'export n'est pas une version lointaine de votre commerce national. C'est un métier à part entière qui demande des outils, des méthodes et une stratégie dédiée.</p>
+          </blockquote>
+
+          <p>C'est précisément pour répondre à ce constat qu'<a href="../index.html#offre">ExportPilot a construit un dispositif complet</a> mêlant data, digital et expertise terrain — parce qu'aucun canal de prospection ne suffit à lui seul pour conquérir un marché international.</p>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="fade-in">
+          <h2>Définir sa stratégie de prospection internationale : les fondamentaux</h2>
+
+          <p>Avant de lancer la moindre campagne, trois questions doivent recevoir une réponse claire. Sans ce travail préalable, vous risquez de disperser vos ressources sur des marchés inadaptés ou avec des messages qui ne résonnent pas.</p>
+
+          <h3>1. Identifier ses marchés prioritaires</h3>
+
+          <p>Tous les marchés ne se valent pas pour votre entreprise. L'identification des marchés prioritaires repose sur des données concrètes :</p>
+
+          <ul>
+            <li><strong>Analyse des flux commerciaux :</strong> quels pays importent déjà vos catégories de produits ? En quelles quantités ? Avec quelle dynamique de croissance ?</li>
+            <li><strong>Environnement réglementaire :</strong> quelles sont les barrières douanières, les certifications obligatoires, les normes techniques à respecter ?</li>
+            <li><strong>Intensité concurrentielle :</strong> qui sont vos concurrents sur ces marchés ? Sont-ils des acteurs locaux ou des exportateurs d'autres pays ?</li>
+            <li><strong>Accessibilité logistique :</strong> la chaîne d'approvisionnement est-elle réaliste en termes de coûts, délais et fiabilité ?</li>
+          </ul>
+
+          <p>Chez ExportPilot, cette phase d'analyse fait partie intégrante de l'<a href="../index.html#pillar-audit">audit export</a>, point d'entrée obligatoire de notre accompagnement. L'objectif : ne pas prospecter dans le vide, mais cibler les marchés où vous avez les meilleures chances de succès.</p>
+
+          <h3>2. Constituer une base de prospects qualifiés</h3>
+
+          <p>Une fois les marchés identifiés, il faut construire une base de contacts exploitable. Pas une liste de 10 000 emails achetée sur internet — une base qualifiée, avec des interlocuteurs pertinents : directeurs des achats, responsables import, distributeurs spécialisés.</p>
+
+          <p>Les outils de data sourcing comme Kompass ou Apollo permettent de segmenter par secteur, taille d'entreprise, zone géographique et fonction. Le travail de qualification est ce qui fait la différence entre un email qui finit dans le spam et un message qui déclenche une réponse.</p>
+
+          <h3>3. Adapter son positionnement au marché cible</h3>
+
+          <p>Votre proposition de valeur en France ne se transpose pas automatiquement à l'étranger. Un industriel allemand n'a pas les mêmes attentes qu'un distributeur ivoirien. Les critères de décision changent : prix, délai, SAV, certifications, conditions de paiement, langue de communication.</p>
+
+          <p>L'adaptation du positionnement passe par la traduction de vos supports, mais surtout par la compréhension des usages locaux. C'est un travail que beaucoup de PME sous-estiment — et qui explique une grande partie des échecs en prospection internationale.</p>
+
+          <div class="info-box">
+            <h4>Les 3 piliers d'une stratégie de prospection export</h4>
+            <ul>
+              <li>Des marchés sélectionnés sur la base de données objectifs (flux, réglementation, concurrence)</li>
+              <li>Une base de prospects qualifiés avec des interlocuteurs décisionnaires</li>
+              <li>Un positionnement adapté aux spécificités culturelles et commerciales du marché cible</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="fade-in">
+          <h2>Les canaux de prospection à l'international : pourquoi l'approche multicanale est indispensable</h2>
+
+          <p>L'erreur la plus fréquente en prospection internationale est de miser sur un seul canal. Certaines entreprises ne font que du salon. D'autres se lancent dans l'emailing de masse sans aucune présence terrain. D'autres encore comptent uniquement sur LinkedIn.</p>
+
+          <p>Chaque canal a ses forces et ses limites. Utilisé seul, aucun ne suffit à couvrir l'ensemble du parcours d'achat d'un importateur. C'est la combinaison de ces canaux — <strong>digital, terrain et veille stratégique</strong> — qui produit des résultats durables.</p>
+
+          <p>Voici comment <a href="../index.html#offre">le dispositif ExportPilot</a> structure cette approche multicanale, pilier par pilier.</p>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div class="fade-in">
+          <h2>Prospection digitale : emails, LinkedIn et landing pages</h2>
+
+          <p>La prospection digitale est le canal le plus scalable. Elle permet de toucher des centaines de prospects en parallèle, de mesurer précisément les résultats, et d'itérer rapidement sur les messages.</p>
+
+          <h3>Les séquences d'emailing multicanal</h3>
+
+          <p>L'email reste le canal principal de la prospection B2B à l'international. Mais envoyer un email unique à une liste non qualifiée, c'est l'équivalent d'un prospectus jeté dans une boîte aux lettres au hasard.</p>
+
+          <p>Une campagne d'emailing efficace repose sur :</p>
+
+          <ul>
+            <li><strong>Des séquences automatisées :</strong> un prospect qui ne répond pas au premier email reçoit un deuxième message quelques jours plus tard, avec un angle différent. En général, 3 à 5 relances sont nécessaires pour obtenir une réponse</li>
+            <li><strong>La personnalisation :</strong> le nom de l'entreprise, le secteur, le pays, le produit mentionné — chaque détail personnalisé augmente le taux de réponse</li>
+            <li><strong>Le multicanal :</strong> les meilleurs résultats viennent de séquences qui combinent email et LinkedIn. Un prospect qui reçoit un email puis voit une demande de connexion LinkedIn est beaucoup plus susceptible de répondre</li>
+          </ul>
+
+          <p>Chez ExportPilot, la <a href="../index.html#pillar-prospection">prospection ciblée</a> s'appuie sur des outils comme Skylead pour automatiser ces séquences multicanales, tout en conservant un ton professionnel et personnalisé.</p>
+
+          <h3>LinkedIn : le réseau incontournable du B2B international</h3>
+
+          <p>Avec plus de 1 milliard de membres dont 65 millions de décideurs, LinkedIn est devenu un canal de prospection majeur pour l'export B2B. Les fonctionnalités de Sales Navigator permettent de filtrer par pays, secteur, taille d'entreprise et poste occupé.</p>
+
+          <p>Mais LinkedIn ne se résume pas à envoyer des InMails en masse. Une présence efficace sur LinkedIn pour l'export implique :</p>
+
+          <ul>
+            <li><strong>Un profil d'entreprise optimisé :</strong> en anglais ou dans la langue du marché cible, avec des mots-clés pertinents</li>
+            <li><strong>Du contenu régulier :</strong> des publications qui démontrent votre expertise et votre connaissance des marchés internationaux</li>
+            <li><strong>Des interactions ciblées :</strong> commenter, partager, réagir aux publications de vos prospects avant de les contacter directement</li>
+            <li><strong>Des messages personnalisés :</strong> oublier les templates génériques, adapter chaque approche au profil du prospect</li>
+          </ul>
+
+          <h3>La landing page : convertir le trafic en leads</h3>
+
+          <p>Le maillon souvent manquant entre la prospection et la conversion, c'est la <a href="landing-page-export.html">landing page</a>. Chaque campagne de prospection devrait rediriger vers une page dédiée, traduite dans la langue du marché cible, avec un seul objectif : convertir le visiteur en lead qualifié.</p>
+
+          <p>Une landing page bien conçue convertit entre 3 et 8 % des visiteurs, contre moins de 2 % pour un site web classique. C'est un levier considérable quand on prospecte à l'échelle internationale. Chez ExportPilot, la création de <a href="../index.html#pillar-digital">landing pages localisées</a> fait partie intégrante du pilier "présence digitale" de notre dispositif.</p>
+        </div>
+
+        <!-- SECTION 5 -->
+        <div class="fade-in">
+          <h2>Prospection terrain : salons, missions commerciales et présence locale</h2>
+
+          <p>Le digital ne remplace pas le terrain. Il le prépare. Dans le commerce international B2B, la confiance se construit aussi en face-à-face — surtout dans les marchés où la relation personnelle prime sur le contrat écrit (Moyen-Orient, Afrique, Asie).</p>
+
+          <h3>Les salons professionnels internationaux</h3>
+
+          <p>Les salons restent le premier lieu de rencontre entre exportateurs et acheteurs internationaux. Ils permettent de :</p>
+
+          <ul>
+            <li><strong>Présenter physiquement vos produits</strong> à des acheteurs qui veulent voir, toucher, tester avant de commander</li>
+            <li><strong>Rencontrer un volume concentré de prospects</strong> en quelques jours — ce que des mois de prospection digitale ne peuvent pas toujours produire</li>
+            <li><strong>Observer la concurrence</strong> : qui expose, quels produits sont mis en avant, quels prix sont affichés</li>
+            <li><strong>Crédibiliser votre démarche export</strong> : être présent sur un salon international montre que vous êtes sérieux dans votre approche du marché</li>
+          </ul>
+
+          <p>Mais participer à un salon sans préparation, c'est gaspiller son budget. La prospection digitale en amont — identifier les visiteurs, leur envoyer une invitation personnalisée, fixer des rendez-vous avant le salon — multiplie le retour sur investissement de la présence terrain.</p>
+
+          <h3>Les missions commerciales</h3>
+
+          <p>Les missions commerciales organisées (par Business France, les CCI, les régions ou des opérateurs privés) offrent un cadre structuré pour une première approche d'un marché : rendez-vous B2B pré-qualifiés, briefings pays, accompagnement logistique.</p>
+
+          <p>Pour une PME qui n'a pas encore de réseau sur un marché cible, la mission commerciale est un accélérateur. Elle permet de tester la réceptivité du marché, de rencontrer des partenaires potentiels et de valider — ou d'infirmer — les hypothèses formulées lors de l'audit export.</p>
+
+          <blockquote>
+            <p>Le digital génère les premiers contacts. Le terrain les transforme en relations commerciales. Les deux sont indissociables dans une stratégie d'export qui dure.</p>
+          </blockquote>
+
+          <p>Chez ExportPilot, les <a href="../index.html#offre">missions terrain et les participations aux salons</a> sont proposées en complément des abonnements mensuels, pour les entreprises prêtes à passer à l'action sur leurs marchés prioritaires.</p>
+        </div>
+
+        <!-- SECTION 6 -->
+        <div class="fade-in">
+          <h2>Veille concurrentielle et appels d'offres : prospecter en anticipant</h2>
+
+          <p>La prospection ne se limite pas à contacter des acheteurs. Elle inclut aussi la capacité à détecter les opportunités avant vos concurrents et à comprendre l'environnement dans lequel vous évoluez.</p>
+
+          <h3>La veille concurrentielle à l'international</h3>
+
+          <p>Connaître vos concurrents sur un marché export est aussi important que connaître vos prospects. La <a href="../index.html#pillar-veille-concurrence">veille concurrentielle</a> vous permet de :</p>
+
+          <ul>
+            <li><strong>Identifier les acteurs en place :</strong> qui fournit déjà vos marchés cibles ? Avec quels produits, à quels prix, via quels canaux de distribution ?</li>
+            <li><strong>Repérer les failles :</strong> un concurrent qui livre en 6 semaines quand vous pouvez livrer en 3, un manque de SAV local, une gamme incomplète — ce sont autant d'angles d'attaque pour votre prospection</li>
+            <li><strong>Suivre les mouvements :</strong> un concurrent qui ouvre un bureau dans un nouveau pays, qui lance un produit, qui perd un client important — chaque mouvement est une information exploitable</li>
+          </ul>
+
+          <p>Les outils de veille automatisée permettent de suivre ces signaux en temps réel, sans y consacrer des heures chaque jour. C'est un avantage compétitif majeur pour les PME qui n'ont pas les ressources d'un service export dédié de grande entreprise.</p>
+
+          <h3>La détection d'appels d'offres internationaux</h3>
+
+          <p>Les <a href="../index.html#pillar-appels-offre">appels d'offres internationaux</a> représentent un canal de prospection souvent sous-exploité par les PME françaises. Pourtant, des marchés publics et privés sont publiés chaque jour dans le monde entier : construction, équipement industriel, fourniture de services, approvisionnement en produits de consommation.</p>
+
+          <p>Le défi est double :</p>
+
+          <ul>
+            <li><strong>Les détecter à temps :</strong> les délais de réponse sont souvent courts. Une veille automatisée sur les plateformes d'appels d'offres (TED, UNGM, plateformes nationales) est indispensable</li>
+            <li><strong>Qualifier leur pertinence :</strong> tous les appels d'offres ne valent pas le temps investi dans la réponse. Il faut filtrer par secteur, montant, zone géographique et probabilité de succès</li>
+          </ul>
+
+          <p>Intégrée dans une stratégie de prospection globale, la veille sur les appels d'offres complète la prospection directe en apportant des opportunités "pull" — des acheteurs qui expriment un besoin concret — en plus de la prospection "push" que vous menez via email et LinkedIn.</p>
+        </div>
+
+        <!-- SECTION 7 -->
+        <div class="fade-in">
+          <h2>Les défis de la prospection internationale et comment les surmonter</h2>
+
+          <p>Prospecter à l'international n'est pas une simple transposition de vos pratiques commerciales nationales. Voici les obstacles les plus fréquents et les solutions pour les contourner.</p>
+
+          <h3>La barrière linguistique et culturelle</h3>
+
+          <p>Un email en anglais approximatif envoyé à un acheteur japonais ne déclenchera pas la même réaction qu'un message bien formulé dans sa langue, avec les codes de politesse appropriés. La barrière linguistique n'est pas seulement une question de traduction — c'est une question de crédibilité.</p>
+
+          <ul>
+            <li><strong>Faites relire vos messages par un locuteur natif</strong> du pays cible, pas seulement par un traducteur</li>
+            <li><strong>Adaptez le ton :</strong> direct et factuel pour l'Allemagne, plus relationnel pour le Moyen-Orient, formel pour le Japon</li>
+            <li><strong>Respectez les fuseaux horaires :</strong> un email envoyé à 9h heure de Paris arrive à 4h du matin sur la côte ouest des États-Unis</li>
+          </ul>
+
+          <h3>La conformité réglementaire</h3>
+
+          <p>Prospecter à l'international implique de respecter les réglementations locales en matière de protection des données et de démarchage commercial. Le RGPD en Europe, le CAN-SPAM Act aux États-Unis, la LGPD au Brésil — chaque marché a ses règles.</p>
+
+          <p>Ne pas les respecter, c'est risquer des amendes mais aussi — et surtout — dégrader votre image auprès de prospects qui n'auront aucune envie de travailler avec une entreprise qui ne respecte pas leur législation.</p>
+
+          <h3>Les cycles de vente longs</h3>
+
+          <p>En B2B international, les cycles de vente sont souvent deux à trois fois plus longs qu'en France. Un premier contact peut mettre 6 à 12 mois avant de se transformer en commande. Cela demande :</p>
+
+          <ul>
+            <li><strong>De la patience et de la constance :</strong> ne pas abandonner un prospect qui n'a pas répondu après 2 emails</li>
+            <li><strong>Un suivi structuré :</strong> un CRM bien tenu pour ne perdre aucun contact dans la durée</li>
+            <li><strong>Du contenu de nurturing :</strong> newsletters, études de cas, actualités sectorielles pour rester dans le radar du prospect entre le premier contact et la décision d'achat</li>
+          </ul>
+
+          <p>C'est d'ailleurs pour cette raison que l'<a href="../etude-de-cas.html">étude de cas PackFrance</a> illustre un processus de 6 mois, du premier contact aux premiers contrats signés. Les résultats en prospection export ne se mesurent pas en jours, mais en trimestres.</p>
+        </div>
+
+        <!-- SECTION 8 -->
+        <div class="fade-in">
+          <h2>Mesurer l'efficacité de sa prospection internationale</h2>
+
+          <p>Ce qui ne se mesure pas ne s'améliore pas. En prospection export, les indicateurs clés à suivre sont :</p>
+
+          <ul>
+            <li><strong>Nombre de prospects contactés</strong> par marché et par canal</li>
+            <li><strong>Taux de réponse :</strong> un bon taux en prospection B2B à froid se situe entre 5 et 15 %</li>
+            <li><strong>Nombre de leads qualifiés :</strong> prospects ayant exprimé un intérêt concret (demande de prix, demande de catalogue, prise de rendez-vous)</li>
+            <li><strong>Nombre de rendez-vous obtenus :</strong> mesure de la capacité à transformer l'intérêt en conversation commerciale</li>
+            <li><strong>Taux de conversion global :</strong> du premier contact au contrat signé</li>
+          </ul>
+
+          <p>Ces métriques permettent d'identifier ce qui fonctionne et ce qui ne fonctionne pas, marché par marché, canal par canal. Elles sont indispensables pour optimiser vos campagnes dans la durée et justifier votre investissement en prospection export.</p>
+
+          <p>Chez ExportPilot, chaque client dispose d'un <strong>dashboard de suivi</strong> qui centralise ces indicateurs en temps réel : nombre de prospects ciblés, leads générés, rendez-vous obtenus, pipeline commercial. La transparence sur les résultats est au cœur de notre approche — consultez notre <a href="../index.html#pricing">grille tarifaire</a> pour découvrir nos engagements par formule.</p>
+        </div>
+
+        <!-- SECTION 9 : CONCLUSION -->
+        <div class="fade-in">
+          <h2>Conclusion : la prospection internationale se gagne sur plusieurs fronts</h2>
+
+          <p>La prospection commerciale internationale n'est pas un sprint. C'est une démarche structurée qui combine plusieurs leviers pour maximiser vos chances de succès :</p>
+
+          <ul>
+            <li><strong>Le digital</strong> pour toucher un grand volume de prospects avec des messages personnalisés (emailing, LinkedIn, landing pages)</li>
+            <li><strong>Le terrain</strong> pour construire la confiance et concrétiser les relations commerciales (salons, missions, rencontres)</li>
+            <li><strong>La veille</strong> pour anticiper les opportunités et comprendre votre environnement concurrentiel (veille concurrentielle, appels d'offres)</li>
+            <li><strong>Les données</strong> pour cibler les bons marchés, les bons interlocuteurs et mesurer vos résultats</li>
+          </ul>
+
+          <p>C'est cette approche multicanale qui différencie une stratégie de prospection export efficace d'un simple envoi d'emails en masse. Chez ExportPilot, nous avons conçu notre <a href="../index.html#offre">dispositif d'accompagnement</a> exactement sur ce principe : chaque pilier renforce les autres, et c'est leur combinaison qui produit des résultats concrets.</p>
+
+          <p>Vous dirigez une PME ou une ETI française et vous souhaitez structurer votre prospection à l'international ? Commencez par un audit de votre potentiel export.</p>
+
+          <div class="article-cta">
+            <h3>Structurez votre prospection internationale</h3>
+            <p>Demandez votre audit export gratuit. Nous analysons vos marchés cibles, votre positionnement et vos canaux de prospection pour construire une stratégie multicanale adaptée à votre entreprise.</p>
+            <a href="../index.html#cta" class="btn btn-white btn-lg">Demander mon audit gratuit</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div class="logo"><img src="../logo/Logo_ExportPilot.png" alt="ExportPilot" style="height:32px;"></div>
+          <p class="footer-tagline">Le premier dispositif mêlant data, digital et expertise terrain pour l'accompagnement des TPE, PME et ETI françaises.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../index.html#offre">Offre</a></li>
+            <li><a href="../index.html#pricing">Tarifs</a></li>
+            <li><a href="../etude-de-cas.html">Étude de cas</a></li>
+            <li><a href="../index.html#faq">FAQ</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="../mentions-legales.html">Mentions légales</a></li>
+            <li><a href="../politique-confidentialite.html">Politique de confidentialité</a></li>
+            <li><a href="../cgv.html">CGV</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@exportpilot.fr" class="footer-contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            contact@exportpilot.fr
+          </a>
+          <a href="https://www.linkedin.com/company/exportpilot" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+            <img src="../logo/linkedin-svgrepo-com.svg" alt="LinkedIn" style="width:18px; height:18px;">
+            LinkedIn ExportPilot
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ExportPilot. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var header = document.getElementById('header');
+      function onScroll() {
+        if (window.scrollY > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var fadeEls = document.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        var fadeObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                fadeObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        fadeEls.forEach(function (el) { fadeObserver.observe(el); });
+      } else {
+        fadeEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+    });
+  </script>
+</body>
+</html>

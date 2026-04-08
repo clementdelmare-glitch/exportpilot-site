@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Post LinkedIn — Lancement page ExportPilot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 1200px;
+      height: 1200px;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+      background: #EFF6FF;
+    }
+
+    .slide {
+      width: 1200px;
+      height: 1200px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #EFF6FF 0%, #DBEAFE 50%, #EFF6FF 100%);
+      border-radius: 0;
+    }
+
+    /* Decorative circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(59, 130, 246, 0.06);
+    }
+    .circle-1 { width: 200px; height: 200px; top: -60px; right: -40px; }
+    .circle-2 { width: 140px; height: 140px; bottom: 80px; left: 40px; }
+    .circle-3 { width: 100px; height: 100px; top: 45%; right: 8%; }
+    .circle-4 { width: 80px; height: 80px; top: 15%; left: 12%; }
+    .circle-5 { width: 60px; height: 60px; bottom: 25%; right: 25%; }
+
+    /* Content */
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      padding: 50px 60px;
+    }
+
+    /* Logo top left */
+    .top-logo {
+      position: absolute;
+      top: 36px;
+      left: 48px;
+      z-index: 2;
+    }
+    .top-logo img { height: 48px; }
+
+    /* Pill */
+    .pill {
+      display: inline-block;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid #E5E7EB;
+      border-radius: 999px;
+      padding: 10px 24px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 32px;
+    }
+
+    /* Title */
+    h1 {
+      font-size: 70px;
+      font-weight: 900;
+      color: #111827;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    /* Subtitle */
+    .subtitle {
+      font-size: 27px;
+      color: #6B7280;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+    .subtitle strong {
+      color: #111827;
+    }
+
+    /* Services grid */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    .service-card {
+      background: #fff;
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .service-icon { font-size: 42px; margin-bottom: 12px; }
+    .service-title { font-size: 17px; font-weight: 800; color: #111827; margin-bottom: 8px; }
+    .service-desc { font-size: 13px; color: #6B7280; line-height: 1.5; }
+
+    /* Bottom CTA */
+    .bottom-cta {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111827;
+    }
+    .bottom-cta span { color: #3B82F6; }
+  </style>
+</head>
+<body>
+
+<div class="slide">
+
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+  <div class="circle circle-3"></div>
+  <div class="circle circle-4"></div>
+  <div class="circle circle-5"></div>
+
+  <div class="top-logo">
+    <img src="../logo/Logo_ExportPilot.png" alt="ExportPilot">
+  </div>
+
+  <div class="content">
+
+    <div class="pill">Nouveau &mdash; Suivez-nous sur LinkedIn</div>
+
+    <h1>Nous sommes sur <img src="../logo/LI-Logo.png" alt="LinkedIn" style="height:68px; display:inline-block; vertical-align:baseline; position:relative; top:6px;"> !</h1>
+
+    <p class="subtitle">
+      La solution vous permettant de <strong>booster vos ventes &agrave; l'Export</strong> &#128640;<br>
+      Ensemble faisons rayonner les soci&eacute;t&eacute;s fran&ccedil;aises &agrave; l'international &#127467;&#127479;
+    </p>
+
+    <div class="services">
+      <div class="service-card">
+        <div class="service-icon">&#127760;</div>
+        <div class="service-title">Pr&eacute;sence digitale</div>
+        <div class="service-desc">Landing page traduite pour chaque march&eacute; cible</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127919;</div>
+        <div class="service-title">Prospection cibl&eacute;e</div>
+        <div class="service-desc">S&eacute;quences multicanales pour toucher vos acheteurs</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128202;</div>
+        <div class="service-title">Veille concurrentielle</div>
+        <div class="service-desc">Suivez vos concurrents en temps r&eacute;el</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128203;</div>
+        <div class="service-title">Appels d'offres</div>
+        <div class="service-desc">D&eacute;tectez les opportunit&eacute;s avant vos concurrents</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128240;</div>
+        <div class="service-title">Actualit&eacute;s</div>
+        <div class="service-desc">Restez inform&eacute; des tendances de votre secteur</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9992;&#65039;</div>
+        <div class="service-title">Pr&eacute;sence terrain</div>
+        <div class="service-desc">Salons, missions et rencontres sur vos march&eacute;s</div>
+      </div>
+    </div>
+
+    <div class="bottom-cta">D&eacute;couvrez notre dispositif complet sur <span>exportpilot.fr</span></div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
