@@ -572,6 +572,123 @@
       }
     }
 
+    /* Widget lead capture */
+    .lead-widget {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px 36px 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      max-width: 620px;
+      width: 100%;
+      margin: 0 auto 48px;
+    }
+
+    .lead-widget-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .lead-widget-row:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .lead-widget-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+      white-space: nowrap;
+      min-width: 180px;
+    }
+
+    .lead-widget-select,
+    .lead-widget-input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      color: #0f172a;
+      background: #f8fafc;
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .lead-widget-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    .lead-widget-select:focus,
+    .lead-widget-input:focus {
+      border-color: #4281fb;
+      background: #fff;
+    }
+
+    .lead-widget-submit {
+      width: 100%;
+      margin-top: 18px;
+      padding: 16px 32px;
+      background: #4281fb;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 800;
+      font-family: 'Inter', sans-serif;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 16px rgba(66, 129, 251, 0.3);
+    }
+
+    .lead-widget-submit:hover {
+      background: #3570e0;
+      transform: translateY(-1px);
+    }
+
+    .lead-widget-submit:active {
+      transform: translateY(0);
+    }
+
+    .lead-widget-note {
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .lead-widget {
+        padding: 24px 20px 22px;
+      }
+      .lead-widget-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+      }
+      .lead-widget-label {
+        min-width: unset;
+        font-size: 0.88rem;
+      }
+      .lead-widget-select,
+      .lead-widget-input {
+        font-size: 0.9rem;
+        padding: 11px 14px;
+      }
+      .lead-widget-submit {
+        font-size: 1rem;
+        padding: 14px 24px;
+      }
+    }
+
     .hero-social-proof {
       display: flex;
       align-items: center;
@@ -3041,9 +3158,116 @@
           Vous êtes Dirigeants, Responsable ou Commercial Export ?<br/>L'international est au coeur de votre stratégie 2026 ?<br/><strong>ExportPilot est la solution pour vous accompagner !</strong>
         </p>
 
-        <div class="hero-ctas fade-in" style="transition-delay: 0.3s">
-          <a href="#cta" class="btn btn-primary" style="padding:12px 0; width:220px; text-align:center; justify-content:center;">Demander une démo</a>
-          <a href="#offre" class="btn btn-secondary" style="padding:12px 0; width:220px; text-align:center; justify-content:center;">Découvrir l'offre</a>
+        <!-- Widget lead capture -->
+        <div class="lead-widget fade-in" style="transition-delay: 0.3s">
+          <form id="lead-widget-form" action="https://formspree.io/f/meeprlgo" method="POST">
+            <input type="hidden" name="_subject" value="Nouveau lead widget export — ExportPilot">
+            <input type="hidden" name="_gotcha" style="display:none">
+
+            <div class="lead-widget-row">
+              <label class="lead-widget-label" for="lead-entreprise">Mon entreprise</label>
+              <input class="lead-widget-input" type="text" id="lead-entreprise" name="entreprise" placeholder="Nom de votre entreprise" required>
+            </div>
+
+            <div class="lead-widget-row">
+              <label class="lead-widget-label" for="lead-secteur">Secteur d'activit&eacute;</label>
+              <select class="lead-widget-select" id="lead-secteur" name="secteur" required>
+                <option value="" disabled selected>Choisir un secteur</option>
+                <option>Industries</option>
+                <option>BTP / Construction</option>
+                <option>Pharmaceutique &amp; Bien-&ecirc;tre</option>
+                <option>Vin &amp; Spiritueux</option>
+                <option>Agroalimentaire</option>
+                <option>Transport &amp; Logistique</option>
+                <option>Autres</option>
+              </select>
+            </div>
+
+            <div class="lead-widget-row">
+              <label class="lead-widget-label" for="lead-pays">Je souhaite exporter vers</label>
+              <select class="lead-widget-select" id="lead-pays" name="pays_cible" required>
+                <option value="" disabled selected>Choisir un pays</option>
+                <optgroup label="Europe">
+                  <option>Allemagne</option>
+                  <option>Autriche</option>
+                  <option>Belgique</option>
+                  <option>Espagne</option>
+                  <option>Gr&egrave;ce</option>
+                  <option>Italie</option>
+                  <option>Pays-Bas</option>
+                  <option>Pologne</option>
+                  <option>Portugal</option>
+                  <option>R&eacute;publique tch&egrave;que</option>
+                  <option>Roumanie</option>
+                  <option>Royaume-Uni</option>
+                  <option>Su&egrave;de</option>
+                  <option>Suisse</option>
+                </optgroup>
+                <optgroup label="Afrique du Nord">
+                  <option>Alg&eacute;rie</option>
+                  <option>&Eacute;gypte</option>
+                  <option>Libye</option>
+                  <option>Maroc</option>
+                  <option>Tunisie</option>
+                </optgroup>
+                <optgroup label="Afrique subsaharienne">
+                  <option>Afrique du Sud</option>
+                  <option>Cameroun</option>
+                  <option>C&ocirc;te d'Ivoire</option>
+                  <option>&Eacute;thiopie</option>
+                  <option>Ghana</option>
+                  <option>Kenya</option>
+                  <option>Madagascar</option>
+                  <option>Nigeria</option>
+                  <option>RDC</option>
+                  <option>S&eacute;n&eacute;gal</option>
+                </optgroup>
+                <optgroup label="Am&eacute;riques">
+                  <option>Argentine</option>
+                  <option>Br&eacute;sil</option>
+                  <option>Canada</option>
+                  <option>Chili</option>
+                  <option>Colombie</option>
+                  <option>&Eacute;tats-Unis</option>
+                  <option>Mexique</option>
+                </optgroup>
+                <optgroup label="Moyen-Orient">
+                  <option>Arabie Saoudite</option>
+                  <option>EAU</option>
+                  <option>Isra&euml;l</option>
+                  <option>Jordanie</option>
+                  <option>Kowe&iuml;t</option>
+                  <option>Oman</option>
+                  <option>Qatar</option>
+                  <option>Turquie</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="lead-widget-row">
+              <label class="lead-widget-label" for="lead-type">Je recherche</label>
+              <select class="lead-widget-select" id="lead-type" name="type_partenaire" required>
+                <option value="" disabled selected>Type de partenaire</option>
+                <option>Des clients utilisateurs</option>
+                <option>Des revendeurs / distributeurs</option>
+                <option>Des agents commerciaux</option>
+                <option>Des partenaires industriels</option>
+                <option>Des importateurs</option>
+              </select>
+            </div>
+
+            <div class="lead-widget-row">
+              <label class="lead-widget-label" for="lead-email">Mon email pro</label>
+              <input class="lead-widget-input" type="email" id="lead-email" name="email" placeholder="nom@entreprise.com" required>
+            </div>
+
+            <button type="submit" class="lead-widget-submit">Recevoir mes premiers prospects</button>
+            <div class="lead-widget-note">Gratuit &middot; Sans engagement</div>
+          </form>
+        </div>
+
+        <div class="hero-ctas fade-in" style="transition-delay: 0.35s">
+          <a href="#offre" class="btn btn-secondary" style="padding:12px 0; width:220px; text-align:center; justify-content:center;">D&eacute;couvrir l'offre</a>
         </div>
 
         <div class="hero-sectors fade-in" style="transition-delay: 0.4s">
@@ -4161,6 +4385,35 @@
        TASK 10 — JS CONSOLIDATED
        ============================== -->
   <script>
+    // Lead widget form
+    document.getElementById('lead-widget-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = e.target;
+      var btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Envoi en cours...';
+      btn.disabled = true;
+
+      fetch('https://formspree.io/f/meeprlgo', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+        if (response.ok) {
+          btn.textContent = 'Demande envoy\u00e9e \u2713';
+          btn.style.background = '#10B981';
+          btn.style.boxShadow = '0 4px 16px rgba(16, 185, 129, 0.3)';
+          form.reset();
+        } else {
+          btn.textContent = 'Erreur \u2014 R\u00e9essayer';
+          btn.disabled = false;
+        }
+      }).catch(function() {
+        btn.textContent = 'Erreur \u2014 R\u00e9essayer';
+        btn.disabled = false;
+      });
+    });
+
+    // CTA form
     document.getElementById('cta-form').addEventListener('submit', function(e) {
       e.preventDefault();
       var form = e.target;
