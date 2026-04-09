@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>ExportPilot — Pack Emojis &amp; Icônes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #F8FAFC;
+      color: #111827;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    h1 span { color: #3B82F6; }
+    .subtitle {
+      font-size: 0.95rem;
+      color: #6B7280;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6B7280;
+      margin: 40px 0 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .icon-card {
+      background: #fff;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 20px 12px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .icon-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .icon-card .emoji {
+      font-size: 40px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .icon-card .label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+    .icon-card .usage {
+      font-size: 0.65rem;
+      color: #6B7280;
+      line-height: 1.4;
+    }
+
+    /* Service cards */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 900px) {
+      .service-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .service-card .s-icon { font-size: 42px; margin-bottom: 12px; }
+    .service-card .s-title { font-size: 0.85rem; font-weight: 800; color: #111827; margin-bottom: 8px; }
+    .service-card .s-desc { font-size: 0.72rem; color: #6B7280; line-height: 1.5; }
+
+    /* Sector pills */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .sector-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid #E5E7EB;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #111827;
+    }
+    .sector-pill .sp-icon { font-size: 1.1rem; }
+
+    /* Toolkit cards */
+    .toolkit-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 900px) {
+      .toolkit-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .toolkit-card {
+      background: #fff;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 20px 14px;
+      text-align: center;
+    }
+    .toolkit-card .t-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin: 0 auto 10px;
+    }
+    .toolkit-card .t-icon.blue { background: rgba(59,130,246,0.15); }
+    .toolkit-card .t-icon.green { background: rgba(34,197,94,0.15); }
+    .toolkit-card .t-icon.purple { background: rgba(168,85,247,0.15); }
+    .toolkit-card .t-icon.amber { background: rgba(245,158,11,0.15); }
+    .toolkit-card .t-icon.rose { background: rgba(244,63,94,0.15); }
+    .toolkit-card .t-label { font-size: 0.75rem; font-weight: 600; color: #111827; }
+
+    /* Why cards */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .why-card {
+      background: #fff;
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+    }
+    .why-card .w-icon {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .why-card .w-label { font-size: 0.8rem; font-weight: 700; color: #111827; }
+
+    .divider { border: none; border-top: 1px solid #E5E7EB; margin: 40px 0; }
+  </style>
+</head>
+<body>
+
+  <h1>Export<span>Pilot</span> — Pack Emojis &amp; Icônes</h1>
+  <p class="subtitle">Tous les emojis et composants visuels utilisés sur le site exportpilot.fr</p>
+
+  <!-- ===================== EMOJIS COMPLETS ===================== -->
+  <h2>Emojis utilisés sur le site</h2>
+  <div class="grid">
+    <div class="icon-card">
+      <span class="emoji">🌐</span>
+      <div class="label">Globe</div>
+      <div class="usage">Présence digitale</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🎯</span>
+      <div class="label">Cible</div>
+      <div class="usage">Prospection ciblée</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">📊</span>
+      <div class="label">Graphiques</div>
+      <div class="usage">Veille concurrentielle</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">📋</span>
+      <div class="label">Clipboard</div>
+      <div class="usage">Appels d'offres</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">📰</span>
+      <div class="label">Journal</div>
+      <div class="usage">Actualités</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">✈️</span>
+      <div class="label">Avion</div>
+      <div class="usage">Présence terrain</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🚀</span>
+      <div class="label">Fusée</div>
+      <div class="usage">CTA / Boost export</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🇫🇷</span>
+      <div class="label">Drapeau FR</div>
+      <div class="usage">Identité française</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🌍</span>
+      <div class="label">Terre Afrique</div>
+      <div class="usage">International / Traduction</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">📈</span>
+      <div class="label">Tendance</div>
+      <div class="usage">Croissance / Résultats</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">💻</span>
+      <div class="label">Laptop</div>
+      <div class="usage">Dashboard / Digital</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🤝</span>
+      <div class="label">Poignée de main</div>
+      <div class="usage">Partenariat / Terrain</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">⚙️</span>
+      <div class="label">Engrenage</div>
+      <div class="usage">Secteur Industries</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🏗️</span>
+      <div class="label">Grue</div>
+      <div class="usage">Secteur BTP</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">💊</span>
+      <div class="label">Pilule</div>
+      <div class="usage">Secteur Pharma</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🍷</span>
+      <div class="label">Vin</div>
+      <div class="usage">Secteur Vin &amp; Spiritueux</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🌾</span>
+      <div class="label">Blé</div>
+      <div class="usage">Secteur Agroalimentaire</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🚚</span>
+      <div class="label">Camion</div>
+      <div class="usage">Secteur Transport</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">📄</span>
+      <div class="label">Document</div>
+      <div class="usage">Toolkit : Landing page</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🔎</span>
+      <div class="label">Loupe</div>
+      <div class="usage">Toolkit : Veille</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🛒</span>
+      <div class="label">Panier</div>
+      <div class="usage">Toolkit : Marketplace</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🎪</span>
+      <div class="label">Chapiteau</div>
+      <div class="usage">Toolkit : Salons</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">📦</span>
+      <div class="label">Colis</div>
+      <div class="usage">Livraison rapide</div>
+    </div>
+    <div class="icon-card">
+      <span class="emoji">🔒</span>
+      <div class="label">Cadenas</div>
+      <div class="usage">URL sécurisée</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===================== CARTES SERVICES ===================== -->
+  <h2>Cartes services — 6 piliers ExportPilot</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="s-icon">🌐</div>
+      <div class="s-title">Présence digitale</div>
+      <div class="s-desc">Landing page traduite pour chaque marché cible</div>
+    </div>
+    <div class="service-card">
+      <div class="s-icon">🎯</div>
+      <div class="s-title">Prospection ciblée</div>
+      <div class="s-desc">Séquences multicanales pour toucher vos acheteurs</div>
+    </div>
+    <div class="service-card">
+      <div class="s-icon">📊</div>
+      <div class="s-title">Veille concurrentielle</div>
+      <div class="s-desc">Suivez vos concurrents en temps réel</div>
+    </div>
+    <div class="service-card">
+      <div class="s-icon">📋</div>
+      <div class="s-title">Appels d'offres</div>
+      <div class="s-desc">Détectez les opportunités avant vos concurrents</div>
+    </div>
+    <div class="service-card">
+      <div class="s-icon">📰</div>
+      <div class="s-title">Actualités</div>
+      <div class="s-desc">Restez informé des tendances de votre secteur</div>
+    </div>
+    <div class="service-card">
+      <div class="s-icon">✈️</div>
+      <div class="s-title">Présence terrain</div>
+      <div class="s-desc">Salons, missions et rencontres sur vos marchés</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===================== PILLS SECTEURS ===================== -->
+  <h2>Pills secteurs d'activité</h2>
+  <div class="pill-row">
+    <div class="sector-pill"><span class="sp-icon">⚙️</span> Industries</div>
+    <div class="sector-pill"><span class="sp-icon">🏗️</span> BTP / Construction</div>
+    <div class="sector-pill"><span class="sp-icon">💊</span> Pharmaceutique &amp; Bien-être</div>
+    <div class="sector-pill"><span class="sp-icon">🍷</span> Vin &amp; Spiritueux</div>
+    <div class="sector-pill"><span class="sp-icon">🌾</span> Agroalimentaire</div>
+    <div class="sector-pill"><span class="sp-icon">🚚</span> Transport &amp; Logistique</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===================== TOOLKIT ===================== -->
+  <h2>Cartes Toolkit</h2>
+  <div class="toolkit-grid">
+    <div class="toolkit-card">
+      <div class="t-icon blue">📄</div>
+      <div class="t-label">Landing page</div>
+    </div>
+    <div class="toolkit-card">
+      <div class="t-icon green">🔎</div>
+      <div class="t-label">Veille</div>
+    </div>
+    <div class="toolkit-card">
+      <div class="t-icon purple">🛒</div>
+      <div class="t-label">Marketplace</div>
+    </div>
+    <div class="toolkit-card">
+      <div class="t-icon amber">🎪</div>
+      <div class="t-label">Salons</div>
+    </div>
+    <div class="toolkit-card">
+      <div class="t-icon rose">📰</div>
+      <div class="t-label">Actualités</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===================== WHY CARDS ===================== -->
+  <h2>Cartes "Pourquoi ExportPilot"</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="w-icon">📈</div>
+      <div class="w-label">Croissance / Résultats</div>
+    </div>
+    <div class="why-card">
+      <div class="w-icon">💻</div>
+      <div class="w-label">Dashboard / Digital</div>
+    </div>
+    <div class="why-card">
+      <div class="w-icon">🤝</div>
+      <div class="w-label">Partenariat / Terrain</div>
+    </div>
+  </div>
+
+</body>
+</html>

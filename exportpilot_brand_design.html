@@ -1,0 +1,204 @@
+
+<style>
+  .brand-wrap { font-family: 'Montserrat', 'Inter', 'Segoe UI', sans-serif; padding: 2rem 1.5rem; }
+  .section-title { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6B7280; margin: 2rem 0 0.75rem; }
+  .swatch-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 0.5rem; }
+  .swatch { border-radius: 10px; overflow: hidden; width: 110px; }
+  .swatch-color { height: 56px; width: 100%; }
+  .swatch-info { padding: 6px 8px; background: #F8FAFC; border: 0.5px solid #E2E8F0; border-top: none; border-radius: 0 0 10px 10px; }
+  .swatch-name { font-size: 11px; font-weight: 600; color: #1E293B; }
+  .swatch-hex { font-size: 10px; color: #64748B; font-family: monospace; }
+  .typo-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .typo-card { background: #F8FAFC; border: 0.5px solid #E2E8F0; border-radius: 10px; padding: 12px 16px; flex: 1; min-width: 160px; }
+  .typo-label { font-size: 10px; color: #94A3B8; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+  .bg-preview { border-radius: 12px; padding: 24px; margin: 1rem 0; position: relative; background: #EFF6FF; overflow: hidden; }
+  .bg-circle { position: absolute; border-radius: 50%; background: rgba(59,130,246,0.06); }
+  .canva-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 0.5rem; }
+  .step-card { background: #F8FAFC; border: 0.5px solid #E2E8F0; border-radius: 10px; padding: 12px 14px; }
+  .step-num { display: inline-block; background: #3B82F6; color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 11px; font-weight: 700; text-align: center; line-height: 20px; margin-bottom: 6px; }
+  .step-text { font-size: 12px; color: #374151; line-height: 1.5; }
+  .step-code { font-family: monospace; font-size: 11px; background: #EFF6FF; color: #1E40AF; padding: 2px 6px; border-radius: 4px; display: inline-block; margin-top: 4px; }
+  .logo-preview { display: flex; align-items: center; gap: 4px; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; font-family: 'Montserrat', sans-serif; }
+  .divider { border: none; border-top: 0.5px solid #E2E8F0; margin: 1.5rem 0; }
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<div class="brand-wrap">
+
+  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.25rem;">
+    <div class="logo-preview">
+      <img src="logo/Logo_ExportPilot.png" alt="ExportPilot" style="height:36px;">
+    </div>
+    <span style="font-size:11px; color:#94A3B8;">Brand Design Guide — ExportPilot</span>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-title">Palette de couleurs</div>
+  <div class="swatch-row">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#111827;"></div>
+      <div class="swatch-info"><div class="swatch-name">Dark</div><div class="swatch-hex">#111827</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Texte principal · Titres</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#3B82F6;"></div>
+      <div class="swatch-info"><div class="swatch-name">Blue Primary</div><div class="swatch-hex">#3B82F6</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Logo · Boutons · Liens</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1E40AF;"></div>
+      <div class="swatch-info"><div class="swatch-name">Blue Dark</div><div class="swatch-hex">#1E40AF</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Hover boutons · Accents</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#DBEAFE;"></div>
+      <div class="swatch-info" style="border-top:0.5px solid #E2E8F0;"><div class="swatch-name">Blue Light</div><div class="swatch-hex">#DBEAFE</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Badges · Fonds clairs</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#EFF6FF;"></div>
+      <div class="swatch-info" style="border-top:0.5px solid #E2E8F0;"><div class="swatch-name">Blue Lighter</div><div class="swatch-hex">#EFF6FF</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Fond sections · Cercles</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#6B7280;"></div>
+      <div class="swatch-info"><div class="swatch-name">Grey</div><div class="swatch-hex">#6B7280</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Texte secondaire</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#E5E7EB;"></div>
+      <div class="swatch-info" style="border-top:0.5px solid #E2E8F0;"><div class="swatch-name">Border</div><div class="swatch-hex">#E5E7EB</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Bordures · Séparateurs</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F1F5F9;"></div>
+      <div class="swatch-info" style="border-top:0.5px solid #E2E8F0;"><div class="swatch-name">Footer BG</div><div class="swatch-hex">#F1F5F9</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Fond footer</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#ffffff; border:0.5px solid #E2E8F0;"></div>
+      <div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-hex">#FFFFFF</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Cartes · Fond page</div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Couleurs d'accent</div>
+  <div class="swatch-row">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#DC2626;"></div>
+      <div class="swatch-info"><div class="swatch-name">Red</div><div class="swatch-hex">#DC2626</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Stats d'impact · Chiffres</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F8FAFC;"></div>
+      <div class="swatch-info" style="border-top:0.5px solid #E2E8F0;"><div class="swatch-name">Alt BG</div><div class="swatch-hex">#F8FAFC</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Fond alternatif sections</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#4B5563;"></div>
+      <div class="swatch-info"><div class="swatch-name">Footer Text</div><div class="swatch-hex">#4B5563</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Texte footer</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#D1D5DB;"></div>
+      <div class="swatch-info" style="border-top:0.5px solid #E2E8F0;"><div class="swatch-name">Footer Border</div><div class="swatch-hex">#D1D5DB</div><div class="swatch-hex" style="font-size:9px;color:#94A3B8;">Séparateur footer</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-title">Typographie — Montserrat (Google Fonts)</div>
+  <div class="typo-row">
+    <div class="typo-card">
+      <div class="typo-label">Titre / Headlines</div>
+      <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:800; color:#111827; letter-spacing:-0.5px;">Montserrat ExtraBold</div>
+      <div style="font-size:11px; color:#64748B; margin-top:4px;">800 · -0.02em tracking</div>
+    </div>
+    <div class="typo-card">
+      <div class="typo-label">Sous-titre / Highlight</div>
+      <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:800; font-style:italic; color:#111827; letter-spacing:-0.3px;">Montserrat ExtraBold Italic</div>
+      <div style="font-size:11px; color:#64748B; margin-top:4px;">800 italic · mots surlignés</div>
+    </div>
+    <div class="typo-card">
+      <div class="typo-label">Navigation / Labels</div>
+      <div style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:600; color:#111827;">Montserrat SemiBold</div>
+      <div style="font-size:11px; color:#64748B; margin-top:4px;">600 · boutons, nav, tags</div>
+    </div>
+    <div class="typo-card">
+      <div class="typo-label">Corps de texte</div>
+      <div style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:400; color:#6B7280; line-height:1.7;">Montserrat Regular<br>pour les descriptions</div>
+      <div style="font-size:11px; color:#64748B; margin-top:4px;">400 · 1rem · line-height 1.8</div>
+    </div>
+    <div class="typo-card">
+      <div class="typo-label">Highlight couleur</div>
+      <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:800; color:#3B82F6;">EXPORT</div>
+      <div style="font-size:11px; color:#64748B; margin-top:4px;">800 · Blue Primary #3B82F6</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-title">Fond signature (à recréer dans Canva)</div>
+  <div class="bg-preview">
+    <div class="bg-circle" style="width:260px;height:260px;top:-80px;left:-80px;"></div>
+    <div class="bg-circle" style="width:200px;height:200px;top:-60px;right:-60px;"></div>
+    <div class="bg-circle" style="width:180px;height:180px;bottom:-60px;left:60px;"></div>
+    <div style="position:relative;z-index:1;text-align:center;padding:12px 0;">
+      <div style="font-family:'Montserrat',sans-serif; font-size:12px;font-weight:600;color:#111827;margin-bottom:4px;">Aperçu du fond</div>
+      <div style="font-size:11px;color:#6B7280;">Background #EFF6FF + cercles rgba(59, 130, 246, 0.06)</div>
+    </div>
+  </div>
+
+  <div class="section-title">Instructions étape par étape pour Canva</div>
+  <div class="canva-steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-text"><strong>Fond de page</strong><br>Couleur de remplissage :<br><span class="step-code">#EFF6FF</span></div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-text"><strong>Cercle haut-gauche</strong><br>Forme ronde · couleur<br><span class="step-code">#DBEAFE</span> · Opacité <span class="step-code">50%</span> · Flou <span class="step-code">30px</span></div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-text"><strong>Cercle haut-droite</strong><br>Même style · positionner hors cadre (coin supérieur droit)</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-text"><strong>Cercle bas-gauche</strong><br>Même style · plus petit · positionner partiellement hors cadre</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">5</div>
+      <div class="step-text"><strong>Grouper les éléments</strong><br>Sélectionner fond + 3 cercles → <em>Grouper</em> → Verrouiller comme fond de template</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">6</div>
+      <div class="step-text"><strong>Sauvegarder en Brand Kit</strong><br>Ajouter <span class="step-code">#3B82F6</span> <span class="step-code">#1E40AF</span> <span class="step-code">#111827</span> <span class="step-code">#EFF6FF</span> <span class="step-code">#DBEAFE</span> dans ta palette de marque Canva</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-title">Récap hex à copier dans Canva Brand Kit</div>
+  <div style="background:#F8FAFC; border:0.5px solid #E2E8F0; border-radius:10px; padding:14px 16px; font-family:monospace; font-size:12px; line-height:2; color:#1E293B;">
+    #111827 &nbsp;— Dark (texte principal, titres)<br>
+    #3B82F6 &nbsp;— Blue Primary (logo, boutons, liens)<br>
+    #1E40AF &nbsp;— Blue Dark (hover boutons, accents foncés)<br>
+    #DBEAFE &nbsp;— Blue Light (badges, fonds clairs)<br>
+    #EFF6FF &nbsp;— Blue Lighter (fond sections, cercles déco)<br>
+    #6B7280 &nbsp;— Grey (texte secondaire)<br>
+    #E5E7EB &nbsp;— Border (bordures, séparateurs)<br>
+    #F1F5F9 &nbsp;— Footer BG (fond footer)<br>
+    #DC2626 &nbsp;— Red (stats d'impact)<br>
+    #FFFFFF &nbsp;— Blanc (cartes, fond page)
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-title">Éléments de design récurrents</div>
+  <div class="canva-steps">
+    <div class="step-card">
+      <div class="step-text"><strong>Border radius</strong><br><span class="step-code">8px</span> boutons<br><span class="step-code">16px</span> cartes<br><span class="step-code">999px</span> badges/pills</div>
+    </div>
+    <div class="step-card">
+      <div class="step-text"><strong>Ombres</strong><br>Cartes : <span class="step-code">0 1px 3px rgba(0,0,0,0.08)</span><br>Hover : <span class="step-code">0 4px 12px rgba(0,0,0,0.12)</span></div>
+    </div>
+    <div class="step-card">
+      <div class="step-text"><strong>Surlignage (highlight)</strong><br>Texte italic bold + trait bleu clair dessous<br>Utilisé pour les mots-clés impactants</div>
+    </div>
+    <div class="step-card">
+      <div class="step-text"><strong>Logo</strong><br>Hauteur header : <span class="step-code">32px</span><br>Hauteur footer : <span class="step-code">32px</span><br>Fichier : Logo_ExportPilot.png</div>
+    </div>
+  </div>
+
+</div>

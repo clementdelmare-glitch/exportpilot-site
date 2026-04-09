@@ -113,6 +113,7 @@
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       padding: 12px 24px;
       border-radius: var(--radius-sm);
@@ -546,6 +547,17 @@
       margin-bottom: 56px;
     }
 
+    @media (max-width: 768px) {
+      .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-ctas .btn {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+
     .hero-social-proof {
       display: flex;
       align-items: center;
@@ -594,6 +606,12 @@
 
     .sector-badge .sector-icon {
       font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+    }
+    .sector-badge .sector-icon img {
+      height: 1rem;
+      width: 1rem;
     }
 
     @media (max-width: 600px) {
@@ -729,6 +747,11 @@
       font-size: 2rem;
       margin-bottom: 10px;
       display: block;
+    }
+    .service-nav-card .nav-icon img {
+      height: 2rem;
+      width: 2rem;
+      display: inline-block;
     }
 
     .service-nav-card .nav-label {
@@ -1348,6 +1371,10 @@
       justify-content: center;
       font-size: 0.8rem;
       flex-shrink: 0;
+    }
+    .toolkit-card-icon img {
+      height: 18px;
+      width: 18px;
     }
 
     .toolkit-card-icon.blue { background: rgba(59,130,246,0.25); }
@@ -2041,6 +2068,11 @@
     .why-card-icon {
       font-size: 2.25rem;
       margin-bottom: 16px;
+    }
+    .why-card-icon img {
+      height: 2.25rem;
+      width: 2.25rem;
+      display: inline-block;
     }
 
     .why-card h3 {
@@ -2967,7 +2999,7 @@
         </div>
 
         <h1 class="fade-in" style="transition-delay: 0.1s">
-          Vous n'êtes plus qu'à un clic de <span class="handwritten-highlight">booster</span> votre développement <span class="accent">EXPORT<span class="accent-box"><span class="accent-handle-bl"></span><span class="accent-handle-br"></span></span></span> 🚀
+          Vous n'êtes plus qu'à un clic de <span class="handwritten-highlight">booster</span> votre développement <span class="accent">EXPORT<span class="accent-box"><span class="accent-handle-bl"></span><span class="accent-handle-br"></span></span></span> <img src="logo/icons/svg/005-rocket.svg" alt="Rocket" style="height:clamp(1.6rem, 4vw, 2.8rem); display:inline-block; vertical-align:middle;">
         </h1>
 
         <p class="hero-subtitle fade-in" style="transition-delay: 0.2s">
@@ -2975,17 +3007,17 @@
         </p>
 
         <div class="hero-ctas fade-in" style="transition-delay: 0.3s">
-          <a href="#cta" class="btn btn-primary" style="padding:12px 28px; min-width:220px; text-align:center;">Demander une démo</a>
-          <a href="#offre" class="btn btn-secondary" style="padding:12px 28px; min-width:220px; text-align:center;">Découvrir l'offre</a>
+          <a href="#cta" class="btn btn-primary" style="padding:12px 0; width:220px; text-align:center; justify-content:center;">Demander une démo</a>
+          <a href="#offre" class="btn btn-secondary" style="padding:12px 0; width:220px; text-align:center; justify-content:center;">Découvrir l'offre</a>
         </div>
 
         <div class="hero-sectors fade-in" style="transition-delay: 0.4s">
-          <div class="sector-badge"><span class="sector-icon">⚙️</span> Industries</div>
-          <div class="sector-badge"><span class="sector-icon">🏗️</span> BTP / Construction</div>
-          <div class="sector-badge"><span class="sector-icon">💊</span> Pharmaceutique &amp; Bien-être</div>
-          <div class="sector-badge"><span class="sector-icon">🍷</span> Vin &amp; Spiritueux</div>
-          <div class="sector-badge"><span class="sector-icon">🌾</span> Agroalimentaire</div>
-          <div class="sector-badge"><span class="sector-icon">🚚</span> Transport &amp; Logistique</div>
+          <div class="sector-badge"><span class="sector-icon"><img src="logo/icons/svg/usine.svg" alt="Industries"></span> Industries</div>
+          <div class="sector-badge"><span class="sector-icon"><img src="logo/icons/svg/construction.svg" alt="BTP"></span> BTP / Construction</div>
+          <div class="sector-badge"><span class="sector-icon"><img src="logo/icons/svg/pilules.svg" alt="Pharma"></span> Pharmaceutique &amp; Bien-être</div>
+          <div class="sector-badge"><span class="sector-icon"><img src="logo/icons/svg/du-vin.svg" alt="Vin"></span> Vin &amp; Spiritueux</div>
+          <div class="sector-badge"><span class="sector-icon"><img src="logo/icons/svg/couverts-bebe.svg" alt="Agro"></span> Agroalimentaire</div>
+          <div class="sector-badge"><span class="sector-icon"><img src="logo/icons/svg/camion.svg" alt="Transport"></span> Transport &amp; Logistique</div>
         </div>
       </div>
     </div>
@@ -3037,32 +3069,32 @@
 
         <div class="service-nav">
           <a href="#pillar-digital" class="service-nav-card">
-            <span class="nav-icon">🌐</span>
+            <span class="nav-icon"><img src="logo/icons/svg/013-vision.svg" alt="Présence digitale"></span>
             <span class="nav-label">Présence digitale</span>
             <span class="nav-desc">Landing page traduite pour chaque marché cible</span>
           </a>
           <a href="#pillar-prospection" class="service-nav-card">
-            <span class="nav-icon">🎯</span>
+            <span class="nav-icon"><img src="logo/icons/svg/008-target.svg" alt="Prospection ciblée"></span>
             <span class="nav-label">Prospection ciblée</span>
             <span class="nav-desc">Séquences multicanales pour toucher vos acheteurs</span>
           </a>
           <a href="#pillar-veille-concurrence" class="service-nav-card">
-            <span class="nav-icon">📊</span>
+            <span class="nav-icon"><img src="logo/icons/svg/010-loupe.svg" alt="Veille concurrentielle"></span>
             <span class="nav-label">Veille concurrentielle</span>
             <span class="nav-desc">Suivez vos concurrents en temps réel</span>
           </a>
           <a href="#pillar-appels-offre" class="service-nav-card">
-            <span class="nav-icon">📋</span>
+            <span class="nav-icon"><img src="logo/icons/svg/015-check-list.svg" alt="Appels d'offres"></span>
             <span class="nav-label">Appels d'offres</span>
             <span class="nav-desc">Détectez les opportunités avant vos concurrents</span>
           </a>
           <a href="#pillar-actualites" class="service-nav-card">
-            <span class="nav-icon">📰</span>
+            <span class="nav-icon"><img src="logo/icons/svg/003-message.svg" alt="Actualités"></span>
             <span class="nav-label">Actualités</span>
             <span class="nav-desc">Restez informé des tendances de votre secteur</span>
           </a>
           <a href="#pillar-terrain" class="service-nav-card">
-            <span class="nav-icon">✈️</span>
+            <span class="nav-icon"><img src="logo/icons/svg/002-flag.svg" alt="Présence terrain"></span>
             <span class="nav-label">Présence terrain</span>
             <span class="nav-desc">Salons, missions et rencontres sur vos marchés</span>
           </a>
@@ -3151,7 +3183,7 @@
           <div class="landing-mockup" style="background:#1e1b4b; border-radius:16px; padding:20px; max-width:480px; color:#fff; font-size:0.85rem;">
             <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px; background:#2d2a5e; border-radius:8px; padding:8px 12px;">
               <span style="display:flex; gap:4px;"><span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:inline-block;"></span><span style="width:10px;height:10px;border-radius:50%;background:#febc2e;display:inline-block;"></span><span style="width:10px;height:10px;border-radius:50%;background:#28c840;display:inline-block;"></span></span>
-              <span style="flex:1; text-align:center; color:#94a3b8; font-size:0.75rem;">🔒 votre-entreprise.pl</span>
+              <span style="flex:1; text-align:center; color:#94a3b8; font-size:0.75rem;"><img src="logo/icons/svg/034-key.svg" alt="Sécurisé" style="height:0.75rem; display:inline-block; vertical-align:middle;"> votre-entreprise.pl</span>
             </div>
             <div style="background:#fff; border-radius:12px; padding:24px; color:#111;">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; font-size:0.8rem;">
@@ -3164,12 +3196,12 @@
               <p style="text-align:center; font-size:0.7rem; color:#6b7280; margin-bottom:16px;">Oferujemy najwyższej jakości produkty dostosowane do potrzeb lokalnego rynku.</p>
               <div style="text-align:center; margin-bottom:20px;"><span style="background:#3B82F6; color:#fff; padding:8px 16px; border-radius:8px; font-size:0.75rem;">Skontaktuj się z nami →</span></div>
               <div style="display:flex; justify-content:space-around; font-size:0.65rem; color:#6b7280; text-align:center;">
-                <span>📦<br>Szybka dostawa</span>
-                <span>🤝<br>Lokalne wsparcie</span>
+                <span><img src="logo/icons/svg/037-chronometer.svg" alt="Livraison" style="height:1rem;"><br>Szybka dostawa</span>
+                <span><img src="logo/icons/svg/042-success-1.svg" alt="Support" style="height:1rem;"><br>Lokalne wsparcie</span>
                 <span>✅<br>Certyfikaty UE</span>
               </div>
             </div>
-            <div style="margin-top:12px;"><span style="background:#22c55e; color:#fff; padding:4px 12px; border-radius:20px; font-size:0.7rem;">🌍 Traduit et adapté en polonais</span></div>
+            <div style="margin-top:12px;"><span style="background:#22c55e; color:#fff; padding:4px 12px; border-radius:20px; font-size:0.7rem;"><img src="logo/icons/svg/013-vision.svg" alt="Globe" style="height:0.7rem; display:inline-block; vertical-align:middle;"> Traduit et adapté en polonais</span></div>
           </div>
         </div>
       </div>
@@ -3427,7 +3459,7 @@
           <div class="pillar-badge">
             <span class="badge">Intelligence marché</span>
           </div>
-          <h3>Toute l'actualité de votre secteur sur le marché cible 📰</h3>
+          <h3>Toute l'actualité de votre secteur sur le marché cible <img src="logo/icons/svg/003-message.svg" alt="Actualités" style="height:1.3rem; display:inline-block; vertical-align:middle;"></h3>
           <p>
             Recevez une information complète sur votre secteur d'activité dans le pays cible. Résumés de presse, salons professionnels, évolutions législatives, impacts politiques à surveiller — ne ratez rien de ce qui peut influencer votre positionnement. Une veille structurée pour prendre les bonnes décisions au bon moment.
           </p>
@@ -3514,7 +3546,7 @@
             <div class="toolkit-grid">
               <div class="toolkit-card">
                 <div class="toolkit-card-header">
-                  <div class="toolkit-card-icon blue">📄</div>
+                  <div class="toolkit-card-icon blue"><img src="logo/icons/svg/023-exam.svg" alt="Landing page"></div>
                   <div class="toolkit-card-name">Supports commerciaux</div>
                 </div>
                 <div class="toolkit-card-detail">Brochures, fiches produit, présentations</div>
@@ -3527,7 +3559,7 @@
               </div>
               <div class="toolkit-card">
                 <div class="toolkit-card-header">
-                  <div class="toolkit-card-icon green">🔎</div>
+                  <div class="toolkit-card-icon green"><img src="logo/icons/svg/010-loupe.svg" alt="Veille"></div>
                   <div class="toolkit-card-name">SEO international</div>
                 </div>
                 <div class="toolkit-card-detail">Mots-clés locaux, positionnement marché</div>
@@ -3539,7 +3571,7 @@
               </div>
               <div class="toolkit-card">
                 <div class="toolkit-card-header">
-                  <div class="toolkit-card-icon purple">🛒</div>
+                  <div class="toolkit-card-icon purple"><img src="logo/icons/svg/029-ingots.svg" alt="Marketplace"></div>
                   <div class="toolkit-card-name">E-commerce</div>
                 </div>
                 <div class="toolkit-card-detail">Traduction, devises, UX locale</div>
@@ -3551,7 +3583,7 @@
               </div>
               <div class="toolkit-card">
                 <div class="toolkit-card-header">
-                  <div class="toolkit-card-icon amber">🎪</div>
+                  <div class="toolkit-card-icon amber"><img src="logo/icons/svg/031-flag-1.svg" alt="Salons"></div>
                   <div class="toolkit-card-name">Salons & événements</div>
                 </div>
                 <div class="toolkit-card-detail">Inscription, logistique, stand</div>
@@ -3563,7 +3595,7 @@
               </div>
               <div class="toolkit-card toolkit-card-full">
                 <div class="toolkit-card-header">
-                  <div class="toolkit-card-icon rose">📰</div>
+                  <div class="toolkit-card-icon rose"><img src="logo/icons/svg/003-message.svg" alt="Actualités"></div>
                   <div class="toolkit-card-name">Presse & médias locaux</div>
                 </div>
                 <div class="toolkit-card-detail">Articles, communiqués, relations presse sur les marchés cibles</div>
@@ -3782,7 +3814,7 @@
         <div class="why-cards">
 
           <div class="why-card">
-            <div class="why-card-icon">📈</div>
+            <div class="why-card-icon"><img src="logo/icons/svg/020-growth.svg" alt="Croissance"></div>
             <h3>Un investissement</h3>
             <p>
               Grâce à nos coûts fixes, vous maîtrisez parfaitement votre budget. Pas de mauvaises surprises, pas de frais supplémentaires.
@@ -3790,7 +3822,7 @@
           </div>
 
           <div class="why-card">
-            <div class="why-card-icon">💻</div>
+            <div class="why-card-icon"><img src="logo/icons/svg/017-presentation.svg" alt="Dashboard"></div>
             <h3>Une méthodologie digitalisée</h3>
             <p>
               Des outils de prospection et d'automatisation de pointe pilotés par nos experts. Votre pipeline de prospects qualifiés est alimenté en continu, avec reporting en temps réel sur votre dashboard.
@@ -3798,7 +3830,7 @@
           </div>
 
           <div class="why-card">
-            <div class="why-card-icon">🤝</div>
+            <div class="why-card-icon"><img src="logo/icons/svg/042-success-1.svg" alt="Partenariat"></div>
             <h3>Focalisez-vous sur vos ventes</h3>
             <p>
               Notre dispositif vous permet de vous consacrer pleinement à la vente et à la défense de vos produits. Nous nous occupons du travail en amont, vous permettant de performer plus rapidement.
