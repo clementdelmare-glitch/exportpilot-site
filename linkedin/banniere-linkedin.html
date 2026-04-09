@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=3168">
+<title>Bannière LinkedIn - ExportPilot</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 3168px;
+    height: 792px;
+    font-family: 'Inter', sans-serif;
+    background: #edf3fb;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Cercles décoratifs */
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.07);
+  }
+  .circle-1 { width: 400px; height: 400px; top: -120px; left: -80px; }
+  .circle-2 { width: 280px; height: 280px; bottom: -100px; left: 300px; }
+  .circle-3 { width: 350px; height: 350px; top: -80px; right: -60px; }
+  .circle-4 { width: 220px; height: 220px; bottom: -60px; right: 400px; }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Zone gauche — branding discret (zone photo de profil) */
+  .left-zone {
+    width: 820px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 60px;
+  }
+
+  .logo {
+    height: 50px;
+    opacity: 0.12;
+  }
+
+  /* Zone droite — contenu principal */
+  .right-zone {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 100px 40px 60px;
+  }
+
+  /* Logo officiel */
+  .logo-official {
+    height: 58px;
+    margin-bottom: 18px;
+    margin-left: 2px;
+    align-self: flex-start;
+  }
+
+  /* Titre principal — une seule ligne */
+  .main-title {
+    font-size: 78px;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .main-title .highlight {
+    color: #4281fb;
+  }
+
+  .inline-icon {
+    height: 0.85em;
+    vertical-align: middle;
+  }
+
+  /* Sous-titre */
+  .subtitle {
+    margin-top: 14px;
+    font-size: 34px;
+    font-weight: 600;
+    color: #334155;
+    line-height: 1.5;
+  }
+
+  /* Services en pills — toutes la même taille */
+  .services-row {
+    margin-top: 22px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .service-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 2px solid #d0d8e4;
+    border-radius: 50px;
+    padding: 12px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    width: 280px;
+  }
+
+  .service-pill img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .service-pill span {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  /* CTA bas droite */
+  .cta-row {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .cta-site {
+    font-size: 30px;
+    font-weight: 800;
+    color: #4281fb;
+  }
+
+  .cta-divider {
+    width: 3px;
+    height: 24px;
+    background: #cbd5e1;
+    border-radius: 2px;
+  }
+
+  .cta-tagline {
+    font-size: 26px;
+    font-weight: 600;
+    color: #64748b;
+  }
+</style>
+</head>
+<body>
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+  <div class="circle circle-3"></div>
+  <div class="circle circle-4"></div>
+
+  <div class="container">
+    <div class="left-zone"></div>
+
+    <div class="right-zone">
+      <img src="../logo/Logo_ExportPilot.png" alt="ExportPilot" class="logo-official">
+
+      <h1 class="main-title">
+        Développez vos <span class="highlight">ventes</span> à l'EXPORT <img src="../logo/icons/svg/005-rocket.svg" alt="fusée" class="inline-icon">
+      </h1>
+
+      <div class="services-row">
+        <div class="service-pill">
+          <img src="../logo/icons/svg/013-vision.svg" alt="">
+          <span>Présence digitale</span>
+        </div>
+        <div class="service-pill">
+          <img src="../logo/icons/svg/008-target.svg" alt="">
+          <span>Prospection</span>
+        </div>
+        <div class="service-pill">
+          <img src="../logo/icons/svg/010-loupe.svg" alt="">
+          <span>Veille</span>
+        </div>
+        <div class="service-pill">
+          <img src="../logo/icons/svg/023-exam.svg" alt="">
+          <span>Appels d'offres</span>
+        </div>
+        <div class="service-pill">
+          <img src="../logo/icons/svg/003-message.svg" alt="">
+          <span>Actualités</span>
+        </div>
+        <div class="service-pill">
+          <img src="../logo/icons/svg/002-flag.svg" alt="">
+          <span>Terrain</span>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <span class="cta-site">exportpilot.fr</span>
+        <div class="cta-divider"></div>
+        <span class="cta-tagline">Ensemble, faisons rayonner nos sociétés françaises partout dans le monde <img src="../logo/icons/svg/france.svg" alt="France" style="height:0.9em;vertical-align:middle;"></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

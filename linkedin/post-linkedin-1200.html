@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>Post LinkedIn - ExportPilot</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 1200px;
+    font-family: 'Inter', sans-serif;
+    background: #edf3fb;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Cercles décoratifs */
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.07);
+  }
+  .circle-1 { width: 300px; height: 300px; top: -80px; right: -60px; }
+  .circle-2 { width: 200px; height: 200px; top: 180px; left: -80px; }
+  .circle-3 { width: 260px; height: 260px; bottom: -80px; left: -40px; }
+  .circle-4 { width: 180px; height: 180px; bottom: 120px; right: -60px; }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Logo */
+  .logo {
+    height: 50px;
+    position: absolute;
+    top: 36px;
+    left: 48px;
+  }
+
+  /* Badge */
+  .badge {
+    background: #fff;
+    border: 2px solid #d0d8e4;
+    border-radius: 50px;
+    padding: 12px 32px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: 0.01em;
+  }
+
+  /* Titre principal */
+  .title {
+    margin-top: 36px;
+    font-size: 68px;
+    font-weight: 900;
+    color: #0f172a;
+    text-align: center;
+    line-height: 1.15;
+  }
+
+  .linkedin-logo {
+    height: 62px;
+    vertical-align: middle;
+    margin: 0 4px;
+    position: relative;
+    top: -3px;
+  }
+
+  /* Sous-titres — texte plus gros, contraste fort */
+  .subtitle {
+    margin-top: 28px;
+    font-size: 30px;
+    color: #1e293b;
+    text-align: center;
+    line-height: 1.7;
+  }
+  .subtitle strong {
+    color: #0f172a;
+    font-weight: 800;
+  }
+  .subtitle .inline-icon {
+    height: 1.15em;
+    vertical-align: middle;
+  }
+
+  /* Grille services — 2 rangées de 3 */
+  .services-grid {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    width: 100%;
+    max-width: 1080px;
+  }
+
+  .service-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 28px 20px 24px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 14px;
+  }
+
+  /* Titres cartes — gras, gros, contraste max */
+  .service-title {
+    font-size: 24px;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  /* Descriptions — taille mini 18px, couleur sombre */
+  .service-desc {
+    font-size: 18px;
+    color: #334155;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  /* CTA — gros et contrasté */
+  .cta {
+    margin-top: 36px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    text-align: center;
+  }
+  .cta a {
+    color: #2563eb;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    font-weight: 800;
+  }
+</style>
+</head>
+<body>
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+  <div class="circle circle-3"></div>
+  <div class="circle circle-4"></div>
+
+  <div class="container">
+    <img src="../logo/clem_dlmr.svg" alt="ExportPilot" class="logo">
+
+    <div class="badge">Nouveau — Suivez-nous sur LinkedIn</div>
+
+    <h1 class="title">
+      Nous sommes sur <img src="../logo/LI-Logo.png" alt="LinkedIn" class="linkedin-logo"> !
+    </h1>
+
+    <div class="subtitle">
+      <strong>Boostez vos ventes Export</strong> <img src="../logo/icons/svg/005-rocket.svg" alt="fusée" class="inline-icon"><br>
+      Ensemble faisons rayonner les sociétés françaises à l'international <img src="../logo/icons/svg/france.svg" alt="France" class="inline-icon">
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="../logo/icons/svg/013-vision.svg" alt="Présence digitale" class="service-icon">
+        <div class="service-title">Présence digitale</div>
+        <div class="service-desc">Landing page traduite pour chaque marché cible</div>
+      </div>
+      <div class="service-card">
+        <img src="../logo/icons/svg/008-target.svg" alt="Prospection ciblée" class="service-icon">
+        <div class="service-title">Prospection ciblée</div>
+        <div class="service-desc">Séquences multicanales pour toucher vos acheteurs</div>
+      </div>
+      <div class="service-card">
+        <img src="../logo/icons/svg/010-loupe.svg" alt="Veille concurrentielle" class="service-icon">
+        <div class="service-title">Veille concurrentielle</div>
+        <div class="service-desc">Suivez vos concurrents en temps réel</div>
+      </div>
+      <div class="service-card">
+        <img src="../logo/icons/svg/023-exam.svg" alt="Appels d'offres" class="service-icon">
+        <div class="service-title">Appels d'offres</div>
+        <div class="service-desc">Détectez les opportunités avant vos concurrents</div>
+      </div>
+      <div class="service-card">
+        <img src="../logo/icons/svg/003-message.svg" alt="Actualités" class="service-icon">
+        <div class="service-title">Actualités</div>
+        <div class="service-desc">Restez informé des tendances de votre secteur</div>
+      </div>
+      <div class="service-card">
+        <img src="../logo/icons/svg/002-flag.svg" alt="Présence terrain" class="service-icon">
+        <div class="service-title">Présence terrain</div>
+        <div class="service-desc">Salons, missions et rencontres sur vos marchés</div>
+      </div>
+    </div>
+
+    <div class="cta">
+      Découvrez notre dispositif complet sur <a href="https://exportpilot.fr">exportpilot.fr</a>
+    </div>
+  </div>
+</body>
+</html>
