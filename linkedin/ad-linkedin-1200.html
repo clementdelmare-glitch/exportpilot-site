@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>LinkedIn Ad - ExportPilot</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 1200px;
+    font-family: 'Inter', sans-serif;
+    background: #edf3fb;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(66, 129, 251, 0.07);
+  }
+  .circle-1 { width: 300px; height: 300px; top: -80px; right: -60px; }
+  .circle-2 { width: 200px; height: 200px; top: 200px; left: -80px; }
+  .circle-3 { width: 260px; height: 260px; bottom: -80px; left: -40px; }
+  .circle-4 { width: 180px; height: 180px; bottom: 150px; right: -60px; }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Logo */
+  .logo {
+    height: 62px;
+    margin-bottom: 44px;
+  }
+
+  /* Accroche */
+  .headline {
+    font-size: 58px;
+    white-space: nowrap;
+    font-weight: 900;
+    color: #0f172a;
+    text-align: center;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .headline .highlight {
+    color: #4281fb;
+  }
+
+  .inline-icon {
+    height: 0.85em;
+    vertical-align: middle;
+  }
+
+  /* Sous-titre */
+  .subheadline {
+    margin-top: 18px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #334155;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* Grille services 2x3 */
+  .services-grid {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 100%;
+    max-width: 1080px;
+  }
+
+  .service-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px 16px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+  }
+
+  .service-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .service-desc {
+    font-size: 16px;
+    color: #334155;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  /* CTA Button */
+  .cta-section {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .cta-button {
+    background: #4281fb;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 800;
+    padding: 20px 64px;
+    border-radius: 60px;
+    border: none;
+    letter-spacing: 0.01em;
+    box-shadow: 0 4px 16px rgba(66, 129, 251, 0.3);
+  }
+
+  .cta-url {
+    font-size: 22px;
+    font-weight: 700;
+    color: #4281fb;
+  }
+
+  .cta-tagline {
+    font-size: 20px;
+    font-weight: 600;
+    color: #64748b;
+  }
+</style>
+</head>
+<body>
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+  <div class="circle circle-3"></div>
+  <div class="circle circle-4"></div>
+
+  <div class="container">
+    <img src="../logo/Logo_ExportPilot.png" alt="ExportPilot" class="logo">
+
+    <h1 class="headline">
+      <span style="background:linear-gradient(to top, rgba(66,129,251,0.2) 40%, transparent 40%);padding:0 4px;">Boostez</span> vos <span class="highlight">ventes</span> à l'EXPORT <img src="../logo/icons/svg/005-rocket.svg" alt="fusée" class="inline-icon">
+    </h1>
+
+    <p class="subheadline">
+      La seule interface qui pilote votre croissance internationale
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="../logo/icons/svg/013-vision.svg" alt="" class="service-icon">
+        <div class="service-title">Présence digitale</div>
+        <div class="service-desc">Landing page traduite par marché</div>
+      </div>
+      <div class="service-card">
+        <img src="../logo/icons/svg/008-target.svg" alt="" class="service-icon">
+        <div class="service-title">Prospection ciblée</div>
+        <div class="service-desc">Séquences multicanales B2B</div>
+      </div>
+      <div class="service-card">
+        <img src="../logo/icons/svg/010-loupe.svg" alt="" class="service-icon">
+        <div class="service-title">Veille concurrentielle</div>
+        <div class="service-desc">Suivi concurrents en temps réel</div>
+      </div>
+      <div class="service-card">
+        <img src="../logo/icons/svg/023-exam.svg" alt="" class="service-icon">
+        <div class="service-title">Appels d'offres</div>
+        <div class="service-desc">Opportunités avant vos concurrents</div>
+      </div>
+      <div class="service-card">
+        <img src="../logo/icons/svg/003-message.svg" alt="" class="service-icon">
+        <div class="service-title">Actualités</div>
+        <div class="service-desc">Tendances de votre secteur</div>
+      </div>
+      <div class="service-card">
+        <img src="../logo/icons/svg/002-flag.svg" alt="" class="service-icon">
+        <div class="service-title">Présence terrain</div>
+        <div class="service-desc">Salons et missions sur vos marchés</div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <div class="cta-button">Découvrir l'offre</div>
+      <span class="cta-url">exportpilot.fr</span>
+    </div>
+  </div>
+</body>
+</html>
